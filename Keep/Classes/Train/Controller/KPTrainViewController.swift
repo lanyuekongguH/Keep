@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class KPTrainViewController: UIViewController {
 
@@ -15,8 +16,34 @@ class KPTrainViewController: UIViewController {
 
         view.backgroundColor = UIColor.white
         
+        navigationItem.titleView = titleView
+
+        let rightItem = UIBarButtonItem(image: UIImage(named: "icon_run_sign"), style: .plain, target: self, action: #selector(rightItemClick))
+        navigationItem.rightBarButtonItem = rightItem
         
+        let path = Bundle.main.path(forResource: "StoreListData", ofType: "geojson")
         
+        let datas = NSData.init(contentsOfFile: path!)
+    
+        let json = JSON(datas as Any)
+        
+        print(json)
     }
+    
+    func rightItemClick() {
+        let runRecordVc = KPTrainRunRecordController()
+        let nav = KPNavigationController.init(rootViewController: runRecordVc)
+        self.present(nav, animated: true, completion:
+        nil)
+    }
+    
+    fileprivate lazy var titleView: UIImageView = {
+        let titleView = UIImageView()
+        titleView.image = UIImage(named: "sticker_keep")
+        titleView.frame = CGRect(x: 0, y: 0, width: 41, height: 20)
+        return titleView
+    }()
+    
+    
 
 }

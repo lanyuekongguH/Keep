@@ -40,7 +40,7 @@ class KPMineController: UIViewController {
         
         let rightItem = UIBarButtonItem(image: UIImage(named: "personal_message_center_icon"), style: .plain, target: self, action: #selector(rightItemClick))
         
-        let leftItem = UIBarButtonItem(image: UIImage(named: "group_icon_add"), style: .plain, target: self, action: #selector(leftItemClick))
+        let leftItem = UIBarButtonItem(image: UIImage(named: "install"), style: .plain, target: self, action: #selector(leftItemClick))
         
         navigationItem.leftBarButtonItem = leftItem
         navigationItem.rightBarButtonItem = rightItem

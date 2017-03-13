@@ -14,10 +14,15 @@ class KPMineHistoryController: UIViewController {
         super.viewDidLoad()
 
         //run_level_timeline_target
+        
+        //same_city_activity_banner_mask
         view.backgroundColor = KPBg()
 
         
         print("hello")
+        
+        print("hello")
+
     }
 
 }

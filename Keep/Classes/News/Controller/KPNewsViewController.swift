@@ -17,6 +17,12 @@ class KPNewsViewController: UIViewController {
         
         navigationItem.titleView = segmentView
 
+        
+        KPNetworkTool.shareNetworkTool.loadStoreListData { (result) in
+            
+        }
+        
+        
     }
 
     fileprivate lazy var segmentView: KPSegmentView = {

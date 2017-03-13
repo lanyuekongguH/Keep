@@ -1,0 +1,42 @@
+{
+    "ok": true,
+    "data": [{
+             "productId": 126,
+             "originPrice": 14900,
+             "specialOfferPrice": 12900,
+             "name": "Keep | 工字运动内衣 黑色＋白色",
+             "message": "江疏影同款运动内衣",
+             "time": 66544000,
+             "image": "https://static2.keepcdn.com/ec/product/973/9f02639e4bc3546c8fe71dd955a12761.jpg",
+             "url": "keep://store_item/126"
+             }, {
+             "productId": 180,
+             "originPrice": 6400,
+             "specialOfferPrice": 5400,
+             "name": "有机白藜麦",
+             "message": "蛋白质和纤维的良好来源",
+             "time": 66544000,
+             "image": "https://static2.keepcdn.com/ec/product/1072/f3ccdd27d2000e3f9255a7e3e2c48800.jpg",
+             "url": "keep://store_item/180"
+             }, {
+             "productId": 175,
+             "originPrice": 13900,
+             "specialOfferPrice": 11900,
+             "name": "Now Foods 天然植物肝脏排毒胶囊",
+             "message": "改善自体排毒机制，身体更健康",
+             "time": 66544000,
+             "image": "https://static2.keepcdn.com/ec/product/1076/f3ccdd27d2000e3f9255a7e3e2c48800.jpg",
+             "url": "keep://store_item/175"
+             }, {
+             "productId": 172,
+             "originPrice": 25900,
+             "specialOfferPrice": 21900,
+             "name": "Now Foods 蛋壳薄膜关节超效恢复胶囊",
+             "message": "天然营养提取，缓解关节疼痛",
+             "time": 66544000,
+             "image": "https://static2.keepcdn.com/ec/product/1168/76dcc5525e74f62e9215b817fd32243d.jpg",
+             "url": "keep://store_item/172"
+             }],
+    "errorCode": 0,
+    "errorMessage": ""
+}
