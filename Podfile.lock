@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.4.0)
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
+  - IQKeyboardManagerSwift (4.0.8)
+  - Kingfisher (3.5.1)
+  - MBProgressHUD (1.0.0)
+  - SnapKit (3.2.0)
+  - SVProgressHUD (2.1.2)
+  - SwiftyJSON (3.1.4)
+  - YYText (1.0.7)
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - MBProgressHUD
+  - SnapKit
+  - SVProgressHUD
+  - SwiftyJSON
+  - YYText
+  - ZipArchive
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  Kingfisher: 12eeffeef42ea45b68c5e5acfe8ba9005b713ab4
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
+
+PODFILE CHECKSUM: c94832aeb0edc3158a76a0d3c0d7a16cb8b0733f
+
+COCOAPODS: 1.1.1
