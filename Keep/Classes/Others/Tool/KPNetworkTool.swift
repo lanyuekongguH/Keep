@@ -16,10 +16,26 @@ class KPNetworkTool: NSObject {
     static let shareNetworkTool = KPNetworkTool()
     
     /// 加载banner数据
-    func liadStoreBannerData(_ request:@escaping ([Any]) ->()) {
+    func loadStoreBannerData(_ finished:@escaping ([KPStoreBanner]) ->()) {
         
+        //https://store.gotokeep.com/api/v1/banner/1
         
+        let path = Bundle.main.path(forResource: "BannerData", ofType: "geojson")
+        let contentData = NSData.init(contentsOfFile: path!)
+        let json = JSON(contentData as Any)
         
+        if let data = json["data"].arrayObject {
+            var bannerArray = [KPStoreBanner]()
+            
+            for dict in data {
+                let title = KPStoreBanner(dict: dict as! [String: AnyObject])
+                bannerArray.append(title)
+            }
+            
+            finished(bannerArray)
+            print(bannerArray)
+
+        }
     }
     
     /// 加载商城数据

@@ -25,6 +25,13 @@ func KPBg() -> UIColor {
     return KPColor(231, g: 236, b: 240, a: 1.0)
 }
 
+func KPGray() -> UIColor {
+    return KPColor(148, g: 148, b: 148, a: 1.0)
+}
+
+func KPLightGray() -> UIColor {
+    return KPColor(142, g: 142, b: 142, a: 1.0)
+}
 
 
 /// iPhone 5

@@ -21,13 +21,6 @@ class KPTrainViewController: UIViewController {
         let rightItem = UIBarButtonItem(image: UIImage(named: "icon_run_sign"), style: .plain, target: self, action: #selector(rightItemClick))
         navigationItem.rightBarButtonItem = rightItem
         
-        let path = Bundle.main.path(forResource: "StoreListData", ofType: "geojson")
-        
-        let datas = NSData.init(contentsOfFile: path!)
-    
-        let json = JSON(datas as Any)
-        
-        print(json)
     }
     
     func rightItemClick() {
