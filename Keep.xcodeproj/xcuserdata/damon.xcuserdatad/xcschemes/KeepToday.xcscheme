@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4AADDE61E8BB48900477C61"
-               BuildableName = "KEEP.appex"
-               BlueprintName = "KEEP"
+               BlueprintIdentifier = "E4B4857D1E8B9BCB00C17363"
+               BuildableName = "KeepToday.appex"
+               BlueprintName = "KeepToday"
                ReferencedContainer = "container:Keep.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4AADDE61E8BB48900477C61"
-            BuildableName = "KEEP.appex"
-            BlueprintName = "KEEP"
+            BlueprintIdentifier = "E4B4857D1E8B9BCB00C17363"
+            BuildableName = "KeepToday.appex"
+            BlueprintName = "KeepToday"
             ReferencedContainer = "container:Keep.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,16 +67,26 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E45D45AF1E70020000AA79C5"
-            BuildableName = "Keep.app"
-            BlueprintName = "Keep"
+            BlueprintIdentifier = "E4B4857D1E8B9BCB00C17363"
+            BuildableName = "KeepToday.appex"
+            BlueprintName = "KeepToday"
             ReferencedContainer = "container:Keep.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E4B4857D1E8B9BCB00C17363"
+            BuildableName = "KeepToday.appex"
+            BlueprintName = "KeepToday"
+            ReferencedContainer = "container:Keep.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

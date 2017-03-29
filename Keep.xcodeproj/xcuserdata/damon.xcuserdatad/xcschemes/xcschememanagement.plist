@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>KEEP.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>Keep.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>KeepToday.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>E45D45CE1E70020100AA79C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4AADDE61E8BB48900477C61</key>
 		<dict>
 			<key>primary</key>
 			<true/>

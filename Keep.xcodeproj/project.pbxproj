@@ -25,7 +25,6 @@
 		E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861CF1E7149960024EE1B /* KPMineSportsController.swift */; };
 		E41861D31E7150DC0024EE1B /* KPMineSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861D11E7150DC0024EE1B /* KPMineSettingCell.swift */; };
 		E45D45B41E70020000AA79C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45B31E70020000AA79C5 /* AppDelegate.swift */; };
-		E45D45B61E70020000AA79C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45B51E70020000AA79C5 /* ViewController.swift */; };
 		E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45D45B71E70020000AA79C5 /* Main.storyboard */; };
 		E45D45BB1E70020000AA79C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45D45BA1E70020000AA79C5 /* Assets.xcassets */; };
 		E45D45C91E70020100AA79C5 /* KeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45C81E70020100AA79C5 /* KeepTests.swift */; };
@@ -50,6 +49,10 @@
 		E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A946501E7286DE0040ED47 /* KPSegmentView.swift */; };
 		E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */; };
 		E4A946561E767F290040ED47 /* KPNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A946551E767F290040ED47 /* KPNetworkTool.swift */; };
+		E4AADDE91E8BB48900477C61 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
+		E4AADDEC1E8BB48900477C61 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */; };
+		E4AADDF31E8BB48900477C61 /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4AADDE71E8BB48900477C61 /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B4865D1E8BB31E00C17363 /* Info.plist */; };
 		E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B74A671E70F131009EE6BC /* KPMineListCell.swift */; };
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
 /* End PBXBuildFile section */
@@ -69,7 +72,28 @@
 			remoteGlobalIDString = E45D45AF1E70020000AA79C5;
 			remoteInfo = Keep;
 		};
+		E4AADDF11E8BB48900477C61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E45D45A81E70020000AA79C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4AADDE61E8BB48900477C61;
+			remoteInfo = KEEP;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4AADDF71E8BB48900477C61 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E4AADDF31E8BB48900477C61 /* KEEP.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		05F14ADAF9F44C27E9C14464 /* Pods-Keep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keep.release.xcconfig"; path = "Pods/Target Support Files/Pods-Keep/Pods-Keep.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,11 +117,9 @@
 		E41861D11E7150DC0024EE1B /* KPMineSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineSettingCell.swift; sourceTree = "<group>"; };
 		E45D45B01E70020000AA79C5 /* Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45D45B31E70020000AA79C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E45D45B51E70020000AA79C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E45D45B81E70020000AA79C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E45D45BA1E70020000AA79C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45D45BD1E70020000AA79C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E45D45BF1E70020000AA79C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45D45C41E70020100AA79C5 /* KeepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45D45C81E70020100AA79C5 /* KeepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepTests.swift; sourceTree = "<group>"; };
 		E45D45CA1E70020100AA79C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +146,12 @@
 		E4A946501E7286DE0040ED47 /* KPSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPSegmentView.swift; sourceTree = "<group>"; };
 		E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRunRecordController.swift; sourceTree = "<group>"; };
 		E4A946551E767F290040ED47 /* KPNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNetworkTool.swift; sourceTree = "<group>"; };
+		E4AADDE71E8BB48900477C61 /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E4AADDF01E8BB48900477C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4AADDF91E8BB71A00477C61 /* KEEP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KEEP.entitlements; sourceTree = "<group>"; };
+		E4B4865D1E8BB31E00C17363 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Classes/Info.plist; sourceTree = "<group>"; };
 		E4B74A671E70F131009EE6BC /* KPMineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineListCell.swift; sourceTree = "<group>"; };
 		E4B74A681E70F131009EE6BC /* KPMineListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPMineListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +179,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4AADDE41E8BB48900477C61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4AADDE91E8BB48900477C61 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -158,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BB32FF36A28A3320826614 /* Pods_Keep.framework */,
+				E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,6 +235,7 @@
 				E45D45B21E70020000AA79C5 /* Keep */,
 				E45D45C71E70020100AA79C5 /* KeepTests */,
 				E45D45D21E70020100AA79C5 /* KeepUITests */,
+				E4AADDEA1E8BB48900477C61 /* KEEP */,
 				E45D45B11E70020000AA79C5 /* Products */,
 				74F3A7F6798C8E6A093A9232 /* Pods */,
 				22F221A340CCDFFA37B1F85B /* Frameworks */,
@@ -210,6 +248,7 @@
 				E45D45B01E70020000AA79C5 /* Keep.app */,
 				E45D45C41E70020100AA79C5 /* KeepTests.xctest */,
 				E45D45CF1E70020100AA79C5 /* KeepUITests.xctest */,
+				E4AADDE71E8BB48900477C61 /* KEEP.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,11 +258,10 @@
 			children = (
 				E4A5D90D1E70041C00F91783 /* Classes */,
 				E45D45B31E70020000AA79C5 /* AppDelegate.swift */,
-				E45D45B51E70020000AA79C5 /* ViewController.swift */,
+				E4B4865D1E8BB31E00C17363 /* Info.plist */,
 				E45D45B71E70020000AA79C5 /* Main.storyboard */,
 				E45D45BA1E70020000AA79C5 /* Assets.xcassets */,
 				E45D45BC1E70020000AA79C5 /* LaunchScreen.storyboard */,
-				E45D45BF1E70020000AA79C5 /* Info.plist */,
 			);
 			path = Keep;
 			sourceTree = "<group>";
@@ -446,6 +484,16 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		E4AADDEA1E8BB48900477C61 /* KEEP */ = {
+			isa = PBXGroup;
+			children = (
+				E4AADDF91E8BB71A00477C61 /* KEEP.entitlements */,
+				E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */,
+				E4AADDF01E8BB48900477C61 /* Info.plist */,
+			);
+			path = KEEP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,10 +507,12 @@
 				E45D45AE1E70020000AA79C5 /* Resources */,
 				868918A38092E96178949BC4 /* [CP] Embed Pods Frameworks */,
 				792E69FDADE6F94AED5CDC97 /* [CP] Copy Pods Resources */,
+				E4AADDF71E8BB48900477C61 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E4AADDF21E8BB48900477C61 /* PBXTargetDependency */,
 			);
 			name = Keep;
 			productName = Keep;
@@ -505,6 +555,23 @@
 			productReference = E45D45CF1E70020100AA79C5 /* KeepUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E4AADDE61E8BB48900477C61 /* KEEP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4AADDF61E8BB48900477C61 /* Build configuration list for PBXNativeTarget "KEEP" */;
+			buildPhases = (
+				E4AADDE31E8BB48900477C61 /* Sources */,
+				E4AADDE41E8BB48900477C61 /* Frameworks */,
+				E4AADDE51E8BB48900477C61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KEEP;
+			productName = KEEP;
+			productReference = E4AADDE71E8BB48900477C61 /* KEEP.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -531,6 +598,16 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = E45D45AF1E70020000AA79C5;
 					};
+					E4AADDE61E8BB48900477C61 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = M3FK4FYNRT;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = E45D45AB1E70020000AA79C5 /* Build configuration list for PBXProject "Keep" */;
@@ -549,6 +626,7 @@
 				E45D45AF1E70020000AA79C5 /* Keep */,
 				E45D45C31E70020100AA79C5 /* KeepTests */,
 				E45D45CE1E70020100AA79C5 /* KeepUITests */,
+				E4AADDE61E8BB48900477C61 /* KEEP */,
 			);
 		};
 /* End PBXProject section */
@@ -564,6 +642,7 @@
 				E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */,
 				E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */,
 				E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */,
+				E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +654,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E45D45CD1E70020100AA79C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4AADDE51E8BB48900477C61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -638,7 +724,6 @@
 			files = (
 				E4A9464F1E715C740040ED47 /* UIImage+KP.swift in Sources */,
 				E4A946561E767F290040ED47 /* KPNetworkTool.swift in Sources */,
-				E45D45B61E70020000AA79C5 /* ViewController.swift in Sources */,
 				E4A5D92D1E7005BE00F91783 /* KPPersonInfoController.swift in Sources */,
 				E41861CC1E7149740024EE1B /* KPMineCollectionController.swift in Sources */,
 				E4A5D9381E7009A900F91783 /* KPConst.swift in Sources */,
@@ -691,6 +776,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4AADDE31E8BB48900477C61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4AADDEC1E8BB48900477C61 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -703,6 +796,11 @@
 			isa = PBXTargetDependency;
 			target = E45D45AF1E70020000AA79C5 /* Keep */;
 			targetProxy = E45D45D01E70020100AA79C5 /* PBXContainerItemProxy */;
+		};
+		E4AADDF21E8BB48900477C61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4AADDE61E8BB48900477C61 /* KEEP */;
+			targetProxy = E4AADDF11E8BB48900477C61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -821,10 +919,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA98CBF4FA95FE96BBB1E5D6 /* Pods-Keep.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
-				INFOPLIST_FILE = Keep/Info.plist;
+				INFOPLIST_FILE = Keep/Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp;
@@ -838,10 +937,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05F14ADAF9F44C27E9C14464 /* Pods-Keep.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
-				INFOPLIST_FILE = Keep/Info.plist;
+				INFOPLIST_FILE = Keep/Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp;
@@ -905,6 +1005,32 @@
 			};
 			name = Release;
 		};
+		E4AADDF41E8BB48900477C61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = M3FK4FYNRT;
+				INFOPLIST_FILE = KEEP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp.KEEP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E4AADDF51E8BB48900477C61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = M3FK4FYNRT;
+				INFOPLIST_FILE = KEEP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp.KEEP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -943,6 +1069,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E4AADDF61E8BB48900477C61 /* Build configuration list for PBXNativeTarget "KEEP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4AADDF41E8BB48900477C61 /* Debug */,
+				E4AADDF51E8BB48900477C61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
