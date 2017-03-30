@@ -52,6 +52,14 @@
 		E4AADDE91E8BB48900477C61 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
 		E4AADDEC1E8BB48900477C61 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */; };
 		E4AADDF31E8BB48900477C61 /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4AADDE71E8BB48900477C61 /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDFD1E8BC31C00477C61 /* KPShortcutType.swift */; };
+		E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDFF1E8BC36600477C61 /* KPShortcutItems.swift */; };
+		E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE021E8C976800477C61 /* KPScanViewController.swift */; };
+		E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE041E8C978B00477C61 /* KPAboutViewController.swift */; };
+		E4AADE071E8C97BA00477C61 /* KPCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE061E8C97BA00477C61 /* KPCommunityViewController.swift */; };
+		E4AADE091E8C97F500477C61 /* KPConventionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE081E8C97F500477C61 /* KPConventionViewController.swift */; };
+		E4AADE0B1E8C982C00477C61 /* KPNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE0A1E8C982C00477C61 /* KPNetworkViewController.swift */; };
+		E4AADE0D1E8C985600477C61 /* KPHelpFeedBackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */; };
 		E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B4865D1E8BB31E00C17363 /* Info.plist */; };
 		E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B74A671E70F131009EE6BC /* KPMineListCell.swift */; };
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
@@ -151,6 +159,14 @@
 		E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E4AADDF01E8BB48900477C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4AADDF91E8BB71A00477C61 /* KEEP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KEEP.entitlements; sourceTree = "<group>"; };
+		E4AADDFD1E8BC31C00477C61 /* KPShortcutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPShortcutType.swift; sourceTree = "<group>"; };
+		E4AADDFF1E8BC36600477C61 /* KPShortcutItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPShortcutItems.swift; sourceTree = "<group>"; };
+		E4AADE021E8C976800477C61 /* KPScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPScanViewController.swift; sourceTree = "<group>"; };
+		E4AADE041E8C978B00477C61 /* KPAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPAboutViewController.swift; sourceTree = "<group>"; };
+		E4AADE061E8C97BA00477C61 /* KPCommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPCommunityViewController.swift; sourceTree = "<group>"; };
+		E4AADE081E8C97F500477C61 /* KPConventionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPConventionViewController.swift; sourceTree = "<group>"; };
+		E4AADE0A1E8C982C00477C61 /* KPNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNetworkViewController.swift; sourceTree = "<group>"; };
+		E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHelpFeedBackController.swift; sourceTree = "<group>"; };
 		E4B4865D1E8BB31E00C17363 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Classes/Info.plist; sourceTree = "<group>"; };
 		E4B74A671E70F131009EE6BC /* KPMineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineListCell.swift; sourceTree = "<group>"; };
 		E4B74A681E70F131009EE6BC /* KPMineListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPMineListCell.xib; sourceTree = "<group>"; };
@@ -361,6 +377,7 @@
 		E4A5D9141E70041C00F91783 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E4AADE011E8C974B00477C61 /* Setting */,
 				E41861C81E7148E50024EE1B /* Tab */,
 				E4A5D9261E70052000F91783 /* KPMineController.swift */,
 				E4A5D9281E70054400F91783 /* KPSettingController.swift */,
@@ -434,6 +451,7 @@
 		E4A5D91B1E70041C00F91783 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E4AADDFC1E8BC2EA00477C61 /* 3DTouch */,
 				E41861C51E713F1A0024EE1B /* Extensions */,
 				E4A5D9361E70097500F91783 /* Tool */,
 			);
@@ -492,6 +510,28 @@
 				E4AADDF01E8BB48900477C61 /* Info.plist */,
 			);
 			path = KEEP;
+			sourceTree = "<group>";
+		};
+		E4AADDFC1E8BC2EA00477C61 /* 3DTouch */ = {
+			isa = PBXGroup;
+			children = (
+				E4AADDFD1E8BC31C00477C61 /* KPShortcutType.swift */,
+				E4AADDFF1E8BC36600477C61 /* KPShortcutItems.swift */,
+			);
+			path = 3DTouch;
+			sourceTree = "<group>";
+		};
+		E4AADE011E8C974B00477C61 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E4AADE021E8C976800477C61 /* KPScanViewController.swift */,
+				E4AADE041E8C978B00477C61 /* KPAboutViewController.swift */,
+				E4AADE061E8C97BA00477C61 /* KPCommunityViewController.swift */,
+				E4AADE081E8C97F500477C61 /* KPConventionViewController.swift */,
+				E4AADE0A1E8C982C00477C61 /* KPNetworkViewController.swift */,
+				E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A9464F1E715C740040ED47 /* UIImage+KP.swift in Sources */,
+				E4AADE091E8C97F500477C61 /* KPConventionViewController.swift in Sources */,
 				E4A946561E767F290040ED47 /* KPNetworkTool.swift in Sources */,
 				E4A5D92D1E7005BE00F91783 /* KPPersonInfoController.swift in Sources */,
 				E41861CC1E7149740024EE1B /* KPMineCollectionController.swift in Sources */,
@@ -733,17 +774,21 @@
 				E4A5D9351E7007D000F91783 /* KPTrainViewController.swift in Sources */,
 				E4051EB91E7788E7007801CA /* KPStoreBanner.swift in Sources */,
 				E4051EBC1E778925007801CA /* KPStoreBannerCell.swift in Sources */,
+				E4AADE0B1E8C982C00477C61 /* KPNetworkViewController.swift in Sources */,
 				E4A5D9291E70054400F91783 /* KPSettingController.swift in Sources */,
+				E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */,
 				E4051EC81E77DB70007801CA /* KPStoreTabView.swift in Sources */,
 				E45D45B41E70020000AA79C5 /* AppDelegate.swift in Sources */,
 				E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */,
 				E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */,
 				E4051EBA1E7788E7007801CA /* KPStoreList.swift in Sources */,
+				E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */,
 				E4051EC41E779F45007801CA /* KPStoreBannerView.swift in Sources */,
 				E41861CE1E7149840024EE1B /* KPMineDataViewController.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4051EC61E77C86C007801CA /* String+KP.swift in Sources */,
 				E4A5D92B1E70058D00F91783 /* KPInfoViewController.swift in Sources */,
+				E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */,
 				E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */,
 				E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */,
 				E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */,
@@ -752,9 +797,12 @@
 				E4051EC01E7789F8007801CA /* KPStoreProductCell.swift in Sources */,
 				E4A5D92F1E7005E900F91783 /* KPEditViewController.swift in Sources */,
 				E4051EBE1E7789AA007801CA /* KPStoreCarouselCell.swift in Sources */,
+				E4AADE071E8C97BA00477C61 /* KPCommunityViewController.swift in Sources */,
 				E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */,
 				E4A5D9311E70064500F91783 /* KPNewsViewController.swift in Sources */,
+				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,
 				E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */,
+				E4AADE0D1E8C985600477C61 /* KPHelpFeedBackController.swift in Sources */,
 				E41861CA1E7149140024EE1B /* KPMineHistoryController.swift in Sources */,
 				E41861D31E7150DC0024EE1B /* KPMineSettingCell.swift in Sources */,
 			);
