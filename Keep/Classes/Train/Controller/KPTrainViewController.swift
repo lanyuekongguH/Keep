@@ -32,8 +32,8 @@ class KPTrainViewController: UIViewController {
     
     fileprivate lazy var titleView: UIImageView = {
         let titleView = UIImageView()
-        titleView.image = UIImage(named: "sticker_keep")
-        titleView.frame = CGRect(x: 0, y: 0, width: 41, height: 20)
+        titleView.image = UIImage(named: "keep_logo")
+        titleView.frame = CGRect(x: 0, y: 0, width: 50, height: 23)
         return titleView
     }()
     
