@@ -7,17 +7,14 @@
 		<key>KEEP.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>12</integer>
 		</dict>
-		<key>Keep.xcscheme</key>
+		<key>Keep 2.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>KeepToday.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -33,6 +30,11 @@
 			<true/>
 		</dict>
 		<key>E45D45CE1E70020100AA79C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E47A822D1E8FAE75004F575B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -40,6 +40,11 @@
 		E45D45BB1E70020000AA79C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45D45BA1E70020000AA79C5 /* Assets.xcassets */; };
 		E45D45C91E70020100AA79C5 /* KeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45C81E70020100AA79C5 /* KeepTests.swift */; };
 		E45D45D41E70020100AA79C5 /* KeepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45D31E70020100AA79C5 /* KeepUITests.swift */; };
+		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
+		E47A82321E8FAE75004F575B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A82311E8FAE75004F575B /* TodayViewController.swift */; };
+		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
+		E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823F1E8FB591004F575B /* KPWidgetButton.swift */; };
 		E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699D1E76973800028DF0 /* BannerData.geojson */; };
 		E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699F1E76A78800028DF0 /* StoreListData.geojson */; };
 		E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9221E7004C500F91783 /* KPTabBarController.swift */; };
@@ -60,9 +65,6 @@
 		E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A946501E7286DE0040ED47 /* KPSegmentView.swift */; };
 		E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */; };
 		E4A946561E767F290040ED47 /* KPNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A946551E767F290040ED47 /* KPNetworkTool.swift */; };
-		E4AADDE91E8BB48900477C61 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
-		E4AADDEC1E8BB48900477C61 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */; };
-		E4AADDF31E8BB48900477C61 /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4AADDE71E8BB48900477C61 /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDFD1E8BC31C00477C61 /* KPShortcutType.swift */; };
 		E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADDFF1E8BC36600477C61 /* KPShortcutItems.swift */; };
 		E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE021E8C976800477C61 /* KPScanViewController.swift */; };
@@ -91,11 +93,11 @@
 			remoteGlobalIDString = E45D45AF1E70020000AA79C5;
 			remoteInfo = Keep;
 		};
-		E4AADDF11E8BB48900477C61 /* PBXContainerItemProxy */ = {
+		E47A82371E8FAE75004F575B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E45D45A81E70020000AA79C5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E4AADDE61E8BB48900477C61;
+			remoteGlobalIDString = E47A822D1E8FAE75004F575B;
 			remoteInfo = KEEP;
 		};
 /* End PBXContainerItemProxy section */
@@ -107,7 +109,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E4AADDF31E8BB48900477C61 /* KEEP.appex in Embed App Extensions */,
+				E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +131,9 @@
 		E40166E11E8D081E00C41F96 /* KPCacheManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPCacheManagerController.swift; sourceTree = "<group>"; };
 		E40166E31E8D082D00C41F96 /* KPAccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPAccountBindingController.swift; sourceTree = "<group>"; };
 		E40166E51E8D085000C41F96 /* KPAboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPAboutMeViewController.swift; sourceTree = "<group>"; };
+		E40167B81E8F88D600C41F96 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		E40167BA1E8F88DF00C41F96 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		E40167BC1E8F88E600C41F96 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		E4051EB71E7788E7007801CA /* KPStoreBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBanner.swift; sourceTree = "<group>"; };
 		E4051EB81E7788E7007801CA /* KPStoreList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreList.swift; sourceTree = "<group>"; };
 		E4051EBB1E778925007801CA /* KPStoreBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBannerCell.swift; sourceTree = "<group>"; };
@@ -156,6 +161,11 @@
 		E45D45CF1E70020100AA79C5 /* KeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45D45D31E70020100AA79C5 /* KeepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepUITests.swift; sourceTree = "<group>"; };
 		E45D45D51E70020100AA79C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E47A82311E8FAE75004F575B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
+		E47A823F1E8FB591004F575B /* KPWidgetButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWidgetButton.swift; sourceTree = "<group>"; };
 		E48F699D1E76973800028DF0 /* BannerData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BannerData.geojson; sourceTree = "<group>"; };
 		E48F699F1E76A78800028DF0 /* StoreListData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreListData.geojson; sourceTree = "<group>"; };
 		E4A5D9221E7004C500F91783 /* KPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTabBarController.swift; sourceTree = "<group>"; };
@@ -176,11 +186,7 @@
 		E4A946501E7286DE0040ED47 /* KPSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPSegmentView.swift; sourceTree = "<group>"; };
 		E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRunRecordController.swift; sourceTree = "<group>"; };
 		E4A946551E767F290040ED47 /* KPNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNetworkTool.swift; sourceTree = "<group>"; };
-		E4AADDE71E8BB48900477C61 /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		E4AADDF01E8BB48900477C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4AADDF91E8BB71A00477C61 /* KEEP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KEEP.entitlements; sourceTree = "<group>"; };
 		E4AADDFD1E8BC31C00477C61 /* KPShortcutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPShortcutType.swift; sourceTree = "<group>"; };
 		E4AADDFF1E8BC36600477C61 /* KPShortcutItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPShortcutItems.swift; sourceTree = "<group>"; };
 		E4AADE021E8C976800477C61 /* KPScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPScanViewController.swift; sourceTree = "<group>"; };
@@ -217,11 +223,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4AADDE41E8BB48900477C61 /* Frameworks */ = {
+		E47A822B1E8FAE75004F575B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4AADDE91E8BB48900477C61 /* NotificationCenter.framework in Frameworks */,
+				E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +237,9 @@
 		22F221A340CCDFFA37B1F85B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E40167BC1E8F88E600C41F96 /* SnapKit.framework */,
+				E40167BA1E8F88DF00C41F96 /* Kingfisher.framework */,
+				E40167B81E8F88D600C41F96 /* Alamofire.framework */,
 				A8BB32FF36A28A3320826614 /* Pods_Keep.framework */,
 				E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */,
 			);
@@ -273,7 +282,7 @@
 				E45D45B21E70020000AA79C5 /* Keep */,
 				E45D45C71E70020100AA79C5 /* KeepTests */,
 				E45D45D21E70020100AA79C5 /* KeepUITests */,
-				E4AADDEA1E8BB48900477C61 /* KEEP */,
+				E47A82301E8FAE75004F575B /* KEEP */,
 				E45D45B11E70020000AA79C5 /* Products */,
 				74F3A7F6798C8E6A093A9232 /* Pods */,
 				22F221A340CCDFFA37B1F85B /* Frameworks */,
@@ -286,7 +295,7 @@
 				E45D45B01E70020000AA79C5 /* Keep.app */,
 				E45D45C41E70020100AA79C5 /* KeepTests.xctest */,
 				E45D45CF1E70020100AA79C5 /* KeepUITests.xctest */,
-				E4AADDE71E8BB48900477C61 /* KEEP.appex */,
+				E47A822E1E8FAE75004F575B /* KEEP.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +329,17 @@
 				E45D45D51E70020100AA79C5 /* Info.plist */,
 			);
 			path = KeepUITests;
+			sourceTree = "<group>";
+		};
+		E47A82301E8FAE75004F575B /* KEEP */ = {
+			isa = PBXGroup;
+			children = (
+				E47A82311E8FAE75004F575B /* TodayViewController.swift */,
+				E47A823F1E8FB591004F575B /* KPWidgetButton.swift */,
+				E47A82361E8FAE75004F575B /* Info.plist */,
+				E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */,
+			);
+			path = KEEP;
 			sourceTree = "<group>";
 		};
 		E48F699C1E76970C00028DF0 /* Resources */ = {
@@ -524,16 +544,6 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		E4AADDEA1E8BB48900477C61 /* KEEP */ = {
-			isa = PBXGroup;
-			children = (
-				E4AADDF91E8BB71A00477C61 /* KEEP.entitlements */,
-				E4AADDEB1E8BB48900477C61 /* TodayViewController.swift */,
-				E4AADDF01E8BB48900477C61 /* Info.plist */,
-			);
-			path = KEEP;
-			sourceTree = "<group>";
-		};
 		E4AADDFC1E8BC2EA00477C61 /* 3DTouch */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,7 +595,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E4AADDF21E8BB48900477C61 /* PBXTargetDependency */,
+				E47A82381E8FAE75004F575B /* PBXTargetDependency */,
 			);
 			name = Keep;
 			productName = Keep;
@@ -628,13 +638,13 @@
 			productReference = E45D45CF1E70020100AA79C5 /* KeepUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		E4AADDE61E8BB48900477C61 /* KEEP */ = {
+		E47A822D1E8FAE75004F575B /* KEEP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4AADDF61E8BB48900477C61 /* Build configuration list for PBXNativeTarget "KEEP" */;
+			buildConfigurationList = E47A823A1E8FAE75004F575B /* Build configuration list for PBXNativeTarget "KEEP" */;
 			buildPhases = (
-				E4AADDE31E8BB48900477C61 /* Sources */,
-				E4AADDE41E8BB48900477C61 /* Frameworks */,
-				E4AADDE51E8BB48900477C61 /* Resources */,
+				E47A822A1E8FAE75004F575B /* Sources */,
+				E47A822B1E8FAE75004F575B /* Frameworks */,
+				E47A822C1E8FAE75004F575B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -642,7 +652,7 @@
 			);
 			name = KEEP;
 			productName = KEEP;
-			productReference = E4AADDE71E8BB48900477C61 /* KEEP.appex */;
+			productReference = E47A822E1E8FAE75004F575B /* KEEP.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -671,15 +681,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = E45D45AF1E70020000AA79C5;
 					};
-					E4AADDE61E8BB48900477C61 = {
+					E47A822D1E8FAE75004F575B = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = M3FK4FYNRT;
 						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-						};
 					};
 				};
 			};
@@ -699,7 +704,7 @@
 				E45D45AF1E70020000AA79C5 /* Keep */,
 				E45D45C31E70020100AA79C5 /* KeepTests */,
 				E45D45CE1E70020100AA79C5 /* KeepUITests */,
-				E4AADDE61E8BB48900477C61 /* KEEP */,
+				E47A822D1E8FAE75004F575B /* KEEP */,
 			);
 		};
 /* End PBXProject section */
@@ -733,7 +738,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4AADDE51E8BB48900477C61 /* Resources */ = {
+		E47A822C1E8FAE75004F575B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -868,11 +873,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4AADDE31E8BB48900477C61 /* Sources */ = {
+		E47A822A1E8FAE75004F575B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4AADDEC1E8BB48900477C61 /* TodayViewController.swift in Sources */,
+				E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */,
+				E47A82321E8FAE75004F575B /* TodayViewController.swift in Sources */,
+				E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,10 +896,10 @@
 			target = E45D45AF1E70020000AA79C5 /* Keep */;
 			targetProxy = E45D45D01E70020100AA79C5 /* PBXContainerItemProxy */;
 		};
-		E4AADDF21E8BB48900477C61 /* PBXTargetDependency */ = {
+		E47A82381E8FAE75004F575B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4AADDE61E8BB48900477C61 /* KEEP */;
-			targetProxy = E4AADDF11E8BB48900477C61 /* PBXContainerItemProxy */;
+			target = E47A822D1E8FAE75004F575B /* KEEP */;
+			targetProxy = E47A82371E8FAE75004F575B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1097,29 +1104,33 @@
 			};
 			name = Release;
 		};
-		E4AADDF41E8BB48900477C61 /* Debug */ = {
+		E47A823B1E8FAE75004F575B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				INFOPLIST_FILE = KEEP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp.KEEP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		E4AADDF51E8BB48900477C61 /* Release */ = {
+		E47A823C1E8FAE75004F575B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				INFOPLIST_FILE = KEEP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp.KEEP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1162,14 +1173,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4AADDF61E8BB48900477C61 /* Build configuration list for PBXNativeTarget "KEEP" */ = {
+		E47A823A1E8FAE75004F575B /* Build configuration list for PBXNativeTarget "KEEP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4AADDF41E8BB48900477C61 /* Debug */,
-				E4AADDF51E8BB48900477C61 /* Release */,
+				E47A823B1E8FAE75004F575B /* Debug */,
+				E47A823C1E8FAE75004F575B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

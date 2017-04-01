@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4AADDE61E8BB48900477C61"
+               BlueprintIdentifier = "E47A822D1E8FAE75004F575B"
                BuildableName = "KEEP.appex"
                BlueprintName = "KEEP"
                ReferencedContainer = "container:Keep.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4AADDE61E8BB48900477C61"
+            BlueprintIdentifier = "E47A822D1E8FAE75004F575B"
             BuildableName = "KEEP.appex"
             BlueprintName = "KEEP"
             ReferencedContainer = "container:Keep.xcodeproj">

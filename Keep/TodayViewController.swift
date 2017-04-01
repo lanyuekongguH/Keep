@@ -2,7 +2,7 @@
 //  TodayViewController.swift
 //  KEEP
 //
-//  Created by Damon on 17/3/29.
+//  Created by Damon on 17/4/1.
 //  Copyright © 2017年 Damon. All rights reserved.
 //
 
@@ -13,10 +13,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         
     }
-    
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
