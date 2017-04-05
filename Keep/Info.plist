@@ -25,7 +25,7 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
         <key>NSExtensionPrincipalClass</key>
-        <string>KPWidgetViewController</string>
+        <string>$(PRODUCT_NAME).KPWidgetViewController</string>
 	</dict>
 </dict>
 </plist>

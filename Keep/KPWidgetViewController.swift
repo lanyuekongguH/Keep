@@ -29,19 +29,16 @@ class KPWidgetViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        self.view.addSubview(contentView)
-        //        self.view.addSubview(runButton)
-        //        self.view.addSubview(trainButton)
-        //        self.view.addSubview(publish)
-        //        self.view.addSubview(scanButton)
-        //
-        //
-        //        runButton.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
-        //        trainButton.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
-        //        publish.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
-        //        scanButton.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
+        self.view.addSubview(runButton)
+        self.view.addSubview(trainButton)
+        self.view.addSubview(publish)
+        self.view.addSubview(scanButton)
         
         
+        runButton.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
+        trainButton.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
+        publish.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
+        scanButton.addTarget(self, action: #selector(gotoapp), for: .touchUpInside)
         
         let buttonW = 70
         
@@ -52,14 +49,6 @@ class KPWidgetViewController: UIViewController, NCWidgetProviding {
         trainButton.frame = CGRect.init(x:(Int(20.0 + CGFloat(buttonW) + CGFloat(buttonD))), y: 20, width: buttonW, height: 70)
         publish.frame = CGRect.init(x: (Int(20 + CGFloat(buttonW) * 2 + CGFloat(buttonD) * 2)), y: 20, width: buttonW, height: 70)
         scanButton.frame = CGRect.init(x: (Int(20 + CGFloat(buttonW) * 3 + CGFloat(buttonD) * 3)), y: 20, width: buttonW, height: 70)
-        
-        
-        let button = UIButton()
-        button.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
-        button.backgroundColor = UIColor.red
-        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
-        
-        self.view.addSubview(button)
     }
     
     func buttonClick() {
@@ -68,20 +57,12 @@ class KPWidgetViewController: UIViewController, NCWidgetProviding {
     
     func gotoapp() {
         
-        //        self.extensionContext?.open(URL(string: "cmb.widget")!, completionHandler: { (success) in
-        //
-        //            print("ssssssseeeee")
-        //        })
-    }
-    
-    fileprivate lazy var contentView: UIView = {
         
-        let contentView = UIView()
-        contentView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 110)
-        contentView.backgroundColor = UIColor.gray
-        contentView.isUserInteractionEnabled = true
-        return contentView
-    }()
+        self.extensionContext?.open(URL(string: "com.cmb.widget")!, completionHandler: { (success) in
+            
+            print("ssssssseeeee")
+        })
+    }
     
     fileprivate lazy var runButton: KPWidgetButton = {
         

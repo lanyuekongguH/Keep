@@ -41,10 +41,10 @@
 		E45D45C91E70020100AA79C5 /* KeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45C81E70020100AA79C5 /* KeepTests.swift */; };
 		E45D45D41E70020100AA79C5 /* KeepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45D31E70020100AA79C5 /* KeepUITests.swift */; };
 		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
-		E47A82321E8FAE75004F575B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A82311E8FAE75004F575B /* TodayViewController.swift */; };
 		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
 		E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823F1E8FB591004F575B /* KPWidgetButton.swift */; };
+		E47A834E1E94E057004F575B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47A834D1E94E057004F575B /* Media.xcassets */; };
 		E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699D1E76973800028DF0 /* BannerData.geojson */; };
 		E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699F1E76A78800028DF0 /* StoreListData.geojson */; };
 		E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9221E7004C500F91783 /* KPTabBarController.swift */; };
@@ -162,10 +162,10 @@
 		E45D45D31E70020100AA79C5 /* KeepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepUITests.swift; sourceTree = "<group>"; };
 		E45D45D51E70020100AA79C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		E47A82311E8FAE75004F575B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
 		E47A823F1E8FB591004F575B /* KPWidgetButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWidgetButton.swift; sourceTree = "<group>"; };
+		E47A834D1E94E057004F575B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keep/Media.xcassets; sourceTree = SOURCE_ROOT; };
 		E48F699D1E76973800028DF0 /* BannerData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BannerData.geojson; sourceTree = "<group>"; };
 		E48F699F1E76A78800028DF0 /* StoreListData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreListData.geojson; sourceTree = "<group>"; };
 		E4A5D9221E7004C500F91783 /* KPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTabBarController.swift; sourceTree = "<group>"; };
@@ -334,10 +334,10 @@
 		E47A82301E8FAE75004F575B /* KEEP */ = {
 			isa = PBXGroup;
 			children = (
-				E47A82311E8FAE75004F575B /* TodayViewController.swift */,
 				E47A823F1E8FB591004F575B /* KPWidgetButton.swift */,
 				E47A82361E8FAE75004F575B /* Info.plist */,
 				E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */,
+				E47A834D1E94E057004F575B /* Media.xcassets */,
 			);
 			path = KEEP;
 			sourceTree = "<group>";
@@ -742,6 +742,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47A834E1E94E057004F575B /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +879,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */,
-				E47A82321E8FAE75004F575B /* TodayViewController.swift in Sources */,
 				E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1180,6 +1180,7 @@
 				E47A823C1E8FAE75004F575B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
