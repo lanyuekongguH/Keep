@@ -62,9 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         tryQuickActionWithTodayWidget(url, inWindow: window!)
-        
-        print("ssss url",url)
-        
+                
         return true
     }
 

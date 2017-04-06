@@ -77,6 +77,8 @@
 		E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B4865D1E8BB31E00C17363 /* Info.plist */; };
 		E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B74A671E70F131009EE6BC /* KPMineListCell.swift */; };
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
+		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
+		E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB0C221E95F6450028E918 /* KPHealthTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +202,9 @@
 		E4B4865D1E8BB31E00C17363 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Classes/Info.plist; sourceTree = "<group>"; };
 		E4B74A671E70F131009EE6BC /* KPMineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineListCell.swift; sourceTree = "<group>"; };
 		E4B74A681E70F131009EE6BC /* KPMineListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPMineListCell.xib; sourceTree = "<group>"; };
+		E4CB0C1E1E95F59F0028E918 /* Keep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keep.entitlements; sourceTree = "<group>"; };
+		E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E4CB0C221E95F6450028E918 /* KPHealthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CD08EC34C9855572EE92ECA /* Pods_Keep.framework in Frameworks */,
+				E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +245,7 @@
 		22F221A340CCDFFA37B1F85B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */,
 				E40167BC1E8F88E600C41F96 /* SnapKit.framework */,
 				E40167BA1E8F88DF00C41F96 /* Kingfisher.framework */,
 				E40167B81E8F88D600C41F96 /* Alamofire.framework */,
@@ -305,6 +312,7 @@
 		E45D45B21E70020000AA79C5 /* Keep */ = {
 			isa = PBXGroup;
 			children = (
+				E4CB0C1E1E95F59F0028E918 /* Keep.entitlements */,
 				E4A5D90D1E70041C00F91783 /* Classes */,
 				E45D45B31E70020000AA79C5 /* AppDelegate.swift */,
 				E4B4865D1E8BB31E00C17363 /* Info.plist */,
@@ -503,6 +511,7 @@
 		E4A5D91B1E70041C00F91783 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E4CB0C211E95F6310028E918 /* Health */,
 				E4A0BDA11E95E39600EB2FB0 /* TodayWidget */,
 				E4AADDFC1E8BC2EA00477C61 /* 3DTouch */,
 				E41861C51E713F1A0024EE1B /* Extensions */,
@@ -586,6 +595,14 @@
 				E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		E4CB0C211E95F6310028E918 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				E4CB0C221E95F6450028E918 /* KPHealthTool.swift */,
+			);
+			path = Health;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -681,6 +698,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = M3FK4FYNRT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					E45D45C31E70020100AA79C5 = {
 						CreatedOnToolsVersion = 8.1;
@@ -856,6 +878,7 @@
 				E4051EC01E7789F8007801CA /* KPStoreProductCell.swift in Sources */,
 				E40166E21E8D081E00C41F96 /* KPCacheManagerController.swift in Sources */,
 				E40166DE1E8D080600C41F96 /* KPGymGoalViewController.swift in Sources */,
+				E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */,
 				E4A5D92F1E7005E900F91783 /* KPEditViewController.swift in Sources */,
 				E4051EBE1E7789AA007801CA /* KPStoreCarouselCell.swift in Sources */,
 				E4AADE071E8C97BA00477C61 /* KPCommunityViewController.swift in Sources */,
@@ -1033,6 +1056,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Keep/Keep.entitlements;
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				INFOPLIST_FILE = Keep/Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1051,6 +1075,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Keep/Keep.entitlements;
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				INFOPLIST_FILE = Keep/Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
