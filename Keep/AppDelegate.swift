@@ -52,12 +52,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         
-        
         if let window = window {
             tryQuickActionWithShortcutItem(shortcutItem, inWindow: window)
         }
         
         completionHandler(true)
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        tryQuickActionWithTodayWidget(url, inWindow: window!)
+        
+        print("ssss url",url)
+        
+        return true
     }
 
 }

@@ -10,8 +10,8 @@ import UIKit
 
 enum KPShortcutType: String {
 
-    case Scan = "com.Keep.Shortcut.Scan"
-    case Notifications = "com.Keep.Shortcut.Notifications"
-    case Run = "com.Keep.Shortcut.Run"
-    case Train = "com.Keep.Shortcut.Train"
+    case Scan = "Keep.Shortcut.Scan"
+    case Notifications = "Keep.Shortcut.Notifications"
+    case Run = "Keep.Shortcut.Run"
+    case Train = "Keep.Shortcut.Train"
 }

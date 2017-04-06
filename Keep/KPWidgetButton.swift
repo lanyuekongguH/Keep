@@ -29,7 +29,6 @@ class KPWidgetButton: UIButton {
     fileprivate lazy var iconImageView: UIImageView = {
     
         let iconImageView = UIImageView()
-        iconImageView.isUserInteractionEnabled = true
         return iconImageView
     }()
     

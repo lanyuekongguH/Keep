@@ -47,6 +47,7 @@
 		E47A834E1E94E057004F575B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47A834D1E94E057004F575B /* Media.xcassets */; };
 		E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699D1E76973800028DF0 /* BannerData.geojson */; };
 		E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699F1E76A78800028DF0 /* StoreListData.geojson */; };
+		E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */; };
 		E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9221E7004C500F91783 /* KPTabBarController.swift */; };
 		E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9241E7004E700F91783 /* KPNavigationController.swift */; };
 		E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9261E70052000F91783 /* KPMineController.swift */; };
@@ -168,6 +169,7 @@
 		E47A834D1E94E057004F575B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keep/Media.xcassets; sourceTree = SOURCE_ROOT; };
 		E48F699D1E76973800028DF0 /* BannerData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BannerData.geojson; sourceTree = "<group>"; };
 		E48F699F1E76A78800028DF0 /* StoreListData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreListData.geojson; sourceTree = "<group>"; };
+		E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTodayWidgetTool.swift; sourceTree = "<group>"; };
 		E4A5D9221E7004C500F91783 /* KPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTabBarController.swift; sourceTree = "<group>"; };
 		E4A5D9241E7004E700F91783 /* KPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNavigationController.swift; sourceTree = "<group>"; };
 		E4A5D9261E70052000F91783 /* KPMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineController.swift; sourceTree = "<group>"; };
@@ -351,6 +353,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E4A0BDA11E95E39600EB2FB0 /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */,
+			);
+			path = TodayWidget;
+			sourceTree = "<group>";
+		};
 		E4A5D90D1E70041C00F91783 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +503,7 @@
 		E4A5D91B1E70041C00F91783 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E4A0BDA11E95E39600EB2FB0 /* TodayWidget */,
 				E4AADDFC1E8BC2EA00477C61 /* 3DTouch */,
 				E41861C51E713F1A0024EE1B /* Extensions */,
 				E4A5D9361E70097500F91783 /* Tool */,
@@ -832,6 +843,7 @@
 				E41861CE1E7149840024EE1B /* KPMineDataViewController.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4051EC61E77C86C007801CA /* String+KP.swift in Sources */,
+				E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */,
 				E40166E61E8D085000C41F96 /* KPAboutMeViewController.swift in Sources */,
 				E4A5D92B1E70058D00F91783 /* KPInfoViewController.swift in Sources */,
 				E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */,
