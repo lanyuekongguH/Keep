@@ -19,14 +19,7 @@
 		E40166E21E8D081E00C41F96 /* KPCacheManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40166E11E8D081E00C41F96 /* KPCacheManagerController.swift */; };
 		E40166E41E8D082D00C41F96 /* KPAccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40166E31E8D082D00C41F96 /* KPAccountBindingController.swift */; };
 		E40166E61E8D085000C41F96 /* KPAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40166E51E8D085000C41F96 /* KPAboutMeViewController.swift */; };
-		E4051EB91E7788E7007801CA /* KPStoreBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EB71E7788E7007801CA /* KPStoreBanner.swift */; };
-		E4051EBA1E7788E7007801CA /* KPStoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EB81E7788E7007801CA /* KPStoreList.swift */; };
-		E4051EBC1E778925007801CA /* KPStoreBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EBB1E778925007801CA /* KPStoreBannerCell.swift */; };
-		E4051EBE1E7789AA007801CA /* KPStoreCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EBD1E7789AA007801CA /* KPStoreCarouselCell.swift */; };
-		E4051EC01E7789F8007801CA /* KPStoreProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EBF1E7789F8007801CA /* KPStoreProductCell.swift */; };
-		E4051EC41E779F45007801CA /* KPStoreBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EC31E779F45007801CA /* KPStoreBannerView.swift */; };
 		E4051EC61E77C86C007801CA /* String+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EC51E77C86C007801CA /* String+KP.swift */; };
-		E4051EC81E77DB70007801CA /* KPStoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EC71E77DB70007801CA /* KPStoreTabView.swift */; };
 		E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */; };
 		E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C31E7133F20024EE1B /* KPMineTabButton.swift */; };
 		E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C61E713F940024EE1B /* UITableView+KP.swift */; };
@@ -80,6 +73,16 @@
 		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
 		E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB0C221E95F6450028E918 /* KPHealthTool.swift */; };
 		E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011AA1E963C630043B61D /* KPBaseViewController.swift */; };
+		E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */; };
+		E4F011BC1E9644670043B61D /* KPStoreBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011BA1E9644670043B61D /* KPStoreBanner.swift */; };
+		E4F011BD1E9644670043B61D /* KPStoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011BB1E9644670043B61D /* KPStoreList.swift */; };
+		E4F011C31E9644700043B61D /* KPStoreBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011BE1E9644700043B61D /* KPStoreBannerCell.swift */; };
+		E4F011C41E9644700043B61D /* KPStoreBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011BF1E9644700043B61D /* KPStoreBannerView.swift */; };
+		E4F011C51E9644700043B61D /* KPStoreCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011C01E9644700043B61D /* KPStoreCarouselCell.swift */; };
+		E4F011C61E9644700043B61D /* KPStoreProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011C11E9644700043B61D /* KPStoreProductCell.swift */; };
+		E4F011C71E9644700043B61D /* KPStoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011C21E9644700043B61D /* KPStoreTabView.swift */; };
+		E4F011C91E9644F40043B61D /* KPNewsHotCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011C81E9644F40043B61D /* KPNewsHotCollectionCell.swift */; };
+		E4F011CB1E9645340043B61D /* KPNewsHotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011CA1E9645340043B61D /* KPNewsHotItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,14 +141,7 @@
 		E40167B81E8F88D600C41F96 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		E40167BA1E8F88DF00C41F96 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		E40167BC1E8F88E600C41F96 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
-		E4051EB71E7788E7007801CA /* KPStoreBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBanner.swift; sourceTree = "<group>"; };
-		E4051EB81E7788E7007801CA /* KPStoreList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreList.swift; sourceTree = "<group>"; };
-		E4051EBB1E778925007801CA /* KPStoreBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBannerCell.swift; sourceTree = "<group>"; };
-		E4051EBD1E7789AA007801CA /* KPStoreCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreCarouselCell.swift; sourceTree = "<group>"; };
-		E4051EBF1E7789F8007801CA /* KPStoreProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreProductCell.swift; sourceTree = "<group>"; };
-		E4051EC31E779F45007801CA /* KPStoreBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBannerView.swift; sourceTree = "<group>"; };
 		E4051EC51E77C86C007801CA /* String+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KP.swift"; sourceTree = "<group>"; };
-		E4051EC71E77DB70007801CA /* KPStoreTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreTabView.swift; sourceTree = "<group>"; };
 		E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButtonCell.swift; sourceTree = "<group>"; };
 		E41861C31E7133F20024EE1B /* KPMineTabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButton.swift; sourceTree = "<group>"; };
 		E41861C61E713F940024EE1B /* UITableView+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+KP.swift"; sourceTree = "<group>"; };
@@ -207,6 +203,16 @@
 		E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E4CB0C221E95F6450028E918 /* KPHealthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthTool.swift; sourceTree = "<group>"; };
 		E4F011AA1E963C630043B61D /* KPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPBaseViewController.swift; sourceTree = "<group>"; };
+		E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPPublishViewController.swift; sourceTree = "<group>"; };
+		E4F011BA1E9644670043B61D /* KPStoreBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBanner.swift; sourceTree = "<group>"; };
+		E4F011BB1E9644670043B61D /* KPStoreList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreList.swift; sourceTree = "<group>"; };
+		E4F011BE1E9644700043B61D /* KPStoreBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBannerCell.swift; sourceTree = "<group>"; };
+		E4F011BF1E9644700043B61D /* KPStoreBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBannerView.swift; sourceTree = "<group>"; };
+		E4F011C01E9644700043B61D /* KPStoreCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreCarouselCell.swift; sourceTree = "<group>"; };
+		E4F011C11E9644700043B61D /* KPStoreProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreProductCell.swift; sourceTree = "<group>"; };
+		E4F011C21E9644700043B61D /* KPStoreTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreTabView.swift; sourceTree = "<group>"; };
+		E4F011C81E9644F40043B61D /* KPNewsHotCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotCollectionCell.swift; sourceTree = "<group>"; };
+		E4F011CA1E9645340043B61D /* KPNewsHotItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,8 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				E4A5D90F1E70041C00F91783 /* Controller */,
-				E4A5D9101E70041C00F91783 /* Model */,
-				E4A5D9111E70041C00F91783 /* View */,
+				E4F011B91E96440F0043B61D /* View */,
+				E4F011B81E9644090043B61D /* Model */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -401,20 +407,6 @@
 				E4A5D9391E700BB700F91783 /* KPDiscoveryController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		E4A5D9101E70041C00F91783 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E4A5D9111E70041C00F91783 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E4A5D9121E70041C00F91783 /* Main */ = {
@@ -486,6 +478,7 @@
 			children = (
 				E4A5D9301E70064500F91783 /* KPNewsViewController.swift */,
 				E4A5D9321E7006F000F91783 /* KPAddFriendController.swift */,
+				E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -493,8 +486,7 @@
 		E4A5D9191E70041C00F91783 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E4051EB71E7788E7007801CA /* KPStoreBanner.swift */,
-				E4051EB81E7788E7007801CA /* KPStoreList.swift */,
+				E4F011CA1E9645340043B61D /* KPNewsHotItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,11 +494,7 @@
 		E4A5D91A1E70041C00F91783 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E4051EBB1E778925007801CA /* KPStoreBannerCell.swift */,
-				E4051EBD1E7789AA007801CA /* KPStoreCarouselCell.swift */,
-				E4051EBF1E7789F8007801CA /* KPStoreProductCell.swift */,
-				E4051EC31E779F45007801CA /* KPStoreBannerView.swift */,
-				E4051EC71E77DB70007801CA /* KPStoreTabView.swift */,
+				E4F011C81E9644F40043B61D /* KPNewsHotCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -606,6 +594,27 @@
 				E4CB0C221E95F6450028E918 /* KPHealthTool.swift */,
 			);
 			path = Health;
+			sourceTree = "<group>";
+		};
+		E4F011B81E9644090043B61D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4F011BA1E9644670043B61D /* KPStoreBanner.swift */,
+				E4F011BB1E9644670043B61D /* KPStoreList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E4F011B91E96440F0043B61D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4F011BE1E9644700043B61D /* KPStoreBannerCell.swift */,
+				E4F011BF1E9644700043B61D /* KPStoreBannerView.swift */,
+				E4F011C01E9644700043B61D /* KPStoreCarouselCell.swift */,
+				E4F011C11E9644700043B61D /* KPStoreProductCell.swift */,
+				E4F011C21E9644700043B61D /* KPStoreTabView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -848,49 +857,52 @@
 				E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */,
 				E4A5D9351E7007D000F91783 /* KPTrainViewController.swift in Sources */,
 				E40166D61E8D07C400C41F96 /* KPTrainSettingController.swift in Sources */,
-				E4051EB91E7788E7007801CA /* KPStoreBanner.swift in Sources */,
-				E4051EBC1E778925007801CA /* KPStoreBannerCell.swift in Sources */,
+				E4F011BC1E9644670043B61D /* KPStoreBanner.swift in Sources */,
+				E4F011C31E9644700043B61D /* KPStoreBannerCell.swift in Sources */,
 				E4AADE0B1E8C982C00477C61 /* KPNetworkViewController.swift in Sources */,
 				E40166E41E8D082D00C41F96 /* KPAccountBindingController.swift in Sources */,
 				E4A5D9291E70054400F91783 /* KPSettingController.swift in Sources */,
 				E40166D41E8D07AD00C41F96 /* KPPushMessageController.swift in Sources */,
 				E40166E01E8D080D00C41F96 /* KPFitBasisController.swift in Sources */,
 				E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */,
-				E4051EC81E77DB70007801CA /* KPStoreTabView.swift in Sources */,
+				E4F011BD1E9644670043B61D /* KPStoreList.swift in Sources */,
 				E45D45B41E70020000AA79C5 /* AppDelegate.swift in Sources */,
 				E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */,
+				E4F011C41E9644700043B61D /* KPStoreBannerView.swift in Sources */,
 				E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */,
-				E4051EBA1E7788E7007801CA /* KPStoreList.swift in Sources */,
 				E40166D31E8D07AD00C41F96 /* KPPrivacyViewController.swift in Sources */,
 				E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */,
+				E4F011C51E9644700043B61D /* KPStoreCarouselCell.swift in Sources */,
 				E40166DC1E8D07EF00C41F96 /* KPManageAccountController.swift in Sources */,
 				E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */,
-				E4051EC41E779F45007801CA /* KPStoreBannerView.swift in Sources */,
 				E41861CE1E7149840024EE1B /* KPMineDataViewController.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4051EC61E77C86C007801CA /* String+KP.swift in Sources */,
 				E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */,
+				E4F011C91E9644F40043B61D /* KPNewsHotCollectionCell.swift in Sources */,
 				E40166E61E8D085000C41F96 /* KPAboutMeViewController.swift in Sources */,
 				E4A5D92B1E70058D00F91783 /* KPInfoViewController.swift in Sources */,
+				E4F011CB1E9645340043B61D /* KPNewsHotItem.swift in Sources */,
 				E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */,
+				E4F011C71E9644700043B61D /* KPStoreTabView.swift in Sources */,
 				E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */,
 				E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */,
 				E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */,
 				E40166D81E8D07CE00C41F96 /* KPOfflineMapController.swift in Sources */,
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
+				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
 				E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */,
-				E4051EC01E7789F8007801CA /* KPStoreProductCell.swift in Sources */,
 				E40166E21E8D081E00C41F96 /* KPCacheManagerController.swift in Sources */,
 				E40166DE1E8D080600C41F96 /* KPGymGoalViewController.swift in Sources */,
 				E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */,
 				E4A5D92F1E7005E900F91783 /* KPEditViewController.swift in Sources */,
-				E4051EBE1E7789AA007801CA /* KPStoreCarouselCell.swift in Sources */,
 				E4AADE071E8C97BA00477C61 /* KPCommunityViewController.swift in Sources */,
 				E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */,
 				E4A5D9311E70064500F91783 /* KPNewsViewController.swift in Sources */,
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
 				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,
 				E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */,
+				E4F011C61E9644700043B61D /* KPStoreProductCell.swift in Sources */,
 				E4AADE0D1E8C985600477C61 /* KPHelpFeedBackController.swift in Sources */,
 				E41861CA1E7149140024EE1B /* KPMineHistoryController.swift in Sources */,
 				E41861D31E7150DC0024EE1B /* KPMineSettingCell.swift in Sources */,

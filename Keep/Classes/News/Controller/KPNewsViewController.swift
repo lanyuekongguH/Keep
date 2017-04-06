@@ -80,14 +80,16 @@ class KPNewsViewController: UIViewController {
     
     
     func rightItemClick() {
-    
-        let addFriendVC = KPAddFriendController()
-        navigationController?.pushViewController(addFriendVC, animated: true)
+        let publishVC = KPPublishViewController()
+        let nav = KPNavigationController.init(rootViewController: publishVC)
+        self.present(nav, animated: true, completion:
+            nil)
     }
     
     func leftItemClick() {
         let addFriendVC = KPAddFriendController()
         navigationController?.pushViewController(addFriendVC, animated: true)
+        
     }
 }
 
