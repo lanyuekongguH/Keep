@@ -79,6 +79,7 @@
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
 		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
 		E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB0C221E95F6450028E918 /* KPHealthTool.swift */; };
+		E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011AA1E963C630043B61D /* KPBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,7 @@
 		E4CB0C1E1E95F59F0028E918 /* Keep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keep.entitlements; sourceTree = "<group>"; };
 		E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E4CB0C221E95F6450028E918 /* KPHealthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthTool.swift; sourceTree = "<group>"; };
+		E4F011AA1E963C630043B61D /* KPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +422,7 @@
 			children = (
 				E4A5D9221E7004C500F91783 /* KPTabBarController.swift */,
 				E4A5D9241E7004E700F91783 /* KPNavigationController.swift */,
+				E4F011AA1E963C630043B61D /* KPBaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */,
 				E4051EBA1E7788E7007801CA /* KPStoreList.swift in Sources */,
 				E40166D31E8D07AD00C41F96 /* KPPrivacyViewController.swift in Sources */,
+				E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */,
 				E40166DC1E8D07EF00C41F96 /* KPManageAccountController.swift in Sources */,
 				E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */,
 				E4051EC41E779F45007801CA /* KPStoreBannerView.swift in Sources */,

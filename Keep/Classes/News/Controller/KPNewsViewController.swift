@@ -32,6 +32,16 @@ class KPNewsViewController: UIViewController {
         
         navigationItem.titleView = segmentView
         
+        let rightItem = UIBarButtonItem(image: UIImage(named: "add"), style: .plain, target: self, action: #selector(rightItemClick))
+        
+        let leftItem = UIBarButtonItem(image: UIImage(named: "add"), style: .plain, target: self, action: #selector(leftItemClick))
+        
+        navigationItem.leftBarButtonItem = leftItem
+        navigationItem.rightBarButtonItem = rightItem
+        
+        
+        
+        
         let tableView = UITableView.init(frame: view.bounds, style: .grouped)
         
         tableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
@@ -67,6 +77,18 @@ class KPNewsViewController: UIViewController {
         segmentView.titiles = ["好友","小组"]
         return segmentView
     }()
+    
+    
+    func rightItemClick() {
+    
+        let addFriendVC = KPAddFriendController()
+        navigationController?.pushViewController(addFriendVC, animated: true)
+    }
+    
+    func leftItemClick() {
+        let addFriendVC = KPAddFriendController()
+        navigationController?.pushViewController(addFriendVC, animated: true)
+    }
 }
 
 extension KPNewsViewController: UITableViewDelegate {

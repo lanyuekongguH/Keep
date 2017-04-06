@@ -8,15 +8,13 @@
 
 import UIKit
 
-class KPAddFriendController: UIViewController {
+class KPAddFriendController: KPBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.title = "添加好友"
+
     }
 
-    
-    
-    
 }
