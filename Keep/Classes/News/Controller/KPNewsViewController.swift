@@ -58,10 +58,16 @@ class KPNewsViewController: UIViewController {
     
     fileprivate func loadBannerData() {
         
-        KPNetworkTool.shareNetworkTool.loadStoreBannerData{ [weak self](banners) in
+        KPNetworkTool.shareNetworkTool.loadNewsHotData{ [weak self](banners) in
             
-            self?.banners = banners
+            
         }
+        
+        
+//        KPNetworkTool.shareNetworkTool.loadStoreBannerData{ [weak self](banners) in
+//            
+//            self?.banners = banners
+//        }
     }
     
 //    fileprivate lazy var segmentView: KPStoreTabView = {

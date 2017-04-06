@@ -44,17 +44,6 @@ class KPNetworkTool: NSObject {
         let url = "https://store.gotokeep.com/api/v1.0/subject/recommondAreaList?count=7"
         
         //https://store.gotokeep.com/api/v1/banner/1
-        
-        
-//        let url = "https://store.gotokeep.com/api/v1.0/subject/bannerList"
-        
-//        let url = "https://api.gotokeep.com/v1.1/log/client/web?"
-        
-//        let url = "https://m.analytics.126.net/news/c"
-        
-//        let params = ["format": "json",
-//                      "userId": "57eb03de4933030ca9305423"] as [String : Any]
-        
 
         Alamofire.request(url).responseJSON { response in
             
@@ -80,9 +69,41 @@ class KPNetworkTool: NSObject {
     
     /// 加载商城数据
 
-    
-    
-    
-    
-    
+    /// 加载热门数据
+    func loadNewsHotData(_ finished:@escaping ([KPNewsHotItem]) ->()) {
+        
+        //
+
+        let url = "https://api.gotokeep.com/social/v3/timeline/hot"
+
+        Alamofire.request(url).responseJSON { response in
+            
+            print(response)
+            
+            guard response.result.isSuccess else {
+                SVProgressHUD.showError(withStatus: "加载失败...")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                print("dddddddddd",json)
+                
+                if let data = json["data"]["entries"].arrayObject {
+                    var bannerArray = [KPNewsHotItem]()
+                    
+                    for dict in data {
+                        let title = KPNewsHotItem(dict: dict as! [String: AnyObject])
+                        bannerArray.append(title)
+                    }
+                    
+                    finished(bannerArray)
+                    print(bannerArray)
+                }
+            }
+        }
+    }
+
 }
