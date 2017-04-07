@@ -68,11 +68,11 @@ class KPNewsViewController: KPBaseViewController {
     
 //    fileprivate lazy var segmentView: KPStoreTabView = {
 //        let segmentView = KPSegmentView()
-//        segmentView.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
-//        segmentView.titiles = ["好友","小组"]
+//        segmentView.frame = CGRect(x: 0, y: 0, width: 150, height: 44)
+//        segmentView.titiles = ["热门","关注","同城"]
 //        return segmentView
 //    }()
-    
+//    
     fileprivate lazy var segmentView: KPSegmentView = {
         let segmentView = KPSegmentView()
         segmentView.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
