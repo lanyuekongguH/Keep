@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class KPNewsHotItem: NSObject {
 
@@ -66,7 +67,13 @@ class KPNewsHotItem: NSObject {
         
         likes = dict["likes"] as? String
         comments = dict["comments"] as? String
-        author = dict["author"] as? KPNewsAuthorItem
+        
+
+        author = KPNewsAuthorItem(dict: dict["author"] as! [String: AnyObject])
+
+        
+        
+//        author = dict["author"] as? KPNewsAuthorItem
         
         created = dict["created"] as? String
         hasLiked = dict["hasLiked"] as? Bool

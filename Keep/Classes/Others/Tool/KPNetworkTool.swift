@@ -89,18 +89,16 @@ class KPNetworkTool: NSObject {
                 
                 let json = JSON(value)
                 
-                print("dddddddddd",json)
-                
                 if let data = json["data"]["entries"].arrayObject {
-                    var bannerArray = [KPNewsHotItem]()
+                    var hotItems = [KPNewsHotItem]()
                     
                     for dict in data {
-                        let title = KPNewsHotItem(dict: dict as! [String: AnyObject])
-                        bannerArray.append(title)
+                        let item = KPNewsHotItem(dict: dict as! [String: AnyObject])
+                        hotItems.append(item)
                     }
                     
-                    finished(bannerArray)
-                    print(bannerArray)
+                    finished(hotItems)
+                    print("dddddddddd",hotItems)
                 }
             }
         }
