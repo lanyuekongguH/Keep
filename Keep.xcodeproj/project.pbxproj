@@ -83,6 +83,7 @@
 		E4F011C71E9644700043B61D /* KPStoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011C21E9644700043B61D /* KPStoreTabView.swift */; };
 		E4F011C91E9644F40043B61D /* KPNewsHotCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011C81E9644F40043B61D /* KPNewsHotCollectionCell.swift */; };
 		E4F011CB1E9645340043B61D /* KPNewsHotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011CA1E9645340043B61D /* KPNewsHotItem.swift */; };
+		E4F011CD1E9743D40043B61D /* KPNewsAuthorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011CC1E9743D40043B61D /* KPNewsAuthorItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,7 @@
 		E4F011C21E9644700043B61D /* KPStoreTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreTabView.swift; sourceTree = "<group>"; };
 		E4F011C81E9644F40043B61D /* KPNewsHotCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotCollectionCell.swift; sourceTree = "<group>"; };
 		E4F011CA1E9645340043B61D /* KPNewsHotItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotItem.swift; sourceTree = "<group>"; };
+		E4F011CC1E9743D40043B61D /* KPNewsAuthorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAuthorItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				E4F011CA1E9645340043B61D /* KPNewsHotItem.swift */,
+				E4F011CC1E9743D40043B61D /* KPNewsAuthorItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -877,6 +880,7 @@
 				E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */,
 				E41861CE1E7149840024EE1B /* KPMineDataViewController.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
+				E4F011CD1E9743D40043B61D /* KPNewsAuthorItem.swift in Sources */,
 				E4051EC61E77C86C007801CA /* String+KP.swift in Sources */,
 				E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */,
 				E4F011C91E9644F40043B61D /* KPNewsHotCollectionCell.swift in Sources */,

@@ -11,38 +11,32 @@ import UIKit
 class KPNewsHotItem: NSObject {
 
     var reason: String?
-//    var achievements: Array<Any>?
-//    var internalShareCount: Int = 0
+    var achievements: Array<Any>?
+    var internalShareCount: Int = 0
     var stateValue: String?
     var feel: String?
-//    var type: Int = 0
+    var type: String?
     var content: String?
-    var geo: String?
+    var geo: Array<Any>?
     
-//    var Public: Bool
-    var noise: Array<Any>?
-    var originalMd5: Int = 0
+    var myPublic: Bool?
+    var noise: Bool?
+    var originalMd5: String?
     var sampleComments: String?
     var state: String?
     var viewCount: Int = 0
     var id: String?
-    var contentType: String?
+    var contentType: Array<Any>?
     
     var likes: String?
-    var comments: Array<Any>?
-    var author: Int = 0
-    var gender: String?
-    var _id: String?
-    var avatar: Int = 0
-    var username: String?
-    var created: String?
-
+    var comments: String?
+    var author: KPNewsAuthorItem?
     
-    var hasLiked: String?
+    var created: String?
+    var hasLiked: Bool?
     var photo: String?
-    var meta: Int = 0
-    var externalShareCount: String?
     var commentUsers: String?
+    var externalShareCount: String?
     var favoriteCount: String?
     
     
@@ -51,13 +45,35 @@ class KPNewsHotItem: NSObject {
         super.init()
         
         reason = dict["reason"] as? String
-//        achievements = dict["achievements"] as? String
-//        internalShareCount = dict["internalShareCount"] as! Int
+        achievements = dict["achievements"] as? Array
+        internalShareCount = dict["internalShareCount"] as! Int
         stateValue = dict["stateValue"] as? String
         feel = dict["feel"] as? String
-//        type = dict["type"] as! Int
+        type = dict["type"] as? String
         content = dict["content"] as? String
-        geo = dict["geo"] as? String
+        geo = dict["geo"] as? Array
+        
+        
+        myPublic = dict["public"] as? Bool
+        noise = dict["noise"] as? Bool
+        originalMd5 = dict["originalMd5"] as? String
+        sampleComments = dict["sampleComments"] as? String
+        state = dict["state"] as? String
+        viewCount = dict["viewCount"] as! Int
+        id = dict["id"] as? String
+        contentType = dict["contentType"] as? Array
+        
+        
+        likes = dict["likes"] as? String
+        comments = dict["comments"] as? String
+        author = dict["author"] as? KPNewsAuthorItem
+        
+        created = dict["created"] as? String
+        hasLiked = dict["hasLiked"] as? Bool
+        photo = dict["photo"] as? String
+        commentUsers = dict["id"] as? String
+        externalShareCount = dict["contentType"] as? String
+        favoriteCount = dict["contentType"] as? String
     }
     
     
