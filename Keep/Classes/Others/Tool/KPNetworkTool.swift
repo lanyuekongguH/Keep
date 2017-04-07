@@ -140,6 +140,43 @@ class KPNetworkTool: NSObject {
         }
     }
     
+    /// 加载喜欢的人列表数据
+    func loadNewsHotLikesData(_ finished:@escaping ([KPNewsHotItem]) ->()) {
+        
+        // https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf/likes
+
+        let url = "https://api.gotokeep.com/social/v3/timeline/hot"
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            print(response)
+            
+            guard response.result.isSuccess else {
+                SVProgressHUD.showError(withStatus: "加载失败...")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let data = json["data"]["entries"].arrayObject {
+                    var hotItems = [KPNewsHotItem]()
+                    
+                    for dict in data {
+                        let item = KPNewsHotItem(dict: dict as! [String: AnyObject])
+                        hotItems.append(item)
+                    }
+                    
+                    finished(hotItems)
+                    print("dddddddddd",hotItems)
+                }
+            }
+        }
+    }
+    
+    
+    
     
     
 }
