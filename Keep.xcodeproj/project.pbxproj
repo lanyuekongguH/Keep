@@ -33,6 +33,14 @@
 		E45D45BB1E70020000AA79C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45D45BA1E70020000AA79C5 /* Assets.xcassets */; };
 		E45D45C91E70020100AA79C5 /* KeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45C81E70020100AA79C5 /* KeepTests.swift */; };
 		E45D45D41E70020100AA79C5 /* KeepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45D31E70020100AA79C5 /* KeepUITests.swift */; };
+		E4694FBF1E9B987700B5026E /* KPTrainRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FBE1E9B987700B5026E /* KPTrainRecommendCell.swift */; };
+		E4694FC11E9B98A000B5026E /* KPTrainRecommendScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FC01E9B98A000B5026E /* KPTrainRecommendScrollView.swift */; };
+		E4694FC41E9B98E300B5026E /* KPTrainPlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FC21E9B98E300B5026E /* KPTrainPlanListCell.swift */; };
+		E4694FC51E9B98E300B5026E /* KPTrainPlanListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4694FC31E9B98E300B5026E /* KPTrainPlanListCell.xib */; };
+		E4694FC81E9B990900B5026E /* KPTrainAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */; };
+		E4694FC91E9B990900B5026E /* KPTrainAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */; };
+		E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */; };
+		E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */; };
 		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
 		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
@@ -170,6 +178,14 @@
 		E45D45CF1E70020100AA79C5 /* KeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45D45D31E70020100AA79C5 /* KeepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepUITests.swift; sourceTree = "<group>"; };
 		E45D45D51E70020100AA79C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4694FBE1E9B987700B5026E /* KPTrainRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRecommendCell.swift; sourceTree = "<group>"; };
+		E4694FC01E9B98A000B5026E /* KPTrainRecommendScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRecommendScrollView.swift; sourceTree = "<group>"; };
+		E4694FC21E9B98E300B5026E /* KPTrainPlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainPlanListCell.swift; sourceTree = "<group>"; };
+		E4694FC31E9B98E300B5026E /* KPTrainPlanListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPTrainPlanListCell.xib; sourceTree = "<group>"; };
+		E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainAddCell.swift; sourceTree = "<group>"; };
+		E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPTrainAddCell.xib; sourceTree = "<group>"; };
+		E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableCell.swift; sourceTree = "<group>"; };
+		E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableController.swift; sourceTree = "<group>"; };
 		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -553,6 +569,7 @@
 			children = (
 				E4A5D9341E7007D000F91783 /* KPTrainViewController.swift */,
 				E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */,
+				E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -569,6 +586,13 @@
 			children = (
 				E4A946481E7158B10040ED47 /* KPTrainTotalCountCell.swift */,
 				E4A946491E7158B10040ED47 /* KPTrainTotalCountCell.xib */,
+				E4694FBE1E9B987700B5026E /* KPTrainRecommendCell.swift */,
+				E4694FC01E9B98A000B5026E /* KPTrainRecommendScrollView.swift */,
+				E4694FC21E9B98E300B5026E /* KPTrainPlanListCell.swift */,
+				E4694FC31E9B98E300B5026E /* KPTrainPlanListCell.xib */,
+				E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */,
+				E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */,
+				E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -789,8 +813,10 @@
 				E4A9464B1E7158B10040ED47 /* KPTrainTotalCountCell.xib in Resources */,
 				E45D45BB1E70020000AA79C5 /* Assets.xcassets in Resources */,
 				E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */,
+				E4694FC91E9B990900B5026E /* KPTrainAddCell.xib in Resources */,
 				E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */,
 				E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */,
+				E4694FC51E9B98E300B5026E /* KPTrainPlanListCell.xib in Resources */,
 				E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */,
 				E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */,
 				E4F011DB1E97A2030043B61D /* KPNewsLikersListCell.xib in Resources */,
@@ -884,6 +910,7 @@
 				E4A9464A1E7158B10040ED47 /* KPTrainTotalCountCell.swift in Sources */,
 				E4F011D71E979F4D0043B61D /* KPNewsLikersListItem.swift in Sources */,
 				E4A5D93A1E700BB700F91783 /* KPDiscoveryController.swift in Sources */,
+				E4694FC41E9B98E300B5026E /* KPTrainPlanListCell.swift in Sources */,
 				E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */,
 				E4A5D9351E7007D000F91783 /* KPTrainViewController.swift in Sources */,
 				E40166D61E8D07C400C41F96 /* KPTrainSettingController.swift in Sources */,
@@ -902,12 +929,15 @@
 				E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */,
 				E4F011C41E9644700043B61D /* KPStoreBannerView.swift in Sources */,
 				E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */,
+				E4694FC11E9B98A000B5026E /* KPTrainRecommendScrollView.swift in Sources */,
 				E40166D31E8D07AD00C41F96 /* KPPrivacyViewController.swift in Sources */,
 				E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */,
 				E4F011C51E9644700043B61D /* KPStoreCarouselCell.swift in Sources */,
+				E4694FC81E9B990900B5026E /* KPTrainAddCell.swift in Sources */,
 				E40166DC1E8D07EF00C41F96 /* KPManageAccountController.swift in Sources */,
 				E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */,
 				E41861CE1E7149840024EE1B /* KPMineDataViewController.swift in Sources */,
+				E4694FBF1E9B987700B5026E /* KPTrainRecommendCell.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4F011CD1E9743D40043B61D /* KPNewsAuthorItem.swift in Sources */,
 				E4051EC61E77C86C007801CA /* String+KP.swift in Sources */,
@@ -924,7 +954,9 @@
 				E40166D81E8D07CE00C41F96 /* KPOfflineMapController.swift in Sources */,
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
 				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
+				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,
 				E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */,
+				E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */,
 				E40166E21E8D081E00C41F96 /* KPCacheManagerController.swift in Sources */,
 				E40166DE1E8D080600C41F96 /* KPGymGoalViewController.swift in Sources */,
 				E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */,

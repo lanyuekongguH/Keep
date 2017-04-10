@@ -86,7 +86,6 @@ final class KPHealthTool: NSObject {
     
     func readAllStepCount() {
     
-    
         let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 
         let allComponent = NSDateComponents()
@@ -95,22 +94,32 @@ final class KPHealthTool: NSObject {
         let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier(rawValue: NSGregorianCalendar))
         
     
-        calendar?.component(NSCalendar.Unit.hour, from: Date())
+        let currentComponents = calendar?.component([NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: NSDate() as Date)
     
+        let endDate = NSDate(timeIntervalSinceNow:Double(currentComponents!))
         
-//         | NSCalendar.Unit.minute | NSCalendar.Unit.second
+        
+        
+//        HKStatisticsCollectionQuery.init(quantityType: <#T##HKQuantityType#>, quantitySamplePredicate: nil, options: HKStatisticsOptionCumulativeSum | HKStatisticsOptionSeparateBySource, anchorDate: <#T##Date#>, intervalComponents: <#T##DateComponents#>)
+//        
+//        
+//        public init(quantityType: HKQuantityType, quantitySamplePredicate: NSPredicate?, options: HKStatisticsOptions = [], anchorDate: Date, intervalComponents: DateComponents)
+
+        
+        
+        
     }
     
     func readStepCount() {
     
     
-        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
-        let startDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        let endDate = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-
-        let calender = NSCalendar.current
+//        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 //        
+//        let startDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+//        let endDate = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+//
+//        let calender = NSCalendar.current
+//
 //        let unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond
 //        
 //        calender.component(unitFlags, from: <#T##Date#>)
