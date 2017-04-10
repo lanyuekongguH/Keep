@@ -9,42 +9,126 @@
 import UIKit
 import HealthKit
 
-class KPHealthTool: NSObject {
+
+final class KPHealthTool: NSObject {
+
+    static let healthTool = KPHealthTool()
+    
+    private override init() {}
 
     var healthStore: HKHealthStore?
-
-    func getAuthority(){
+    
+    func getAuthority(_ finished:@escaping ((_ success:Bool, _ error:Error)->())){
     
         if HKHealthStore.isHealthDataAvailable() {
             
             healthStore = HKHealthStore()
+                        
+            let readSet = healthDataToRead()
             
-            let type = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-            
-            var set = Set<HKQuantityType>()
-            set.insert(type!)
-            
-            healthStore?.requestAuthorization(toShare: nil, read: set, completion: { (success, error) in
-                
-                if success {
-                
-                    
-                    let sampleType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-                    
-                    let start = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-                    let end = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+            let writeSet = healthDataToWrite()
 
-                    
-//                    HKSampleType
-                }
+            healthStore?.requestAuthorization(toShare: writeSet, read: readSet, completion: { (success, error) in
                 
+                finished(success, error!)
+
             })
             
+        } else {
+        
+            let error = NSError(domain: "", code: 2, userInfo: [NSLocalizedDescriptionKey:"HealthKit is not available in this Device"])
+            finished(false,error)
+
         }
     
     }
     
     
+    fileprivate func healthDataToWrite() -> Set<HKSampleType> {
     
+        let stepCount = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount);
+        
+        let walkDistance = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning);
+        
+        let activeEnergyBurn = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned);
+
+        let heart = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate);
+
+        let height = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height);
+
+        let weight = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass);
+
+        let climbed = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed);
+
+        return NSSet.init(arrayLiteral: stepCount!,walkDistance!,activeEnergyBurn!,heart!,height!,weight!,climbed!) as! Set<HKSampleType>
+    }
+    
+    fileprivate func healthDataToRead() -> Set<HKSampleType> {
+
+        let stepCount = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount);
+        
+        let walkDistance = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning);
+        
+        let activeEnergyBurn = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned);
+        
+        let heart = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate);
+        
+        let height = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height);
+        
+        let weight = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass);
+        
+        let climbed = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed);
+        
+        return NSSet.init(arrayLiteral: stepCount!,walkDistance!,activeEnergyBurn!,heart!,height!,weight!,climbed!) as! Set<HKSampleType>
+        
+    }
+    
+    
+    func readAllStepCount() {
+    
+    
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+
+        let allComponent = NSDateComponents()
+        allComponent.day = 1
+        
+        let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier(rawValue: NSGregorianCalendar))
+        
+    
+        calendar?.component(NSCalendar.Unit.hour, from: Date())
+    
+        
+//         | NSCalendar.Unit.minute | NSCalendar.Unit.second
+    }
+    
+    func readStepCount() {
+    
+    
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        let startDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        let endDate = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+
+        let calender = NSCalendar.current
+//        
+//        let unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond
+//        
+//        calender.component(unitFlags, from: <#T##Date#>)
+//        NSDateComponents *dateComponent = [calender components:unitFlags fromDate:now];
+//
+//        
+//        
+//        
+//        
+//        
+//        
+//        let now = NSDate.date
+//        
+//        HKQuery.predicateForSamples(withStart: <#T##Date?#>, end: <#T##Date?#>, options: HKQueryOptionNone)
+//        
+//        HKSampleQuery.init(sampleType: sampleType, predicate: <#T##NSPredicate?#>, limit: <#T##Int#>, sortDescriptors: <#T##[NSSortDescriptor]?#>, resultsHandler: <#T##(HKSampleQuery, [HKSample]?, Error?) -> Void#>)
+        
+        
+    }
     
 }

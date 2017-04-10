@@ -25,6 +25,14 @@ class KPMineController: UIViewController {
         
         setupUI()
         
+
+        KPHealthTool.healthTool.getAuthority { (success, error) in
+            
+            if success {
+            
+            }
+        }
+        
     }
     
     fileprivate func loadData() {
