@@ -99,9 +99,18 @@ final class KPHealthTool: NSObject {
         let endDate = NSDate(timeIntervalSinceNow:Double(currentComponents!))
         
         
+        let anchorDate = calendar?.component([NSCalendar.Unit.year,NSCalendar.Unit.month,NSCalendar.Unit.day,NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: endDate as Date)
+
         
-//        HKStatisticsCollectionQuery.init(quantityType: <#T##HKQuantityType#>, quantitySamplePredicate: nil, options: HKStatisticsOptionCumulativeSum | HKStatisticsOptionSeparateBySource, anchorDate: <#T##Date#>, intervalComponents: <#T##DateComponents#>)
-//        
+        
+//        HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[HKStatisticsOptions.cumulativeSum,HKStatisticsOptions.separateBySource], anchorDate: anchorDate, intervalComponents: allComponent)
+        
+        
+        
+        
+        
+        
+//
 //        
 //        public init(quantityType: HKQuantityType, quantitySamplePredicate: NSPredicate?, options: HKStatisticsOptions = [], anchorDate: Date, intervalComponents: DateComponents)
 
