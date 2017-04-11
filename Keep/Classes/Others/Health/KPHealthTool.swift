@@ -8,9 +8,9 @@
 
 import UIKit
 import HealthKit
+import Foundation
 
-
-final class KPHealthTool: NSObject {
+final class KPHealthTool: HKHealthStore {
 
     static let healthTool = KPHealthTool()
     
@@ -92,49 +92,112 @@ final class KPHealthTool: NSObject {
     
         let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 
-        let allComponent = NSDateComponents()
-        allComponent.day = 1
+        let calendar = NSCalendar.current
         
-        let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier(rawValue: NSGregorianCalendar))
+        let interval = NSDateComponents()
         
-    
-        let currentComponents = calendar?.component([NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: NSDate() as Date)
-    
-        let endDate = NSDate(timeIntervalSinceNow:Double(currentComponents!))
+        interval.day = 1
         
-        let anchorComponents = calendar?.components([NSCalendar.Unit.year,NSCalendar.Unit.month,NSCalendar.Unit.day,NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: endDate as Date)
+        var anchorComponents = calendar.dateComponents([.day, .month, .year], from: NSDate() as Date)
+        anchorComponents.hour = 0
         
-    
-        let anchorDate = calendar?.date(from: anchorComponents!)
+        let anchorDate = calendar.date(from: anchorComponents)
         
-    
+        let stepsQuery = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options: .cumulativeSum, anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
         
-        
-        let query = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[HKStatisticsOptions.cumulativeSum,HKStatisticsOptions.separateBySource], anchorDate: anchorDate!, intervalComponents: allComponent as DateComponents)
-        
-        
-        query.initialResultsHandler = {
-            
-            query, results, error in
-            
-            guard let statsCollection = results else {
+        stepsQuery.initialResultsHandler = {query, results, error in
 
-                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
-            }
-            
-            
-//            let array = [HKStatistics]
-//            
-//            array.enumerated(
-//            
-//            )
-            
-            
             let array = results?.statistics()
             
+            array?.forEach({ (statistics) in
+                
+                statistics.sources?.forEach({ (source) in
+                    
+                    if source.name == UIDevice.current.name {
+                    
+                        let count = statistics.sumQuantity(for: source)?.doubleValue(for: HKUnit.count())
+                        
+                        let data = KPHealthData()
+                        
+                        data.stepCount = count!
+                        
+//                        data.startDateComponents = calendar.component([.day, .month, .year], from: statistics.startDate)
+//                        
+//                        
+//                        data.endDateComponents =
+
+
+                        
+                        
+                    }
+                    
+//                    sou
+//                    source.na
+//                    
+//                    
+//                    
+//                    
+//                    if source.name
+//                    if ([source.name isEqualToString:[UIDevice currentDevice].name]) {//只取设备的步数，过滤其他第三方应用的
+
+                    
+                })
+            })
             
-            print(array)
             
+            
+//            cocoaArray.enumerateObjectsUsingBlock({ object, index, stop in
+//                //your code
+//            })
+            
+            
+        }
+        
+        self.healthStore?.execute(stepsQuery)
+
+        
+//        let allComponent = NSDateComponents()
+//        allComponent.day = 1
+//        
+//        let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier(rawValue: NSGregorianCalendar))
+//        
+//        let currentComponents = calendar?.component([.hour,.minute,.second], from: NSDate() as Date)
+//    
+//        let endDate = NSDate(timeIntervalSinceNow:Double(currentComponents!))
+//        
+//        let anchorComponents = calendar?.components([NSCalendar.Unit.year,NSCalendar.Unit.month,NSCalendar.Unit.day,NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: endDate as Date)
+//        
+//    
+//        let anchorDate = calendar?.date(from: anchorComponents!)
+//        
+//    
+//        
+//        
+//        let query = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[HKStatisticsOptions.cumulativeSum,HKStatisticsOptions.separateBySource], anchorDate: anchorDate!, intervalComponents: allComponent as DateComponents)
+//        
+//        
+//        query.initialResultsHandler = {
+//            
+//            query, results, error in
+//            
+//            guard let statsCollection = results else {
+//
+//                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
+//            }
+//            
+//            
+////            let array = [HKStatistics]
+////            
+////            array.enumerated(
+////            
+////            )
+//            
+//            
+//            let array = results?.statistics()
+//            
+//            
+//            print(array)
+        
             
             
             
@@ -158,7 +221,7 @@ final class KPHealthTool: NSObject {
             
             
         
-        }
+//        }
         
         
 //

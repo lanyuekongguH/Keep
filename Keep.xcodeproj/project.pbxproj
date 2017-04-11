@@ -41,6 +41,7 @@
 		E4694FC91E9B990900B5026E /* KPTrainAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */; };
 		E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */; };
 		E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */; };
+		E4694FCF1E9C918C00B5026E /* KPHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCE1E9C918C00B5026E /* KPHealthData.swift */; };
 		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
 		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
@@ -186,6 +187,7 @@
 		E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPTrainAddCell.xib; sourceTree = "<group>"; };
 		E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableCell.swift; sourceTree = "<group>"; };
 		E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableController.swift; sourceTree = "<group>"; };
+		E4694FCE1E9C918C00B5026E /* KPHealthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthData.swift; sourceTree = "<group>"; };
 		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -643,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				E4CB0C221E95F6450028E918 /* KPHealthTool.swift */,
+				E4694FCE1E9C918C00B5026E /* KPHealthData.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -948,6 +951,7 @@
 				E4F011CB1E9645340043B61D /* KPNewsHotItem.swift in Sources */,
 				E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */,
 				E4F011C71E9644700043B61D /* KPStoreTabView.swift in Sources */,
+				E4694FCF1E9C918C00B5026E /* KPHealthData.swift in Sources */,
 				E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */,
 				E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */,
 				E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */,
