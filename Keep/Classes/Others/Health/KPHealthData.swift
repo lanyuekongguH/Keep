@@ -10,8 +10,8 @@ import UIKit
 
 class KPHealthData: NSObject {
 
-    var startDateComponents: NSDateComponents?
-    var endDateComponents: NSDateComponents?
+    var startDateComponents: DateComponents?
+    var endDateComponents: DateComponents?
     var stepCount: Double = 0
     
 }

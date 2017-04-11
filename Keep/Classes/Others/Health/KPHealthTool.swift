@@ -34,7 +34,20 @@ final class KPHealthTool: HKHealthStore {
 
                 if success {
                 
-                    self.readAllStepCount()
+                    self.readAllStepCount({ (dataArray) in
+                        
+                        
+                        for data in dataArray {
+                        
+                            print(data.stepCount)
+
+                            print(data.startDateComponents)
+
+                            print(data.endDateComponents)
+                        
+                        }
+                        
+                    })
                 }
             })
             
@@ -42,9 +55,7 @@ final class KPHealthTool: HKHealthStore {
         
             let error = NSError(domain: "", code: 2, userInfo: [NSLocalizedDescriptionKey:"HealthKit is not available in this Device"])
             finished(false,error)
-
         }
-    
     }
     
     
@@ -87,23 +98,24 @@ final class KPHealthTool: HKHealthStore {
         
     }
     
-    
-    func readAllStepCount() {
+    func readAllStepCount(_ finished:@escaping([KPHealthData]) ->()) {
     
         let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
 
-        let calendar = NSCalendar.current
+        let calendar = NSCalendar(calendarIdentifier: .gregorian)
         
         let interval = NSDateComponents()
         
         interval.day = 1
         
-        var anchorComponents = calendar.dateComponents([.day, .month, .year], from: NSDate() as Date)
-        anchorComponents.hour = 0
+        var anchorComponents = calendar?.components([.day, .month, .year], from: NSDate() as Date)
+        anchorComponents?.hour = 0
         
-        let anchorDate = calendar.date(from: anchorComponents)
+        let anchorDate = calendar?.date(from: anchorComponents!)
         
-        let stepsQuery = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options: .cumulativeSum, anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
+        let stepsQuery = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[.cumulativeSum, .separateBySource], anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
+        
+        var dataArray = [KPHealthData]()
         
         stepsQuery.initialResultsHandler = {query, results, error in
 
@@ -111,8 +123,12 @@ final class KPHealthTool: HKHealthStore {
             
             array?.forEach({ (statistics) in
                 
-                statistics.sources?.forEach({ (source) in
+                let sources = statistics.sources
+                
+                sources?.forEach({ (source) in
                     
+                    print(source.name)
+
                     if source.name == UIDevice.current.name {
                     
                         let count = statistics.sumQuantity(for: source)?.doubleValue(for: HKUnit.count())
@@ -121,143 +137,27 @@ final class KPHealthTool: HKHealthStore {
                         
                         data.stepCount = count!
                         
-//                        data.startDateComponents = calendar.component([.day, .month, .year], from: statistics.startDate)
-//                        
-//                        
-//                        data.endDateComponents =
+                        data.startDateComponents = calendar?.components([.second, .minute, .hour, .day, .month, .year], from: statistics.startDate as Date)
 
+                        data.endDateComponents = calendar?.components([.second, .minute, .hour, .day, .month, .year], from: statistics.endDate as Date)
 
-                        
-                        
+                        dataArray.insert(data, at: 0)
                     }
-                    
-//                    sou
-//                    source.na
-//                    
-//                    
-//                    
-//                    
-//                    if source.name
-//                    if ([source.name isEqualToString:[UIDevice currentDevice].name]) {//只取设备的步数，过滤其他第三方应用的
-
-                    
                 })
+
             })
             
-            
-            
-//            cocoaArray.enumerateObjectsUsingBlock({ object, index, stop in
-//                //your code
-//            })
-            
-            
+            finished(dataArray)
+
         }
         
         self.healthStore?.execute(stepsQuery)
 
         
-//        let allComponent = NSDateComponents()
-//        allComponent.day = 1
-//        
-//        let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier(rawValue: NSGregorianCalendar))
-//        
-//        let currentComponents = calendar?.component([.hour,.minute,.second], from: NSDate() as Date)
-//    
-//        let endDate = NSDate(timeIntervalSinceNow:Double(currentComponents!))
-//        
-//        let anchorComponents = calendar?.components([NSCalendar.Unit.year,NSCalendar.Unit.month,NSCalendar.Unit.day,NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: endDate as Date)
-//        
-//    
-//        let anchorDate = calendar?.date(from: anchorComponents!)
-//        
-//    
-//        
-//        
-//        let query = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[HKStatisticsOptions.cumulativeSum,HKStatisticsOptions.separateBySource], anchorDate: anchorDate!, intervalComponents: allComponent as DateComponents)
-//        
-//        
-//        query.initialResultsHandler = {
-//            
-//            query, results, error in
-//            
-//            guard let statsCollection = results else {
-//
-//                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
-//            }
-//            
-//            
-////            let array = [HKStatistics]
-////            
-////            array.enumerated(
-////            
-////            )
-//            
-//            
-//            let array = results?.statistics()
-//            
-//            
-//            print(array)
-        
-            
-            
-            
-//            let endDate = NSDate()
-//            
-//            guard let startDate = calendar.dateByAddingUnit(.Month, value: -3, toDate: endDate, options: []) else {
-//                fatalError("*** Unable to calculate the start date ***")
-//            }
-//            
-//            // Plot the weekly step counts over the past 3 months
-//            statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) { [unowned self] statistics, stop in
-//                
-//                if let quantity = statistics.sumQuantity() {
-//                    let date = statistics.startDate
-//                    let value = quantity.doubleValueForUnit(HKUnit.countUnit())
-//                    
-//                    // Call a custom method to plot each data point.
-//                    self.plotWeeklyStepCount(value, forDate: date)
-//                }
-//            }
-            
-            
-        
-//        }
-        
-        
-//
-//        
-//        public init(quantityType: HKQuantityType, quantitySamplePredicate: NSPredicate?, options: HKStatisticsOptions = [], anchorDate: Date, intervalComponents: DateComponents)
-
     }
     
     func readStepCount() {
     
-    
-//        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-//        
-//        let startDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-//        let endDate = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-//
-//        let calender = NSCalendar.current
-//
-//        let unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond
-//        
-//        calender.component(unitFlags, from: <#T##Date#>)
-//        NSDateComponents *dateComponent = [calender components:unitFlags fromDate:now];
-//
-//        
-//        
-//        
-//        
-//        
-//        
-//        let now = NSDate.date
-//        
-//        HKQuery.predicateForSamples(withStart: <#T##Date?#>, end: <#T##Date?#>, options: HKQueryOptionNone)
-//        
-//        HKSampleQuery.init(sampleType: sampleType, predicate: <#T##NSPredicate?#>, limit: <#T##Int#>, sortDescriptors: <#T##[NSSortDescriptor]?#>, resultsHandler: <#T##(HKSampleQuery, [HKSample]?, Error?) -> Void#>)
-        
-        
     }
     
 }

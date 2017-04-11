@@ -18,21 +18,25 @@ class KPMineController: UIViewController {
     
     var dataArray = [[String]]()
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+
+        KPHealthTool.healthTool.getAuthority { (success, error) in
+            
+            if success {
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadData()
         
         setupUI()
-        
-
-        KPHealthTool.healthTool.getAuthority { (success, error) in
-            
-            if success {
-            
-            }
-        }
-        
     }
     
     fileprivate func loadData() {
