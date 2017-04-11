@@ -42,6 +42,8 @@
 		E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */; };
 		E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */; };
 		E4694FCF1E9C918C00B5026E /* KPHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCE1E9C918C00B5026E /* KPHealthData.swift */; };
+		E4694FD11E9CC96A00B5026E /* KPHealthListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD01E9CC96A00B5026E /* KPHealthListController.swift */; };
+		E4694FD31E9CC98E00B5026E /* KPHealthListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD21E9CC98E00B5026E /* KPHealthListCell.swift */; };
 		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
 		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
@@ -188,6 +190,8 @@
 		E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableCell.swift; sourceTree = "<group>"; };
 		E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableController.swift; sourceTree = "<group>"; };
 		E4694FCE1E9C918C00B5026E /* KPHealthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthData.swift; sourceTree = "<group>"; };
+		E4694FD01E9CC96A00B5026E /* KPHealthListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthListController.swift; sourceTree = "<group>"; };
+		E4694FD21E9CC98E00B5026E /* KPHealthListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthListCell.swift; sourceTree = "<group>"; };
 		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -495,6 +499,7 @@
 				E41861C31E7133F20024EE1B /* KPMineTabButton.swift */,
 				E41861D11E7150DC0024EE1B /* KPMineSettingCell.swift */,
 				E4A946501E7286DE0040ED47 /* KPSegmentView.swift */,
+				E4694FD21E9CC98E00B5026E /* KPHealthListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,6 +642,7 @@
 				E4AADE081E8C97F500477C61 /* KPConventionViewController.swift */,
 				E4AADE0A1E8C982C00477C61 /* KPNetworkViewController.swift */,
 				E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */,
+				E4694FD01E9CC96A00B5026E /* KPHealthListController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -920,6 +926,7 @@
 				E4F011DD1E97A26A0043B61D /* KPNewsDetailAuthorCell.swift in Sources */,
 				E4F011BC1E9644670043B61D /* KPStoreBanner.swift in Sources */,
 				E4F011C31E9644700043B61D /* KPStoreBannerCell.swift in Sources */,
+				E4694FD31E9CC98E00B5026E /* KPHealthListCell.swift in Sources */,
 				E4AADE0B1E8C982C00477C61 /* KPNetworkViewController.swift in Sources */,
 				E40166E41E8D082D00C41F96 /* KPAccountBindingController.swift in Sources */,
 				E4F011DA1E97A2030043B61D /* KPNewsLikersListCell.swift in Sources */,
@@ -971,6 +978,7 @@
 				E4A5D9311E70064500F91783 /* KPNewsViewController.swift in Sources */,
 				E4F011D51E979E3A0043B61D /* KPNewDetailLikersCell.swift in Sources */,
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
+				E4694FD11E9CC96A00B5026E /* KPHealthListController.swift in Sources */,
 				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,
 				E4F011D11E9799040043B61D /* KPHotDetailItem.swift in Sources */,
 				E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */,

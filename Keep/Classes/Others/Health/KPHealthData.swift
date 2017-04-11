@@ -12,6 +12,6 @@ class KPHealthData: NSObject {
 
     var startDateComponents: DateComponents?
     var endDateComponents: DateComponents?
-    var stepCount: Double = 0
+    var stepCount: Int = 0
     
 }

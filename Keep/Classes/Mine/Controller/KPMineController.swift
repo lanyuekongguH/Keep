@@ -23,12 +23,6 @@ class KPMineController: UIViewController {
         
         super.viewWillAppear(animated)
 
-        KPHealthTool.healthTool.getAuthority { (success, error) in
-            
-            if success {
-                
-            }
-        }
     }
     
     override func viewDidLoad() {
@@ -40,7 +34,7 @@ class KPMineController: UIViewController {
     }
     
     fileprivate func loadData() {
-        dataArray = [["训练等级","跑步等级","骑行等级","我的徽章","我的活动"],["购物车","我的订单","优惠券"]]
+        dataArray = [["训练等级","跑步等级","骑行等级","我的徽章","我的活动"],["购物车","我的订单","优惠券","显示所有步数"]]
         
         print(dataArray)
     }
@@ -81,14 +75,15 @@ class KPMineController: UIViewController {
         navigationController?.pushViewController(settingVc, animated: true)
     }
     
-    
-    
 }
 
 extension KPMineController: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+        
+        let healthList = KPHealthListController()
+        navigationController?.pushViewController(healthList, animated: true)
     }
 
 }

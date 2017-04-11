@@ -18,7 +18,26 @@ final class KPHealthTool: HKHealthStore {
 
     var healthStore: HKHealthStore?
     
-    func getAuthority(_ finished:@escaping ((_ success:Bool, _ error:Error)->())){
+    func getHealthKitStepCountData(_ finished:@escaping([KPHealthData]) ->()) {
+    
+        getAuthority { (success, error) in
+            
+            if success {
+                
+                self.readAllStepCount({ (dataArray) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        finished(dataArray)
+
+                    }
+                    
+                })
+            }
+        }
+    }
+    
+    func getAuthority(_ finished:@escaping ((_ success:Bool, _ error:Error?)->())){
     
         if HKHealthStore.isHealthDataAvailable() {
             
@@ -27,28 +46,11 @@ final class KPHealthTool: HKHealthStore {
             let readSet = healthDataToRead()
             
             let writeSet = healthDataToWrite()
-
+            
             healthStore?.requestAuthorization(toShare: writeSet, read: readSet, completion: { (success, error) in
                 
-//                finished(success, error!)
-
-                if success {
+                finished(success, error)
                 
-                    self.readAllStepCount({ (dataArray) in
-                        
-                        
-                        for data in dataArray {
-                        
-                            print(data.stepCount)
-
-                            print(data.startDateComponents)
-
-                            print(data.endDateComponents)
-                        
-                        }
-                        
-                    })
-                }
             })
             
         } else {
@@ -57,7 +59,6 @@ final class KPHealthTool: HKHealthStore {
             finished(false,error)
         }
     }
-    
     
     fileprivate func healthDataToWrite() -> Set<HKSampleType> {
     
@@ -95,7 +96,6 @@ final class KPHealthTool: HKHealthStore {
         let climbed = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed);
         
         return NSSet.init(arrayLiteral: stepCount!,walkDistance!,activeEnergyBurn!,heart!,height!,weight!,climbed!) as! Set<HKSampleType>
-        
     }
     
     func readAllStepCount(_ finished:@escaping([KPHealthData]) ->()) {
@@ -125,35 +125,33 @@ final class KPHealthTool: HKHealthStore {
                 
                 let sources = statistics.sources
                 
+                
                 sources?.forEach({ (source) in
                     
-                    print(source.name)
-
                     if source.name == UIDevice.current.name {
                     
                         let count = statistics.sumQuantity(for: source)?.doubleValue(for: HKUnit.count())
                         
                         let data = KPHealthData()
                         
-                        data.stepCount = count!
+                        data.stepCount = Int(count!)
                         
                         data.startDateComponents = calendar?.components([.second, .minute, .hour, .day, .month, .year], from: statistics.startDate as Date)
 
                         data.endDateComponents = calendar?.components([.second, .minute, .hour, .day, .month, .year], from: statistics.endDate as Date)
 
+//                        print(count)
+//                        print(data.startDateComponents)
+//                        print(data.endDateComponents)
+
                         dataArray.insert(data, at: 0)
                     }
                 })
-
             })
-            
             finished(dataArray)
-
         }
         
         self.healthStore?.execute(stepsQuery)
-
-        
     }
     
     func readStepCount() {
