@@ -81,7 +81,8 @@ extension KPMineController: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        
+        tableView.deselectRow(at: indexPath, animated: false)
+
         let healthList = KPHealthListController()
         navigationController?.pushViewController(healthList, animated: true)
     }
