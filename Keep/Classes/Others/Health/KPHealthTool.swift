@@ -30,8 +30,12 @@ final class KPHealthTool: NSObject {
 
             healthStore?.requestAuthorization(toShare: writeSet, read: readSet, completion: { (success, error) in
                 
-                finished(success, error!)
+//                finished(success, error!)
 
+                if success {
+                
+                    self.readAllStepCount()
+                }
             })
             
         } else {
@@ -98,25 +102,69 @@ final class KPHealthTool: NSObject {
     
         let endDate = NSDate(timeIntervalSinceNow:Double(currentComponents!))
         
+        let anchorComponents = calendar?.components([NSCalendar.Unit.year,NSCalendar.Unit.month,NSCalendar.Unit.day,NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: endDate as Date)
         
-        let anchorDate = calendar?.component([NSCalendar.Unit.year,NSCalendar.Unit.month,NSCalendar.Unit.day,NSCalendar.Unit.hour,NSCalendar.Unit.minute,NSCalendar.Unit.second], from: endDate as Date)
+    
+        let anchorDate = calendar?.date(from: anchorComponents!)
+        
+    
+        
+        
+        let query = HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[HKStatisticsOptions.cumulativeSum,HKStatisticsOptions.separateBySource], anchorDate: anchorDate!, intervalComponents: allComponent as DateComponents)
+        
+        
+        query.initialResultsHandler = {
+            
+            query, results, error in
+            
+            guard let statsCollection = results else {
 
+                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
+            }
+            
+            
+//            let array = [HKStatistics]
+//            
+//            array.enumerated(
+//            
+//            )
+            
+            
+            let array = results?.statistics()
+            
+            
+            print(array)
+            
+            
+            
+            
+//            let endDate = NSDate()
+//            
+//            guard let startDate = calendar.dateByAddingUnit(.Month, value: -3, toDate: endDate, options: []) else {
+//                fatalError("*** Unable to calculate the start date ***")
+//            }
+//            
+//            // Plot the weekly step counts over the past 3 months
+//            statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) { [unowned self] statistics, stop in
+//                
+//                if let quantity = statistics.sumQuantity() {
+//                    let date = statistics.startDate
+//                    let value = quantity.doubleValueForUnit(HKUnit.countUnit())
+//                    
+//                    // Call a custom method to plot each data point.
+//                    self.plotWeeklyStepCount(value, forDate: date)
+//                }
+//            }
+            
+            
         
-        
-//        HKStatisticsCollectionQuery(quantityType: sampleType!, quantitySamplePredicate: nil, options:[HKStatisticsOptions.cumulativeSum,HKStatisticsOptions.separateBySource], anchorDate: anchorDate, intervalComponents: allComponent)
-        
-        
-        
-        
+        }
         
         
 //
 //        
 //        public init(quantityType: HKQuantityType, quantitySamplePredicate: NSPredicate?, options: HKStatisticsOptions = [], anchorDate: Date, intervalComponents: DateComponents)
 
-        
-        
-        
     }
     
     func readStepCount() {
