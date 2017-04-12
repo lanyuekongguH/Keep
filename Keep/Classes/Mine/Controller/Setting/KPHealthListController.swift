@@ -27,31 +27,99 @@ class KPHealthListController: KPBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        let chartView = LineChartView.init(frame: CGRect.init(x: 0, y: 64, width: SCREENW, height: SCREENH - 64))
-        
-        chartView.lineData
-        chartView.delegate = self
-        chartView.backgroundColor = UIColor.white
-        self.view.addSubview(chartView)
-        
-        
-        
-        
-        
 //        setupUI()
-//        
+//
 //        startPedometerUpdates()
         
-//        KPHealthTool.healthTool.getHealthKitStepCountData { (stepCounts) in
-//            
-//            self.dataArray = stepCounts
-//
+        KPHealthTool.healthTool.getHealthKitStepCountData { [weak self]
+            (stepCounts) in
+            
+            self?.dataArray = stepCounts
+
+            let chartView = LineChartView.init(frame: CGRect.init(x: 20, y: 64 + 20, width: SCREENW - 20, height: 200))
+            chartView.delegate = self
+            chartView.backgroundColor = UIColor.white
+            self?.view.addSubview(chartView)
+            
+            let data = self?.dataWithCount(36, 100)
+            
+            data?.setValueFont(UIFont.systemFont(ofSize: 7.0))
+            
+            let colors = [
+                UIColor(colorLiteralRed: 137/255.0, green: 230/255.0, blue: 81/255.0, alpha: 1.0),
+                UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 30/255.0, alpha: 1.0),
+                UIColor(colorLiteralRed: 89/255.0, green: 2199/255.0, blue: 250/255.0, alpha: 1.0),
+                UIColor(colorLiteralRed: 250/255.0, green: 104/255.0, blue: 104/255.0, alpha: 1.0)]
+            
+            self?.setupChart(chartView, data!, colors[1])
+            
 //            self.tableView?.reloadData()
-//        }
+        }
     }
     
+    func setupChart(_ chart:LineChartView, _ data:LineChartData, _ color:UIColor) {
     
+        let set = data.getDataSetByIndex(0) as? LineChartDataSet
+        set?.setCircleColor(color)
+        
+        chart.delegate = self
+        
+        chart.backgroundColor = KPColor(28, g: 144, b: 136, a: 1.0)
+        
+        chart.chartDescription?.enabled = false
+        
+        chart.drawGridBackgroundEnabled = false;
+        chart.dragEnabled = true;
+        
+        chart.setScaleEnabled(true)
+        chart.pinchZoomEnabled = false;
+        
+        chart.setViewPortOffsets(left: 10.0, top: 0.0, right: 10.0, bottom: 0.0)
+        chart.legend.enabled = false;
+        
+        chart.leftAxis.enabled = false;
+        chart.leftAxis.spaceTop = 0.4;
+        chart.leftAxis.spaceBottom = 0.4;
+        chart.rightAxis.enabled = false;
+        chart.xAxis.enabled = false;
+        
+        chart.data = data;
+        
+        chart.animate(xAxisDuration: 0.25)
+    }
+    
+    func dataWithCount(_ count:Int, _ range:Double) -> LineChartData {
+    
+        var yVals = [ChartDataEntry]()
+        
+        
+        let stepCountArray = dataArray.reversed()
+        
+        for i in 0...6 {
+        
+            let val = dataArray[6 - i].stepCount
+            
+            yVals.append(ChartDataEntry(x: Double(i), y: Double(val)))
+        }
+        
+        let set1 = LineChartDataSet(values: yVals, label: "DataSet 1")
+    
+        set1.lineWidth = 1.75
+        set1.circleRadius = 5.0
+        set1.circleHoleRadius = 2.5
+        
+//        set1.setCircleColor(UIColor.white)
+//        set1.setColor(UIColor.white)
+        
+        set1.setCircleColor(KPColor(128, g: 255, b: 242, a: 1.0))
+        set1.setColor(KPColor(128, g: 255, b: 242, a: 1.0))
+        
+        
+        set1.highlightColor = UIColor.white
+        set1.drawCirclesEnabled = false
+        
+        return LineChartData.init(dataSet: set1)
+    }
     
     func setChart(dataPoints: [String], values: [Double]) {
 
