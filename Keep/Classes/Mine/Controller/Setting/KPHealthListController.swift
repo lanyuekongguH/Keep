@@ -60,7 +60,8 @@ class KPHealthListController: KPBaseViewController {
     func setupChart(_ chart:LineChartView, _ data:LineChartData, _ color:UIColor) {
     
         let set = data.getDataSetByIndex(0) as? LineChartDataSet
-        set?.setCircleColor(color)
+        
+        set?.setCircleColor(KPColor(35, g: 207, b: 91, a: 1.0))
         
         chart.delegate = self
         
@@ -69,12 +70,14 @@ class KPHealthListController: KPBaseViewController {
         chart.chartDescription?.enabled = false
         
         chart.drawGridBackgroundEnabled = false;
-        chart.dragEnabled = true;
+        chart.dragEnabled = false;
         
-        chart.setScaleEnabled(true)
+        chart.setScaleEnabled(false)
         chart.pinchZoomEnabled = false;
+        chart.scaleXEnabled = false;
+
         
-        chart.setViewPortOffsets(left: 10.0, top: 0.0, right: 10.0, bottom: 0.0)
+//        chart.setViewPortOffsets(left: 10.0, top: 0.0, right: 10.0, bottom: 0.0)
         chart.legend.enabled = false;
         
         chart.leftAxis.enabled = false;
@@ -106,17 +109,12 @@ class KPHealthListController: KPBaseViewController {
     
         set1.lineWidth = 1.75
         set1.circleRadius = 5.0
-        set1.circleHoleRadius = 2.5
-        
-//        set1.setCircleColor(UIColor.white)
-//        set1.setColor(UIColor.white)
-        
-        set1.setCircleColor(KPColor(128, g: 255, b: 242, a: 1.0))
-        set1.setColor(KPColor(128, g: 255, b: 242, a: 1.0))
-        
-        
-        set1.highlightColor = UIColor.white
-        set1.drawCirclesEnabled = false
+        set1.circleHoleRadius = 1.0
+        set1.setColor(KPColor(35, g: 207, b: 91, a: 1.0))
+        set1.fillColor = UIColor.red
+        set1.drawCircleHoleEnabled = true
+        set1.highlightColor = KPColor(35, g: 207, b: 91, a: 1.0)
+        set1.drawCirclesEnabled = true
         
         return LineChartData.init(dataSet: set1)
     }
