@@ -29,7 +29,7 @@ class KPNewsHotItem: NSObject {
     var id: String?
     var contentType: Array<Any>?
     
-    var likes: String?
+    var likes: Int = 0
     var comments: String?
     var author: KPNewsAuthorItem?
     
@@ -38,7 +38,7 @@ class KPNewsHotItem: NSObject {
     var photo: String?
     var commentUsers: String?
     var externalShareCount: String?
-    var favoriteCount: String?
+    var favoriteCount: Int = 0
     
     
     init(dict: [String: AnyObject]) {
@@ -65,7 +65,7 @@ class KPNewsHotItem: NSObject {
         contentType = dict["contentType"] as? Array
         
         
-        likes = dict["likes"] as? String
+        likes = dict["likes"] as! Int
         comments = dict["comments"] as? String
         
 
@@ -80,7 +80,7 @@ class KPNewsHotItem: NSObject {
         photo = dict["photo"] as? String
         commentUsers = dict["id"] as? String
         externalShareCount = dict["contentType"] as? String
-        favoriteCount = dict["contentType"] as? String
+        favoriteCount = dict["favoriteCount"] as! Int
     }
     
     

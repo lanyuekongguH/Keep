@@ -32,8 +32,8 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
             contentLable.text = hotItem.content
             iconImageView.kf.setImage(with: URL(string: (hotItem.author?.avatar!)!))
             nameLable.text = hotItem.author?.username
-            likeImageView.image = UIImage.init(named: "")
-            likeNumberLabel.text = hotItem.likes
+            likeImageView.image = UIImage(named: "icon_timeline_liked")
+            likeNumberLabel.text = String(hotItem.likes)
             
             imageView.snp.makeConstraints { (make) in
                 make.width.height.equalTo(cellWidth)
@@ -55,38 +55,31 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
             }
             
             nameLable.snp.makeConstraints { (make) in
-                make.height.equalTo(30)
+                make.height.equalTo(26)
                 make.width.equalTo(100)
                 make.top.equalTo(contentLable.snp.bottom).offset(15)
                 make.left.equalTo(iconImageView.snp.right).offset(5)
             }
             
-            
-            let likeNumberW = hotItem.likes?.boundingRectWithFont(nameLable.font).width
-            
-//            let likeImageViewX = cellWidth - likeNumberW! - 5 - 5
-            
-            let likeImageViewX = cellWidth - 30
+            let likeNumberW = String(hotItem.likes).boundingRectWithFont(likeNumberLabel.font).width
+
+            let likeImageViewX = cellWidth - likeNumberW - 16 - 5
             
             likeImageView.snp.makeConstraints { (make) in
-                make.height.width.equalTo(5)
+                make.width.equalTo(16)
+                make.height.equalTo(26)
                 make.top.equalTo(contentLable.snp.bottom).offset(15)
                 make.left.equalTo(likeImageViewX)
             }
             
             likeNumberLabel.snp.makeConstraints { (make) in
-                make.height.equalTo(25)
-                //make.width.equalTo(likeNumberW!)
-                
-                make.width.equalTo(20)
-
+                make.height.equalTo(26)
+                make.width.equalTo(likeNumberW)
                 make.top.equalTo(contentLable.snp.bottom).offset(15)
                 make.left.equalTo(likeImageView.snp.right).offset(5)
             }
-            
         }
     }
-    
     
     fileprivate lazy var imageView: UIImageView = {
     
@@ -123,7 +116,7 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
     fileprivate lazy var likeImageView: UIImageView = {
         
         let likeImageView = UIImageView()
-        
+        likeImageView.contentMode = .scaleAspectFit
         return likeImageView
     }()
     
@@ -131,6 +124,7 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
         
         let likeNumberLabel = UILabel()
         likeNumberLabel.font = UIFont.systemFont(ofSize: 10)
+        likeNumberLabel.textColor = KPLightGray()
         return likeNumberLabel
     }()
     
