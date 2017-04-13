@@ -16,5 +16,6 @@ pod "SVProgressHUD"
 pod "ZipArchive"
 pod "AMap3DMap"
 pod "AMapLocation"
+pod "MJRefresh"
 
 end

@@ -16,14 +16,24 @@ class KPNewsViewController: KPBaseViewController {
 
     var collectionView: UICollectionView?
     
+    var refreshControl = UIRefreshControl()
+    
+    var lastID : String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
         
         loadBannerData()
+        
+        refreshControl.addTarget(self, action: #selector(loadBannerData), for: .valueChanged)
+        
+        collectionView?.addSubview(refreshControl)
+        
     }
 
+    
     fileprivate func setupUI() {
     
         view.backgroundColor = KPBg()
@@ -50,18 +60,24 @@ class KPNewsViewController: KPBaseViewController {
         collectionView.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         self.collectionView = collectionView
-        
-        
-        
     }
     
-    fileprivate func loadBannerData() {
+    @objc fileprivate func loadBannerData() {
         
-        KPNetworkTool.shareNetworkTool.loadNewsHotData{ [weak self](hotItems) in
+//        self.hotItems = [KPNewsHotItem]()
+        
+        
+        KPNetworkTool.shareNetworkTool.loadNewsHotData(last: lastID) {[weak self]
+        
+            (hotItems) in
             
-            self?.hotItems = hotItems
+            self?.lastID = hotItems.1
+            self?.hotItems = hotItems.0
             
             self?.collectionView?.reloadData()
+            
+            self?.refreshControl.endRefreshing()
+        
         }
         
     }

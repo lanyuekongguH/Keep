@@ -70,12 +70,20 @@ class KPNetworkTool: NSObject {
     /// 加载商城数据
 
     /// 加载热门数据
-    func loadNewsHotData(_ finished:@escaping ([KPNewsHotItem]) ->()) {
+    func loadNewsHotData(last lastId:String?, _ finished:@escaping ([KPNewsHotItem], String?) ->()) {
         
         //https://api.gotokeep.com/social/v3/timeline/hot?lastId=58d8701be1d6d416109a6980
 
-        let url = "https://api.gotokeep.com/social/v3/timeline/hot"
+        var url: String
+        
+        if let lastId = lastId {
+            url = "https://api.gotokeep.com/social/v3/timeline/hot?lastId=\(lastId)"
 
+        } else {
+            url = "https://api.gotokeep.com/social/v3/timeline/hot"
+
+        }
+        
         Alamofire.request(url).responseJSON { response in
             
             print(response)
@@ -97,8 +105,9 @@ class KPNetworkTool: NSObject {
                         hotItems.append(item)
                     }
                     
-                    finished(hotItems)
-                    print("dddddddddd",hotItems)
+                    let lastID = json["data"]["lastId"].string
+                    
+                    finished(hotItems, lastID)
                 }
             }
         }

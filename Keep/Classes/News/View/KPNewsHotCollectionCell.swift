@@ -21,6 +21,7 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
         contentView.addSubview(likeNumberLabel)
         
         self.backgroundColor = UIColor.white
+        
     }
     
     var hotItem: KPNewsHotItem! {
@@ -58,7 +59,7 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
                 make.height.equalTo(26)
                 make.width.equalTo(100)
                 make.top.equalTo(contentLable.snp.bottom).offset(15)
-                make.left.equalTo(iconImageView.snp.right).offset(5)
+//                make.left.equalTo(iconImageView.snp.right).offset(5)
             }
             
             let likeNumberW = String(hotItem.likes).boundingRectWithFont(likeNumberLabel.font).width
