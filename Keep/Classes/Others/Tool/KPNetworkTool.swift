@@ -70,7 +70,7 @@ class KPNetworkTool: NSObject {
     /// 加载商城数据
 
     /// 加载热门数据
-    func loadNewsHotData(last lastId:String?, _ finished:@escaping ([KPNewsHotItem], String?) ->()) {
+    func loadNewsHotData(last lastId:String?, _ finished:@escaping ([KPNewsHotItem],String?) ->()) {
         
         //https://api.gotokeep.com/social/v3/timeline/hot?lastId=58d8701be1d6d416109a6980
 

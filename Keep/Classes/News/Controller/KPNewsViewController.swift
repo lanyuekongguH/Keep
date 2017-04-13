@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 let KPNewsHotCollectionCellIdentifier = "KPNewsHotCollectionCellIdentifier"
 
@@ -18,6 +19,8 @@ class KPNewsViewController: KPBaseViewController {
     
     var refreshControl = UIRefreshControl()
     
+    let footer = MJRefreshAutoNormalFooter()
+
     var lastID : String?
 
     override func viewDidLoad() {
@@ -30,7 +33,6 @@ class KPNewsViewController: KPBaseViewController {
         refreshControl.addTarget(self, action: #selector(loadBannerData), for: .valueChanged)
         
         collectionView?.addSubview(refreshControl)
-        
     }
 
     
@@ -60,24 +62,37 @@ class KPNewsViewController: KPBaseViewController {
         collectionView.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         self.collectionView = collectionView
+        
+        footer.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadBannerData))
+        self.collectionView?.mj_footer = footer
     }
     
     @objc fileprivate func loadBannerData() {
         
 //        self.hotItems = [KPNewsHotItem]()
         
-        
         KPNetworkTool.shareNetworkTool.loadNewsHotData(last: lastID) {[weak self]
         
-            (hotItems) in
+            (data) in
             
-            self?.lastID = hotItems.1
-            self?.hotItems = hotItems.0
+            self?.lastID = data.1
+            
+            if self?.lastID != nil {
+            
+                self?.hotItems.append(contentsOf: data.0)
+                self?.collectionView?.mj_footer.endRefreshing()
+                
+            } else {
+                self?.hotItems = data.0
+            }
+            
+            if (self?.refreshControl.isRefreshing)! {
+            
+                self?.refreshControl.endRefreshing()
+            }
+            
             
             self?.collectionView?.reloadData()
-            
-            self?.refreshControl.endRefreshing()
-        
         }
         
     }
