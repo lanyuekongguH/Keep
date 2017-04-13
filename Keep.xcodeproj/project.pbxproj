@@ -46,6 +46,7 @@
 		E4694FD31E9CC98E00B5026E /* KPHealthListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD21E9CC98E00B5026E /* KPHealthListCell.swift */; };
 		E4694FD71E9E333400B5026E /* KPNewsFollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD61E9E333400B5026E /* KPNewsFollowCell.swift */; };
 		E4694FD91E9E337500B5026E /* KPNewsRecommendUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD81E9E337500B5026E /* KPNewsRecommendUserCell.swift */; };
+		E4694FDB1E9F897300B5026E /* KPNewsCommentsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FDA1E9F897200B5026E /* KPNewsCommentsItem.swift */; };
 		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
 		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
@@ -196,6 +197,7 @@
 		E4694FD21E9CC98E00B5026E /* KPHealthListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthListCell.swift; sourceTree = "<group>"; };
 		E4694FD61E9E333400B5026E /* KPNewsFollowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsFollowCell.swift; sourceTree = "<group>"; };
 		E4694FD81E9E337500B5026E /* KPNewsRecommendUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsRecommendUserCell.swift; sourceTree = "<group>"; };
+		E4694FDA1E9F897200B5026E /* KPNewsCommentsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsCommentsItem.swift; sourceTree = "<group>"; };
 		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -537,6 +539,7 @@
 				E4F011CE1E97988A0043B61D /* KPNewsLikersItem.swift */,
 				E4F011D01E9799040043B61D /* KPHotDetailItem.swift */,
 				E4F011D61E979F4D0043B61D /* KPNewsLikersListItem.swift */,
+				E4694FDA1E9F897200B5026E /* KPNewsCommentsItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -915,6 +918,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4694FDB1E9F897300B5026E /* KPNewsCommentsItem.swift in Sources */,
 				E4A9464F1E715C740040ED47 /* UIImage+KP.swift in Sources */,
 				E4AADE091E8C97F500477C61 /* KPConventionViewController.swift in Sources */,
 				E4A946561E767F290040ED47 /* KPNetworkTool.swift in Sources */,

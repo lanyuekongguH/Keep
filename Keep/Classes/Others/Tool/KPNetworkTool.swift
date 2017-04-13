@@ -146,6 +146,40 @@ class KPNetworkTool: NSObject {
         }
     }
     
+    /// 加载评论列表数据
+    func loadNewsHotCommentsData(userID userId:String?, _ finished:@escaping ([KPNewsCommentsItem]?) ->()) {
+        
+        //    https://api.gotokeep.com/v1.1/entries/58eedb6df75d3926e2fce3d2/comments?limit=20&reverse=true
+
+        let url = "https://api.gotokeep.com/v1.1/entries/58eedb6df75d3926e2fce3d2/comments?limit=20&reverse=true"
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            guard response.result.isSuccess else {
+                SVProgressHUD.showError(withStatus: "加载失败...")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let data = json["data"].arrayObject {
+
+                    var comments = [KPNewsCommentsItem]()
+                    
+                    for comment in data {
+                        
+                        let item = KPNewsCommentsItem(dict: comment as! [String: AnyObject])
+                        comments.append(item)
+                    }
+                    
+                    finished(comments)
+                }
+            }
+        }
+    }
+
     /// 加载喜欢的人列表数据
     func loadNewsHotLikesData(_ finished:@escaping ([KPNewsHotItem]) ->()) {
         
@@ -175,7 +209,6 @@ class KPNetworkTool: NSObject {
                     }
                     
                     finished(hotItems)
-                    print("dddddddddd",hotItems)
                 }
             }
         }

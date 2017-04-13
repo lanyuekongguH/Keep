@@ -22,6 +22,8 @@ class KPHotDetailController: KPBaseViewController {
     
     var hotDetailItem: KPHotDetailItem?
     
+    var comments = [KPNewsCommentsItem]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,15 +41,29 @@ class KPHotDetailController: KPBaseViewController {
             if let hotDetailItem = hotDetailItem {
                 
                 self?.hotDetailItem = hotDetailItem
+                
+                
             }
             
             if let likerArray = hotDetailItem?.likers {
             
                 self?.likers = likerArray
+                
+                
             }
             
             self?.tableView?.reloadData()
         }
+        
+        
+        KPNetworkTool.shareNetworkTool.loadNewsHotCommentsData(userID: userID) {[weak self]
+            
+            (comments) in
+            
+               self?.comments = comments!
+            
+               self?.tableView?.reloadData()
+            }
     }
     
     fileprivate func setupUI() {
@@ -97,7 +113,7 @@ extension KPHotDetailController: UITableViewDataSource {
         if section == 0 || section == 1 {
             return 1
         }
-        return likers.count
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,6 +133,9 @@ extension KPHotDetailController: UITableViewDataSource {
         } else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsRecommendUserCellIdentifier) as! KPNewsRecommendUserCell
+            
+            cell.commentsItem = comments[indexPath.row]
+            
             return cell
 
         }
