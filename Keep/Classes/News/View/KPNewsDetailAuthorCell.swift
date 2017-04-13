@@ -10,17 +10,41 @@ import UIKit
 
 class KPNewsDetailAuthorCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?){
+        
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(iconImageView)
+        contentView.addSubview(nameLable)
+        contentView.addSubview(timeLable)
+        contentView.addSubview(likedButton)
+        contentView.addSubview(photoImageView)
+        contentView.addSubview(contentLable)
+        
+        contentView.addSubview(favoriteCountLable)
+        contentView.addSubview(lineView)
+        
+        contentView.addSubview(favoritedButton)
+        contentView.addSubview(commentButton)
+        contentView.addSubview(shareButton)
+        contentView.addSubview(moreButton)
+
+        
+        self.backgroundColor = UIColor.white
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var hotDetailItem: KPHotDetailItem! {
+        didSet {
+    
+            
+            
+        }
     }
-
+    
+    required init?(coder aDecoder: NSCoder){
+        fatalError("init(coder:) has not been implemented")
+    }
     
     fileprivate lazy var iconImageView: UIImageView = {
         

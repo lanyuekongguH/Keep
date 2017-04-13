@@ -130,6 +130,12 @@ extension KPNewsViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
+        let hotDetailVC = KPHotDetailController()
+        
+        hotDetailVC.userID = hotItems[indexPath.row].author?._id
+        
+        self.navigationController?.pushViewController(hotDetailVC, animated: true)
+        
         let hot = hotItems[indexPath.row]
         print(hot.content ?? "无内容")
     }
@@ -169,11 +175,6 @@ extension KPNewsViewController: UICollectionViewDelegateFlowLayout {
     
         return 30
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//    
-//        return 10
-//    }
     
 }
 

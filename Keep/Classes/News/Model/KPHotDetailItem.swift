@@ -10,10 +10,13 @@ import UIKit
 
 class KPHotDetailItem: NSObject {
 
+    var country: String?
     var commentsList: Array<Any>?
     var achievements: Array<Any>?
-    var internalShareCount: String?
+    var city: String?
+    var internalShareCount: Array<Any>?
     var stateValue: String?
+    
     var feel: String?
     var type: String?
 
@@ -43,22 +46,26 @@ class KPHotDetailItem: NSObject {
 
     var externalShareCount: String?
     var favoriteCount: String?
-    
-    
+        
     init(dict: [String: AnyObject]) {
+        
         super.init()
+        
+        country = dict["country"] as? String
+        
         
         commentsList = dict["commentsList"] as? Array
         achievements = dict["achievements"] as? Array
-        internalShareCount = dict["internalShareCount"] as? String
+        city = dict["city"] as? String
+        internalShareCount = dict["internalShareCount"] as? Array
         stateValue = dict["stateValue"] as? String
         feel = dict["feel"] as? String
         type = dict["type"] as? String
-        
+
         content = dict["content"] as? String
+        
         relation = dict["relation"] as? String
         geo = dict["geo"] as? Array
-        stateValue = dict["stateValue"] as? String
         feel = dict["feel"] as? String
         type = dict["type"] as? String
         
@@ -71,11 +78,25 @@ class KPHotDetailItem: NSObject {
         viewCount = dict["viewCount"] as? String
         id = dict["id"] as? String
         contentType = dict["contentType"] as? Array
-        likers = dict["likers"] as? Array
-        likes = dict["likes"] as? String
         comments = dict["comments"] as? String
         
-        author = dict["author"] as? KPNewsAuthorItem
+        if let likerArray = dict["likers"] as? [AnyObject] {
+            
+            var likersItem = [KPNewsLikersItem]()
+
+            for item in likerArray {
+                let item = KPNewsLikersItem(dict: item as! [String: AnyObject])
+                likersItem.append(item)
+            }
+            
+            likers = likersItem
+        }
+        
+        if var author = dict["author"] {
+            
+            author = KPNewsAuthorItem(dict: author as! [String: AnyObject])
+        }
+
         created = dict["created"] as? String
         hasLiked = dict["hasLiked"] as? Bool
         photo = dict["photo"] as? String

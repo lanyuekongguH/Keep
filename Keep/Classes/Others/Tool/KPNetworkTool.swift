@@ -113,17 +113,18 @@ class KPNetworkTool: NSObject {
         }
     }
 
-    /// 加载热门数据
-    func loadNewsHotDetailData(_ finished:@escaping ([KPNewsHotItem]) ->()) {
+    /// 加载热门详情数据
+    func loadNewsHotDetailData(userID userId:String?, _ finished:@escaping (KPHotDetailItem?) ->()) {
         
-        //    https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true
+        //https://api.gotokeep.com/v1.1/entries/54d31883e1728b0434fb0f3b?limit=20&reverse=true
+        
+        //https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true
 
+//        let url = "https://api.gotokeep.com/v1.1/entries/\(userId!)?limit=20&reverse=true"
         
-        let url = "https://api.gotokeep.com/social/v3/timeline/hot"
+        let url = "https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true"
         
         Alamofire.request(url).responseJSON { response in
-            
-            print(response)
             
             guard response.result.isSuccess else {
                 SVProgressHUD.showError(withStatus: "加载失败...")
@@ -134,16 +135,12 @@ class KPNetworkTool: NSObject {
                 
                 let json = JSON(value)
                 
-                if let data = json["data"]["entries"].arrayObject {
-                    var hotItems = [KPNewsHotItem]()
+                
+                if let dic = json["data"].dictionaryObject {
                     
-                    for dict in data {
-                        let item = KPNewsHotItem(dict: dict as! [String: AnyObject])
-                        hotItems.append(item)
-                    }
+                    let item = KPHotDetailItem(dict: dic as [String: AnyObject])
                     
-                    finished(hotItems)
-                    print("dddddddddd",hotItems)
+                    finished(item)
                 }
             }
         }

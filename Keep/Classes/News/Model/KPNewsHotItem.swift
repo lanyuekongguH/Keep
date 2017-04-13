@@ -53,8 +53,6 @@ class KPNewsHotItem: NSObject {
         type = dict["type"] as? String
         content = dict["content"] as? String
         geo = dict["geo"] as? Array
-        
-        
         myPublic = dict["public"] as? Bool
         noise = dict["noise"] as? Bool
         originalMd5 = dict["originalMd5"] as? String
@@ -63,18 +61,9 @@ class KPNewsHotItem: NSObject {
         viewCount = dict["viewCount"] as! Int
         id = dict["id"] as? String
         contentType = dict["contentType"] as? Array
-        
-        
         likes = dict["likes"] as! Int
         comments = dict["comments"] as? String
-        
-
         author = KPNewsAuthorItem(dict: dict["author"] as! [String: AnyObject])
-
-        
-        
-//        author = dict["author"] as? KPNewsAuthorItem
-        
         created = dict["created"] as? String
         hasLiked = dict["hasLiked"] as? Bool
         photo = dict["photo"] as? String
@@ -82,8 +71,6 @@ class KPNewsHotItem: NSObject {
         externalShareCount = dict["contentType"] as? String
         favoriteCount = dict["favoriteCount"] as! Int
     }
-    
-    
     
 //    "reason": "grouped",
 //    "achievements": [],
