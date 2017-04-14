@@ -128,7 +128,6 @@ extension KPHotDetailController: UITableViewDataSource {
         if indexPath.section == 0 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsDetailAuthorCellIdentifier) as! KPNewsDetailAuthorCell
-            
             cell.hotDetailItem = hotDetailItem
             
             return cell
@@ -154,8 +153,15 @@ extension KPHotDetailController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            
+            return 500
+        } else if indexPath.section == 1 {
+        
+            return 44
+        }
         return 90
-
     }
     
 }

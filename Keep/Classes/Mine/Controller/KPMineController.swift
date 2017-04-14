@@ -54,7 +54,7 @@ class KPMineController: UIViewController {
         let tableView = UITableView.init(frame: view.bounds, style: .grouped)
         let noLoginNib = UINib.init(nibName: "KPMineListCell", bundle: nil)
         tableView.register(noLoginNib, forCellReuseIdentifier: KPMineListCellIdentifier)
-        
+
         tableView.register(KPMineTabButtonCell.self, forCellReuseIdentifier: KPMineTabButtonCellIdentifier)
 
         tableView.tableFooterView = UIView()

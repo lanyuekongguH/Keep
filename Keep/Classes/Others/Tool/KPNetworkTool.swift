@@ -120,10 +120,17 @@ class KPNetworkTool: NSObject {
         
         //https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true
 
-//        let url = "https://api.gotokeep.com/v1.1/entries/\(userId!)?limit=20&reverse=true"
+        let url = "https://api.gotokeep.com/v1.1/entries/\(userId!)?limit=20&reverse=true"
         
-        let url = "https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true"
+//        5586a4093568e007bf0e9b46
         
+//        58f03a82e1d6d40199e17cf5
+        
+//        let url = "https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true"
+//        https://api.gotokeep.com/v1.1/entries/58f03a82e1d6d40199e17cf5?limit=20&reverse=true
+        
+        //"https://api.gotokeep.com/v1.1/entries/5586a4093568e007bf0e9b46?limit=20&reverse=true"
+
         Alamofire.request(url).responseJSON { response in
             
             guard response.result.isSuccess else {

@@ -11,6 +11,22 @@ import UIKit
 
 extension String {
     
+    
+    /// 返回图片大小比例
+//    func getImageViewSize(_ url:String?) -> CGSize {
+//    
+//        guard let url = url else {
+//            return  CGSize.init(width: 0, height: 0)
+//        }
+//    
+//        
+////        let range = url.range(of: "_", options: NSString.CompareOptions())
+////        
+////        let startIndex = range.
+//    
+//    }
+    
+    
     /// 返回文字的高度
     func boundingRectWithSize(_ size: CGSize, _ font: UIFont) -> CGSize {
         

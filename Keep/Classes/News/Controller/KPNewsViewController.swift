@@ -132,7 +132,7 @@ extension KPNewsViewController: UICollectionViewDelegate {
     
         let hotDetailVC = KPHotDetailController()
         
-        hotDetailVC.userID = hotItems[indexPath.row].author?._id
+        hotDetailVC.userID = hotItems[indexPath.row].id
         
         self.navigationController?.pushViewController(hotDetailVC, animated: true)
         

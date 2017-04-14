@@ -54,7 +54,6 @@ class KPHotDetailItem: NSObject {
         
         country = dict["country"] as? String
         
-        
         commentsList = dict["commentsList"] as? Array
         achievements = dict["achievements"] as? Array
         city = dict["city"] as? String
@@ -93,9 +92,9 @@ class KPHotDetailItem: NSObject {
             likers = likersItem
         }
         
-        if var author = dict["author"] {
+        if let data = dict["author"] {
             
-            author = KPNewsAuthorItem(dict: author as! [String: AnyObject])
+            author = KPNewsAuthorItem(dict: data as! [String: AnyObject])
         }
 
         created = dict["created"] as? String
