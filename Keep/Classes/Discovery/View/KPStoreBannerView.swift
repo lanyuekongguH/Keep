@@ -17,67 +17,69 @@ class KPStoreBannerView: UIView {
         setupUI()
     }
     
-    var banner: KPStoreBanner! {
+    var banner: KPStoreBanner? {
         didSet {
             
-            titleLabel.text = banner.name
+            if let banner = banner {
             
-            detailLabel.text = banner.message
-
-            specialOfferPriceLabel.text = "¥\(banner!.specialOfferPrice / 100)"
-
-            originPriceLabel.text = "¥\(banner!.originPrice / 100)"
-
-            timeLabel.text = "¥\(banner!.time)"
-            
-            storeImageView.kf.setImage(with: URL(string: banner.image!))
-            
-            titleLabel.snp.makeConstraints { (make) in
-                make.height.equalTo(20)
-                make.width.equalTo(SCREENW - 20 - 150 - 20 - 20)
-                make.top.equalTo(20)
-                make.left.equalTo(30)
-            }
-            
-            detailLabel.snp.makeConstraints { (make) in
-                make.height.equalTo(20)
-                make.width.equalTo(SCREENW - 20 - 150 - 20 - 20)
-                make.top.equalTo(titleLabel.snp.bottom).offset(5)
-                make.left.equalTo(30)
-            }
-            
-            specialOfferPriceLabel.snp.makeConstraints { (make) in
+                titleLabel.text = banner.name
                 
-                let size = specialOfferPriceLabel.text?.boundingRectWithFont(specialOfferPriceLabel.font)
-                make.height.equalTo((size?.height)!)
-                make.width.equalTo((size?.width)!)
-                make.top.equalTo(detailLabel.snp.bottom).offset(20)
-                make.left.equalTo(30)
-            }
-            
-            originPriceLabel.snp.makeConstraints { (make) in
-                let size = originPriceLabel.text?.boundingRectWithFont(originPriceLabel.font)
-                make.height.equalTo((size?.height)!)
+                detailLabel.text = banner.message
                 
-                make.width.equalTo((size?.width)!)
-                 make.bottom.equalTo(specialOfferPriceLabel).offset(-2)
-                make.left.equalTo(specialOfferPriceLabel.snp.right).offset(15)
+                specialOfferPriceLabel.text = "¥\(banner.specialOfferPrice / 100)"
+                
+                originPriceLabel.text = "¥\(banner.originPrice / 100)"
+                
+                timeLabel.text = "¥\(banner.time)"
+                
+                storeImageView.kf.setImage(with: URL(string: banner.image!))
+                
+                titleLabel.snp.makeConstraints { (make) in
+                    make.height.equalTo(20)
+                    make.width.equalTo(SCREENW - 20 - 150 - 20 - 20)
+                    make.top.equalTo(20)
+                    make.left.equalTo(30)
+                }
+                
+                detailLabel.snp.makeConstraints { (make) in
+                    make.height.equalTo(20)
+                    make.width.equalTo(SCREENW - 20 - 150 - 20 - 20)
+                    make.top.equalTo(titleLabel.snp.bottom).offset(5)
+                    make.left.equalTo(30)
+                }
+                
+                specialOfferPriceLabel.snp.makeConstraints { (make) in
+                    
+                    let size = specialOfferPriceLabel.text?.boundingRectWithFont(specialOfferPriceLabel.font)
+                    make.height.equalTo((size?.height)!)
+                    make.width.equalTo((size?.width)!)
+                    make.top.equalTo(detailLabel.snp.bottom).offset(20)
+                    make.left.equalTo(30)
+                }
+                
+                originPriceLabel.snp.makeConstraints { (make) in
+                    let size = originPriceLabel.text?.boundingRectWithFont(originPriceLabel.font)
+                    make.height.equalTo((size?.height)!)
+                    
+                    make.width.equalTo((size?.width)!)
+                    make.bottom.equalTo(specialOfferPriceLabel).offset(-2)
+                    make.left.equalTo(specialOfferPriceLabel.snp.right).offset(15)
+                }
+                
+                timeLabel.snp.makeConstraints { (make) in
+                    let size = timeLabel.text?.boundingRectWithFont(timeLabel.font)
+                    make.height.equalTo((size?.height)!)
+                    make.width.equalTo((size?.width)!)
+                    make.top.equalTo(specialOfferPriceLabel.snp.bottom).offset(15)
+                    make.left.equalTo(30)
+                }
+                
+                storeImageView.snp.makeConstraints { (make) in
+                    make.width.height.equalTo(150)
+                    make.top.equalTo(0)
+                    make.right.equalTo(self.snp.right).offset(-20)
+                }
             }
-            
-            timeLabel.snp.makeConstraints { (make) in
-                let size = timeLabel.text?.boundingRectWithFont(timeLabel.font)
-                make.height.equalTo((size?.height)!)
-                make.width.equalTo((size?.width)!)
-                make.top.equalTo(specialOfferPriceLabel.snp.bottom).offset(15)
-                make.left.equalTo(30)
-            }
-            
-            storeImageView.snp.makeConstraints { (make) in
-                make.width.height.equalTo(150)
-                make.top.equalTo(0)
-                make.right.equalTo(self.snp.right).offset(-20)
-            }
-
         }
     }
     

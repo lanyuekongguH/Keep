@@ -22,60 +22,63 @@ class KPNewsRecommendUserCell: UITableViewCell {
         contentView.addSubview(commentButton)
     }
     
-    var commentsItem: KPNewsCommentsItem! {
+    var commentsItem: KPNewsCommentsItem? {
         didSet {
             
-            if let url = commentsItem.author?.avatar {
+            if let commentsItem = commentsItem {
             
-                iconImageView.kf.setImage(with: URL(string: url))
-            }
-            
-            nameLable.text = commentsItem.author?.username
-            timeLable.text = commentsItem.created
-            contentLable.text = commentsItem.content
-            
-            iconImageView.snp.updateConstraints { (make) in
+                if let url = commentsItem.author?.avatar {
+                    
+                    iconImageView.kf.setImage(with: URL(string: url))
+                }
                 
-                make.width.height.equalTo(30)
-                make.top.equalTo(20)
-                make.left.equalTo(20)
-            }
-            
-            nameLable.snp.updateConstraints { (make) in
+                nameLable.text = commentsItem.author?.username
+                timeLable.text = commentsItem.created
+                contentLable.text = commentsItem.content
                 
-                make.height.equalTo(12)
-                make.width.equalTo(100)
-                make.top.equalTo(20)
-                make.left.equalTo(iconImageView.snp.right).offset(10)
-            }
-            
-            timeLable.snp.updateConstraints { (make) in
+                iconImageView.snp.updateConstraints { (make) in
+                    
+                    make.width.height.equalTo(30)
+                    make.top.equalTo(20)
+                    make.left.equalTo(20)
+                }
                 
-                make.height.equalTo(10)
-                make.width.equalTo(100)
-                make.top.equalTo(nameLable.snp.bottom).offset(5)
-                make.left.equalTo(iconImageView.snp.right).offset(10)
-            }
-            
-            let content = contentLable.text?.boundingRectWithSize(CGSize.init(width: SCREENW - 20 - 30 - 20 - 10, height: CGFloat(MAXFRAG)), contentLable.font)
-            
-            contentLable.snp.updateConstraints { (make) in
-                make.width.equalTo((content?.width)!)
-                make.height.equalTo((content?.height)!)
-                make.top.equalTo(iconImageView.snp.bottom).offset(10)
-                make.left.equalTo(nameLable)
-            }
-            
-            likeButton.snp.updateConstraints { (make) in
-                make.width.height.equalTo(10)
-                make.top.equalTo(0)
-                make.left.equalTo(0)
-            }
-            
-            commentButton.snp.updateConstraints { (make) in
-                make.width.height.equalTo(10)
-                make.top.equalTo(0)
-                make.left.equalTo(0)
+                nameLable.snp.updateConstraints { (make) in
+                    
+                    make.height.equalTo(12)
+                    make.width.equalTo(100)
+                    make.top.equalTo(20)
+                    make.left.equalTo(iconImageView.snp.right).offset(10)
+                }
+                
+                timeLable.snp.updateConstraints { (make) in
+                    
+                    make.height.equalTo(10)
+                    make.width.equalTo(100)
+                    make.top.equalTo(nameLable.snp.bottom).offset(5)
+                    make.left.equalTo(iconImageView.snp.right).offset(10)
+                }
+                
+                let content = contentLable.text?.boundingRectWithSize(CGSize.init(width: SCREENW - 20 - 30 - 20 - 10, height: CGFloat(MAXFRAG)), contentLable.font)
+                
+                contentLable.snp.updateConstraints { (make) in
+                    make.width.equalTo((content?.width)!)
+                    make.height.equalTo((content?.height)!)
+                    make.top.equalTo(iconImageView.snp.bottom).offset(10)
+                    make.left.equalTo(nameLable)
+                }
+                
+                likeButton.snp.updateConstraints { (make) in
+                    make.width.height.equalTo(10)
+                    make.top.equalTo(0)
+                    make.left.equalTo(0)
+                }
+                
+                commentButton.snp.updateConstraints { (make) in
+                    make.width.height.equalTo(10)
+                    make.top.equalTo(0)
+                    make.left.equalTo(0)
+                }
             }
         }
     }

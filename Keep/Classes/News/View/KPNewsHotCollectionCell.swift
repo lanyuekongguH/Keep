@@ -24,62 +24,67 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
         
     }
     
-    var hotItem: KPNewsHotItem! {
+    var hotItem: KPNewsHotItem? {
         didSet {
             
-            let cellWidth = frame.width
+            if let hotItem = hotItem {
             
-            imageView.kf.setImage(with: URL(string: hotItem.photo!))
-            contentLable.text = hotItem.content
-            iconImageView.kf.setImage(with: URL(string: (hotItem.author?.avatar!)!))
-            nameLable.text = hotItem.author?.username
-            likeImageView.image = UIImage(named: "icon_timeline_liked")
-            likeNumberLabel.text = String(hotItem.likes)
-            
-            imageView.snp.updateConstraints { (make) in
-                make.width.height.equalTo(cellWidth)
-                make.top.equalTo(0)
-                make.left.equalTo(0)
+                let cellWidth = frame.width
+                
+                imageView.kf.setImage(with: URL(string: hotItem.photo!), placeholder: UIImage(named: "placeholder200_200"))
+                
+                contentLable.text = hotItem.content
+                iconImageView.kf.setImage(with: URL(string: (hotItem.author?.avatar!)!))
+                nameLable.text = hotItem.author?.username
+                likeImageView.image = UIImage(named: "icon_timeline_liked")
+                likeNumberLabel.text = String(hotItem.likes)
+                
+                imageView.snp.updateConstraints { (make) in
+                    make.width.height.equalTo(cellWidth)
+                    make.top.equalTo(0)
+                    make.left.equalTo(0)
+                }
+                
+                contentLable.snp.updateConstraints { (make) in
+                    make.height.equalTo(35)
+                    make.width.equalTo(cellWidth)
+                    make.top.equalTo(imageView.snp.bottom).offset(10)
+                    make.left.equalTo(0)
+                }
+                
+                iconImageView.snp.updateConstraints { (make) in
+                    make.height.width.equalTo(26)
+                    make.top.equalTo(contentLable.snp.bottom).offset(15)
+                    make.left.equalTo(0)
+                }
+                
+                nameLable.snp.updateConstraints { (make) in
+                    make.height.equalTo(26)
+                    make.width.equalTo(100)
+                    make.top.equalTo(contentLable.snp.bottom).offset(15)
+                    make.left.equalTo(iconImageView.snp.right).offset(5)
+                }
+                
+                let likeNumberW = String(hotItem.likes).boundingRectWithFont(likeNumberLabel.font).width
+                
+                let likeImageViewX = cellWidth - likeNumberW - 16 - 5
+                
+                
+                likeImageView.snp.updateConstraints { (make) in
+                    make.width.equalTo(16)
+                    make.height.equalTo(26)
+                    make.top.equalTo(contentLable.snp.bottom).offset(15)
+                    make.left.equalTo(likeImageViewX)
+                }
+                
+                likeNumberLabel.snp.updateConstraints { (make) in
+                    make.height.equalTo(26)
+                    make.width.equalTo(likeNumberW)
+                    make.top.equalTo(contentLable.snp.bottom).offset(15)
+                    make.left.equalTo(likeImageView.snp.right).offset(5)
+                }
             }
             
-            contentLable.snp.updateConstraints { (make) in
-                make.height.equalTo(35)
-                make.width.equalTo(cellWidth)
-                make.top.equalTo(imageView.snp.bottom).offset(10)
-                make.left.equalTo(0)
-            }
-            
-            iconImageView.snp.updateConstraints { (make) in
-                make.height.width.equalTo(26)
-                make.top.equalTo(contentLable.snp.bottom).offset(15)
-                make.left.equalTo(0)
-            }
-            
-            nameLable.snp.updateConstraints { (make) in
-                make.height.equalTo(26)
-                make.width.equalTo(100)
-                make.top.equalTo(contentLable.snp.bottom).offset(15)
-                make.left.equalTo(iconImageView.snp.right).offset(5)
-            }
-            
-            let likeNumberW = String(hotItem.likes).boundingRectWithFont(likeNumberLabel.font).width
-
-            let likeImageViewX = cellWidth - likeNumberW - 16 - 5
-            
-            
-            likeImageView.snp.updateConstraints { (make) in
-                make.width.equalTo(16)
-                make.height.equalTo(26)
-                make.top.equalTo(contentLable.snp.bottom).offset(15)
-                make.left.equalTo(likeImageViewX)
-            }
-            
-            likeNumberLabel.snp.updateConstraints { (make) in
-                make.height.equalTo(26)
-                make.width.equalTo(likeNumberW)
-                make.top.equalTo(contentLable.snp.bottom).offset(15)
-                make.left.equalTo(likeImageView.snp.right).offset(5)
-            }
         }
     }
     

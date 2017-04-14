@@ -21,20 +21,23 @@ class KPHealthListCell: UITableViewCell {
         
     }
 
-    var healthData: KPHealthData! {
+    var healthData: KPHealthData? {
         didSet {
             
             addSubview(countLabel)
             
             addSubview(timeLabel)
 
-            let stepCount = String(stringInterpolationSegment: healthData.stepCount)
-
-            countLabel.text = stepCount
-
-            let components = healthData.startDateComponents!
+            if let healthData = healthData {
             
-            timeLabel.text = "\(components.year!)年\(components.month!)月\(components.day!)日"
+                let stepCount = String(stringInterpolationSegment: healthData.stepCount)
+                
+                countLabel.text = stepCount
+                
+                let components = healthData.startDateComponents!
+                
+                timeLabel.text = "\(components.year!)年\(components.month!)月\(components.day!)日"
+            }
         }
     }
     

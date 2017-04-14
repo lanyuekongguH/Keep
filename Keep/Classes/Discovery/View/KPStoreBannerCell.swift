@@ -22,19 +22,23 @@ class KPStoreBannerCell: UITableViewCell {
         addSubview(scrollView)
     }
     
-    var banners: [KPStoreBanner]! {
+    var banners: [KPStoreBanner]? {
         didSet {
-            scrollView.contentSize = CGSize.init(width: (CGFloat(banners.count) * SCREENW), height: 150)
-            scrollView.isPagingEnabled = true
-            scrollView.alwaysBounceHorizontal = true
-            scrollView.showsHorizontalScrollIndicator = false
-
-            for index in 0...(banners.count-1) {
-
-                let contentBanner = KPStoreBannerView()
-                contentBanner.banner = banners[index]
-                contentBanner.frame = CGRect.init(x: CGFloat(index) * SCREENW, y: 0, width: SCREENW, height: 150)
-                scrollView.addSubview(contentBanner)
+            
+            if let banners = banners {
+            
+                scrollView.contentSize = CGSize.init(width: (CGFloat(banners.count) * SCREENW), height: 150)
+                scrollView.isPagingEnabled = true
+                scrollView.alwaysBounceHorizontal = true
+                scrollView.showsHorizontalScrollIndicator = false
+                
+                for index in 0...(banners.count-1) {
+                    
+                    let contentBanner = KPStoreBannerView()
+                    contentBanner.banner = banners[index]
+                    contentBanner.frame = CGRect.init(x: CGFloat(index) * SCREENW, y: 0, width: SCREENW, height: 150)
+                    scrollView.addSubview(contentBanner)
+                }
             }
         }
     }

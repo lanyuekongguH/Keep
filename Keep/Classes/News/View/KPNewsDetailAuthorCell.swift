@@ -34,9 +34,37 @@ class KPNewsDetailAuthorCell: UITableViewCell {
     }
 
     
-    var hotDetailItem: KPHotDetailItem! {
+    var hotDetailItem: KPHotDetailItem? {
         didSet {
-    
+            
+            if let hotDetailItem = hotDetailItem {
+            
+                if let url = hotDetailItem.author?.avatar {
+                    
+                    iconImageView.kf.setImage(with: URL(string: url))
+                }
+                
+                nameLable.text = hotDetailItem.author?.username
+                
+                timeLable.text = hotDetailItem.now
+            }
+            
+            
+            
+//            contentView.addSubview(nameLable)
+//            contentView.addSubview(timeLable)
+//            contentView.addSubview(likedButton)
+//            contentView.addSubview(photoImageView)
+//            contentView.addSubview(contentLable)
+//            
+//            contentView.addSubview(favoriteCountLable)
+//            contentView.addSubview(lineView)
+//            
+//            contentView.addSubview(favoritedButton)
+//            contentView.addSubview(commentButton)
+//            contentView.addSubview(shareButton)
+//            contentView.addSubview(moreButton)
+            
             
             
         }

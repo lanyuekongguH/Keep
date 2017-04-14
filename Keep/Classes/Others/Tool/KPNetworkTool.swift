@@ -138,7 +138,11 @@ class KPNetworkTool: NSObject {
                 
                 if let dic = json["data"].dictionaryObject {
                     
-                    let item = KPHotDetailItem(dict: dic as [String: AnyObject])
+                    var data = dic
+                    
+                    data["now"] = json["now"].string
+                    
+                    let item = KPHotDetailItem(dict: data as [String: AnyObject])
                     
                     finished(item)
                 }

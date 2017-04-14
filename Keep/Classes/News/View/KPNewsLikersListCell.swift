@@ -21,14 +21,17 @@ class KPNewsLikersListCell: UITableViewCell {
         iconImageView.layer.cornerRadius = 15
     }
 
-    var likersItem: KPNewsLikersItem! {
+    var likersItem: KPNewsLikersItem? {
         didSet {
             
-            if let url = likersItem.avatar {
-                
-                iconImageView.kf.setImage(with: URL(string: url))
+            if let likersItem = likersItem {
+            
+                if let url = likersItem.avatar {
+                    
+                    iconImageView.kf.setImage(with: URL(string: url))
+                }
+                nameLabel.text = likersItem.username
             }
-            nameLabel.text = likersItem.username
         }
     }
     

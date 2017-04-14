@@ -46,7 +46,8 @@ class KPHotDetailItem: NSObject {
 
     var externalShareCount: String?
     var favoriteCount: String?
-        
+    var now: String?
+
     init(dict: [String: AnyObject]) {
         
         super.init()
@@ -105,5 +106,8 @@ class KPHotDetailItem: NSObject {
         
         externalShareCount = dict["externalShareCount"] as? String
         favoriteCount = dict["favoriteCount"] as? String
+        
+        now = dict["now"] as? String
+
     }
 }
