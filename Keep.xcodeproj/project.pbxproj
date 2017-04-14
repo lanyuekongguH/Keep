@@ -47,6 +47,7 @@
 		E4694FD71E9E333400B5026E /* KPNewsFollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD61E9E333400B5026E /* KPNewsFollowCell.swift */; };
 		E4694FD91E9E337500B5026E /* KPNewsRecommendUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FD81E9E337500B5026E /* KPNewsRecommendUserCell.swift */; };
 		E4694FDB1E9F897300B5026E /* KPNewsCommentsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FDA1E9F897200B5026E /* KPNewsCommentsItem.swift */; };
+		E4694FDD1E9F95F900B5026E /* KPNewsLikeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FDC1E9F95F900B5026E /* KPNewsLikeListController.swift */; };
 		E47A822F1E8FAE75004F575B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AADDE81E8BB48900477C61 /* NotificationCenter.framework */; };
 		E47A82391E8FAE75004F575B /* KEEP.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47A822E1E8FAE75004F575B /* KEEP.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
@@ -198,6 +199,7 @@
 		E4694FD61E9E333400B5026E /* KPNewsFollowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsFollowCell.swift; sourceTree = "<group>"; };
 		E4694FD81E9E337500B5026E /* KPNewsRecommendUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsRecommendUserCell.swift; sourceTree = "<group>"; };
 		E4694FDA1E9F897200B5026E /* KPNewsCommentsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsCommentsItem.swift; sourceTree = "<group>"; };
+		E4694FDC1E9F95F900B5026E /* KPNewsLikeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsLikeListController.swift; sourceTree = "<group>"; };
 		E47A822E1E8FAE75004F575B /* KEEP.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KEEP.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47A82361E8FAE75004F575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -527,6 +529,7 @@
 				E4A5D9321E7006F000F91783 /* KPAddFriendController.swift */,
 				E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */,
 				E4F011D21E979D630043B61D /* KPHotDetailController.swift */,
+				E4694FDC1E9F95F900B5026E /* KPNewsLikeListController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -975,6 +978,7 @@
 				E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */,
 				E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */,
 				E40166D81E8D07CE00C41F96 /* KPOfflineMapController.swift in Sources */,
+				E4694FDD1E9F95F900B5026E /* KPNewsLikeListController.swift in Sources */,
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
 				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
 				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,

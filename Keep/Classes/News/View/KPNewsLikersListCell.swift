@@ -10,15 +10,26 @@ import UIKit
 
 class KPNewsLikersListCell: UITableViewCell {
 
+    @IBOutlet weak var iconImageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        iconImageView.layer.masksToBounds = true
+        iconImageView.layer.cornerRadius = 15
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var likersItem: KPNewsLikersItem! {
+        didSet {
+            
+            if let url = likersItem.avatar {
+                
+                iconImageView.kf.setImage(with: URL(string: url))
+            }
+            nameLabel.text = likersItem.username
+        }
     }
     
 }

@@ -11,12 +11,23 @@ import UIKit
 class KPNewsLikersListItem: NSObject {
 
     var lastId: String?
-    var users: Array<Any>?
+    var users: Array<KPNewsLikersItem>?
     
     init(dict: [String: AnyObject]) {
         super.init()
         
         lastId = dict["lastId"] as? String
-        users = dict["users"] as? Array
+        
+        if let likerArray = dict["users"] as? [AnyObject] {
+            
+            var likersItem = [KPNewsLikersItem]()
+            
+            for item in likerArray {
+                let item = KPNewsLikersItem(dict: item as! [String: AnyObject])
+                likersItem.append(item)
+            }
+            
+            users = likersItem
+        }
     }
 }

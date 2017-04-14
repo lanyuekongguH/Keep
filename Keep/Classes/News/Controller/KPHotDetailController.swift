@@ -103,6 +103,13 @@ extension KPHotDetailController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: false)
         
+        
+        if indexPath.section == 1 {
+        
+            let likeListVC = KPNewsLikeListController()
+            likeListVC.userID = userID
+            self.navigationController?.pushViewController(likeListVC, animated: true)
+        }
     }
 }
 

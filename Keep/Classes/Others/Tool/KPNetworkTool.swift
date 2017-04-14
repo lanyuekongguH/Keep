@@ -181,11 +181,11 @@ class KPNetworkTool: NSObject {
     }
 
     /// 加载喜欢的人列表数据
-    func loadNewsHotLikesData(_ finished:@escaping ([KPNewsHotItem]) ->()) {
+    func loadNewsHotLikesData(userID userId:String?, _ finished:@escaping (KPNewsLikersListItem?) ->()) {
         
         // https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf/likes
 
-        let url = "https://api.gotokeep.com/social/v3/timeline/hot"
+        let url = "https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf/likes"
         
         Alamofire.request(url).responseJSON { response in
             
@@ -200,21 +200,15 @@ class KPNetworkTool: NSObject {
                 
                 let json = JSON(value)
                 
-                if let data = json["data"]["entries"].arrayObject {
-                    var hotItems = [KPNewsHotItem]()
+                if let data = json["data"].dictionaryObject {
                     
-                    for dict in data {
-                        let item = KPNewsHotItem(dict: dict as! [String: AnyObject])
-                        hotItems.append(item)
-                    }
+                    let item = KPNewsLikersListItem(dict: data as! [String: AnyObject])
+                    finished(item)
                     
-                    finished(hotItems)
                 }
             }
         }
     }
-    
-    
     
     
     
