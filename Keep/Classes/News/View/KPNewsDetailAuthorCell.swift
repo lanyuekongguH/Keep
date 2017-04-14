@@ -76,36 +76,16 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                     make.left.equalTo(nameLable)
                 }
                 
-                // _1516x1516.jpg
-                
-                //"http://static1.keepcdn.com/picture/2017/04/14/10/a40116bea42b05097aeef76bf4021c97c5d5d576_1280x1280.jpg"
-
-                
                 if let photo = hotDetailItem.photo {
 
+                    let photoSize = photo.getImageViewSize()
                     
-//                    photo.hasSuffix(<#T##suffix: String##String#>)
-//                    photo.range(of: ".jpg")!.
-//                    
-//                    
-//                    let str = photo as NSString
-//                    
-//                    let end = str.range(of: ".jpg").location
-//                    let start = str.range(of: "_").location
-//                    let gap = str.range(of: "x").location
-
-                    
-                    
-                }
-                
-//                let photoW =
-//                let photoH =
-
-                photoImageView.snp.updateConstraints { (make) in
-                    make.width.equalTo(200)
-                    make.height.equalTo(200)
-                    make.top.equalTo(timeLable.snp.bottom).offset(10)
-                    make.left.equalTo(nameLable)
+                    photoImageView.snp.updateConstraints { (make) in
+                        make.width.equalTo(photoSize.width)
+                        make.height.equalTo(photoSize.height)
+                        make.top.equalTo(timeLable.snp.bottom).offset(10)
+                        make.left.equalTo(0)
+                    }
                 }
                 
                 let contentSize = contentLable.text?.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), contentLable.font)
