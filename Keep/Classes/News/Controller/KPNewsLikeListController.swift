@@ -35,9 +35,9 @@ class KPNewsLikeListController: KPBaseViewController {
     fileprivate func setupUI() {
         
         navigationItem.title = "加油"
-        view.backgroundColor = KPBg()
         
-        let tableView = UITableView.init(frame: view.bounds, style: .grouped)
+        let tableView = UITableView.init(frame: view.bounds, style: .plain)
+        tableView.backgroundColor = KPTable()
         
         tableView.register(KPNewsDetailAuthorCell.self, forCellReuseIdentifier: KPNewsDetailAuthorCellIdentifier)
         

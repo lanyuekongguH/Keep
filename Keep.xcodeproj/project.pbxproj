@@ -85,6 +85,7 @@
 		E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B4865D1E8BB31E00C17363 /* Info.plist */; };
 		E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B74A671E70F131009EE6BC /* KPMineListCell.swift */; };
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
+		E4BA87501EA0D423000C09D2 /* KPNewsHotVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA874F1EA0D423000C09D2 /* KPNewsHotVideoItem.swift */; };
 		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
 		E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB0C221E95F6450028E918 /* KPHealthTool.swift */; };
 		E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011AA1E963C630043B61D /* KPBaseViewController.swift */; };
@@ -238,6 +239,7 @@
 		E4B4865D1E8BB31E00C17363 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Classes/Info.plist; sourceTree = "<group>"; };
 		E4B74A671E70F131009EE6BC /* KPMineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineListCell.swift; sourceTree = "<group>"; };
 		E4B74A681E70F131009EE6BC /* KPMineListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPMineListCell.xib; sourceTree = "<group>"; };
+		E4BA874F1EA0D423000C09D2 /* KPNewsHotVideoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoItem.swift; sourceTree = "<group>"; };
 		E4CB0C1E1E95F59F0028E918 /* Keep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keep.entitlements; sourceTree = "<group>"; };
 		E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E4CB0C221E95F6450028E918 /* KPHealthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthTool.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				E4F011D01E9799040043B61D /* KPHotDetailItem.swift */,
 				E4F011D61E979F4D0043B61D /* KPNewsLikersListItem.swift */,
 				E4694FDA1E9F897200B5026E /* KPNewsCommentsItem.swift */,
+				E4BA874F1EA0D423000C09D2 /* KPNewsHotVideoItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				E40166E21E8D081E00C41F96 /* KPCacheManagerController.swift in Sources */,
 				E40166DE1E8D080600C41F96 /* KPGymGoalViewController.swift in Sources */,
 				E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */,
+				E4BA87501EA0D423000C09D2 /* KPNewsHotVideoItem.swift in Sources */,
 				E4F011D31E979D630043B61D /* KPHotDetailController.swift in Sources */,
 				E4A5D92F1E7005E900F91783 /* KPEditViewController.swift in Sources */,
 				E4AADE071E8C97BA00477C61 /* KPCommunityViewController.swift in Sources */,

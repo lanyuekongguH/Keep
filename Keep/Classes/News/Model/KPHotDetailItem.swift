@@ -48,6 +48,11 @@ class KPHotDetailItem: NSObject {
     var favoriteCount: Int = 0
     var now: String?
 
+    var video: String?
+    var province: String?
+    var citycode: String?
+    var sampleComments: Array<Any>?
+    
     init(dict: [String: AnyObject]) {
         
         super.init()
