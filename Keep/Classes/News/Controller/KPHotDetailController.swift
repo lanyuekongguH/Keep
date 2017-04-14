@@ -42,13 +42,11 @@ class KPHotDetailController: KPBaseViewController {
                 
                 self?.hotDetailItem = hotDetailItem
                 
-                
             }
             
             if let likerArray = hotDetailItem?.likers {
             
                 self?.likers = likerArray
-                
                 
             }
             
@@ -69,13 +67,13 @@ class KPHotDetailController: KPBaseViewController {
     fileprivate func setupUI() {
     
         navigationItem.title = "动态详情"
-        view.backgroundColor = KPBg()
-        
+
         let rightItem = UIBarButtonItem(image: UIImage(named: "personal_message_center_icon"), style: .plain, target: self, action: #selector(likeClick))
         
         navigationItem.rightBarButtonItem = rightItem
         
-        let tableView = UITableView.init(frame: view.bounds, style: .grouped)
+        let tableView = UITableView.init(frame: view.bounds, style: .plain)
+        tableView.backgroundColor = KPTable()
         
         tableView.register(KPNewsDetailAuthorCell.self, forCellReuseIdentifier: KPNewsDetailAuthorCellIdentifier)
         
@@ -99,10 +97,25 @@ class KPHotDetailController: KPBaseViewController {
 
 extension KPHotDetailController: UITableViewDelegate {
     
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section != 0 {
+            
+            return 8.0
+        }
+        return 0.1
+    }
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView()
+        view.frame = CGRect.init(x: 0, y: 0, width: SCREENW, height: 8)
+        view.backgroundColor = KPTable()
+        return view
+    }
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: false)
-        
         
         if indexPath.section == 1 {
         
@@ -156,14 +169,16 @@ extension KPHotDetailController: UITableViewDataSource {
         
         if indexPath.section == 0 {
             
-            return 500
+            return KPNewsDetailAuthorCell.heightOfAuthorCell(hotDetailItem)
         } else if indexPath.section == 1 {
         
             return 44
+        } else {
+        
+            return 90
         }
-        return 90
     }
-    
+
 }
 
 

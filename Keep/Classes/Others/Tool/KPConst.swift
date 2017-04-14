@@ -14,25 +14,32 @@ func KPColor(_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
 }
 
 func KPGreen() -> UIColor  {
-    return KPColor(38, g: 191, b: 119, a: 1.0)
+    return KPColor(38.0, g: 191.0, b: 119.0, a: 1.0)
 }
 
 func KPTheme() -> UIColor {
-    return KPColor(69, g: 60, b: 77, a: 1.0)
+    return KPColor(69.0, g: 60.0, b: 77.0, a: 1.0)
 }
 
 func KPBg() -> UIColor {
-    return KPColor(231, g: 236, b: 240, a: 1.0)
+    return KPColor(231.0, g: 236.0, b: 240.0, a: 1.0)
 }
 
 func KPGray() -> UIColor {
-    return KPColor(148, g: 148, b: 148, a: 1.0)
+    return KPColor(148.0, g: 148.0, b: 148.0, a: 1.0)
 }
 
 func KPLightGray() -> UIColor {
-    return KPColor(142, g: 142, b: 142, a: 1.0)
+    return KPColor(142.0, g: 142.0, b: 142.0, a: 1.0)
 }
 
+func KPLine() -> UIColor {
+    return KPColor(240.0, g: 240.0, b: 240.0, a: 1.0)
+}
+
+func KPTable() -> UIColor {
+    return KPColor(229.0, g: 235.0, b: 239.0, a: 1.0)
+}
 
 /// iPhone 5
 let isIPhone5 = SCREENH == 568 ? true : false

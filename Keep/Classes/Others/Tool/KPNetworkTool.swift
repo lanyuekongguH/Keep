@@ -15,6 +15,8 @@ class KPNetworkTool: NSObject {
 
     static let shareNetworkTool = KPNetworkTool()
     
+    private override init() {}
+    
     /// 加载banner数据
     func loadStoreBannerData(_ finished:@escaping ([KPStoreBanner]) ->()) {
         
@@ -115,22 +117,9 @@ class KPNetworkTool: NSObject {
 
     /// 加载热门详情数据
     func loadNewsHotDetailData(userID userId:String?, _ finished:@escaping (KPHotDetailItem?) ->()) {
-        
-        //https://api.gotokeep.com/v1.1/entries/54d31883e1728b0434fb0f3b?limit=20&reverse=true
-        
-        //https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true
 
         let url = "https://api.gotokeep.com/v1.1/entries/\(userId!)?limit=20&reverse=true"
         
-//        5586a4093568e007bf0e9b46
-        
-//        58f03a82e1d6d40199e17cf5
-        
-//        let url = "https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf?limit=20&reverse=true"
-//        https://api.gotokeep.com/v1.1/entries/58f03a82e1d6d40199e17cf5?limit=20&reverse=true
-        
-        //"https://api.gotokeep.com/v1.1/entries/5586a4093568e007bf0e9b46?limit=20&reverse=true"
-
         Alamofire.request(url).responseJSON { response in
             
             guard response.result.isSuccess else {
@@ -159,10 +148,8 @@ class KPNetworkTool: NSObject {
     
     /// 加载评论列表数据
     func loadNewsHotCommentsData(userID userId:String?, _ finished:@escaping ([KPNewsCommentsItem]?) ->()) {
-        
-        //    https://api.gotokeep.com/v1.1/entries/58eedb6df75d3926e2fce3d2/comments?limit=20&reverse=true
 
-        let url = "https://api.gotokeep.com/v1.1/entries/58eedb6df75d3926e2fce3d2/comments?limit=20&reverse=true"
+        let url = "https://api.gotokeep.com/v1.1/entries/\(userId!)/comments?limit=20&reverse=true"
         
         Alamofire.request(url).responseJSON { response in
             

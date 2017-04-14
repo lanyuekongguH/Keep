@@ -56,10 +56,12 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                 
                 contentLable.text = hotDetailItem.content
                 
+                favoriteCountLable.text = "\(hotDetailItem.externalShareCount) 分享  \(hotDetailItem.favoriteCount) 收藏"
+                    
                 iconImageView.snp.updateConstraints { (make) in
                     make.width.height.equalTo(30)
-                    make.top.equalTo(20)
-                    make.left.equalTo(20)
+                    make.top.equalTo(15)
+                    make.left.equalTo(15)
                 }
                 
                 nameLable.snp.updateConstraints { (make) in
@@ -83,7 +85,7 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                     photoImageView.snp.updateConstraints { (make) in
                         make.width.equalTo(photoSize.width)
                         make.height.equalTo(photoSize.height)
-                        make.top.equalTo(timeLable.snp.bottom).offset(10)
+                        make.top.equalTo(iconImageView.snp.bottom).offset(15)
                         make.left.equalTo(0)
                     }
                 }
@@ -94,7 +96,7 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                     
                     make.width.equalTo((contentSize?.width)!)
                     make.height.equalTo((contentSize?.height)!)
-                    make.top.equalTo(photoImageView.snp.bottom).offset(20)
+                    make.top.equalTo(photoImageView.snp.bottom).offset(15)
                     make.left.equalTo(20)
                 }
                 
@@ -106,7 +108,7 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                 }
                 
                 favoriteCountLable.snp.updateConstraints { (make) in
-                    make.width.equalTo(100)
+                    make.width.equalTo(200)
                     make.height.equalTo(15)
                     make.top.equalTo(contentLable.snp.bottom).offset(10)
                     make.left.equalTo(contentLable)
@@ -140,10 +142,25 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                 moreButton.snp.updateConstraints { (make) in
                     make.width.height.equalTo(30)
                     make.top.equalTo(lineView.snp.bottom).offset(15)
-                    make.right.equalTo(SCREENW - 30 - 20)
+                    make.left.equalTo(SCREENW - 30 - 20)
                 }
             }
         }
+    }
+    
+    class func heightOfAuthorCell(_ item: KPHotDetailItem?) -> CGFloat {
+        
+        if let item = item {
+        
+            let photoSize = item.photo?.getImageViewSize()
+            
+            let contentSize = item.content?.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), UIFont.systemFont(ofSize: 15))
+            
+            let height = 15 + 30 + 15 + 15 + 25 + 60 + (photoSize?.height)! + (contentSize?.height)!
+
+            return CGFloat(height)
+            
+        } else { return 0.1 }
     }
     
     required init?(coder aDecoder: NSCoder){
@@ -196,12 +213,14 @@ class KPNewsDetailAuthorCell: UITableViewCell {
         
         let favoriteCountLable = UILabel()
         favoriteCountLable.font = UIFont.systemFont(ofSize: 13)
+        favoriteCountLable.textColor = KPLightGray()
         return favoriteCountLable
     }()
     
     fileprivate lazy var lineView: UIView = {
         
         let lineView = UIView()
+        lineView.backgroundColor = KPLine()
         return lineView
     }()
     

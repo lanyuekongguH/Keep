@@ -44,8 +44,8 @@ class KPHotDetailItem: NSObject {
 
     var _id: String?
 
-    var externalShareCount: String?
-    var favoriteCount: String?
+    var externalShareCount: Int = 0
+    var favoriteCount: Int = 0
     var now: String?
 
     init(dict: [String: AnyObject]) {
@@ -103,8 +103,8 @@ class KPHotDetailItem: NSObject {
         commentUsers = dict["commentUsers"] as? String
         _id = dict["_id"] as? String
         
-        externalShareCount = dict["externalShareCount"] as? String
-        favoriteCount = dict["favoriteCount"] as? String
+        externalShareCount = (dict["externalShareCount"] as? Int)!
+        favoriteCount = (dict["favoriteCount"] as? Int)!
         
         now = dict["now"] as? String
 
