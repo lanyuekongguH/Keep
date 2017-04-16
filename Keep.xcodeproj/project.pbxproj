@@ -39,7 +39,6 @@
 		E4694FBF1E9B987700B5026E /* KPTrainRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FBE1E9B987700B5026E /* KPTrainRecommendCell.swift */; };
 		E4694FC11E9B98A000B5026E /* KPTrainRecommendScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FC01E9B98A000B5026E /* KPTrainRecommendScrollView.swift */; };
 		E4694FC41E9B98E300B5026E /* KPTrainPlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FC21E9B98E300B5026E /* KPTrainPlanListCell.swift */; };
-		E4694FC51E9B98E300B5026E /* KPTrainPlanListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4694FC31E9B98E300B5026E /* KPTrainPlanListCell.xib */; };
 		E4694FC81E9B990900B5026E /* KPTrainAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */; };
 		E4694FC91E9B990900B5026E /* KPTrainAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */; };
 		E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */; };
@@ -196,7 +195,6 @@
 		E4694FBE1E9B987700B5026E /* KPTrainRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRecommendCell.swift; sourceTree = "<group>"; };
 		E4694FC01E9B98A000B5026E /* KPTrainRecommendScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRecommendScrollView.swift; sourceTree = "<group>"; };
 		E4694FC21E9B98E300B5026E /* KPTrainPlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainPlanListCell.swift; sourceTree = "<group>"; };
-		E4694FC31E9B98E300B5026E /* KPTrainPlanListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPTrainPlanListCell.xib; sourceTree = "<group>"; };
 		E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainAddCell.swift; sourceTree = "<group>"; };
 		E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPTrainAddCell.xib; sourceTree = "<group>"; };
 		E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainTimetableCell.swift; sourceTree = "<group>"; };
@@ -623,7 +621,6 @@
 				E4694FBE1E9B987700B5026E /* KPTrainRecommendCell.swift */,
 				E4694FC01E9B98A000B5026E /* KPTrainRecommendScrollView.swift */,
 				E4694FC21E9B98E300B5026E /* KPTrainPlanListCell.swift */,
-				E4694FC31E9B98E300B5026E /* KPTrainPlanListCell.xib */,
 				E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */,
 				E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */,
 				E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */,
@@ -852,7 +849,6 @@
 				E4694FC91E9B990900B5026E /* KPTrainAddCell.xib in Resources */,
 				E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */,
 				E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */,
-				E4694FC51E9B98E300B5026E /* KPTrainPlanListCell.xib in Resources */,
 				E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */,
 				E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */,
 				E4F011DB1E97A2030043B61D /* KPNewsLikersListCell.xib in Resources */,

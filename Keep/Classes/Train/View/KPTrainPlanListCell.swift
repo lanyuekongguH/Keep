@@ -7,18 +7,39 @@
 //
 
 import UIKit
+import SWTableViewCell
 
-class KPTrainPlanListCell: UITableViewCell {
+class KPTrainPlanListCell: SWTableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?){
+        
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupUI()
     }
     
+    
+    func addSwipeRightButtons() -> Void{
+        
+        var rightButtons : [AnyObject] = [AnyObject]()
+        
+        let deleteButton = UIButton()
+        
+        deleteButton.backgroundColor = KPTable()
+        deleteButton.setTitleColor(UIColor.white, for: .normal)
+        deleteButton.setTitle("修改", for: .normal)
+        deleteButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        rightButtons.append(deleteButton)
+        
+        self.rightUtilityButtons = rightButtons
+    }
+    
+    fileprivate func setupUI() {
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        fatalError("init(coder:) has not been implemented")
+    }
 }

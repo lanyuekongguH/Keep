@@ -10,7 +10,6 @@ import UIKit
 
 let KPNewsLikersListCellIdentifier = "KPNewsLikersListCellIdentifier"
 
-
 class KPNewsLikeListController: KPBaseViewController {
 
     var userID: String?
