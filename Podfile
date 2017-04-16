@@ -19,6 +19,7 @@ pod "AMapLocation"
 pod "MJRefresh"
 pod "RealmSwift"
 pod "SQLite.swift"
-
+pod “ChameleonFramework/Swift”, :git => 'https://github.com/ViccAlexander/Chameleon.git'
+pod "SWTableViewCell"
 
 end

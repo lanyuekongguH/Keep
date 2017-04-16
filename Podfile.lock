@@ -5,6 +5,9 @@ PODS:
   - AMapFoundation (1.4.0)
   - AMapLocation (2.3.1):
     - AMapFoundation (~> 1.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
@@ -23,6 +26,7 @@ PODS:
   - SQLite.swift/standard (0.11.2)
   - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
+  - SWTableViewCell (0.3.7)
   - YYText (1.0.7)
   - ZipArchive (1.4.0)
 
@@ -30,6 +34,7 @@ DEPENDENCIES:
   - Alamofire
   - AMap3DMap
   - AMapLocation
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Charts
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -40,14 +45,25 @@ DEPENDENCIES:
   - SQLite.swift
   - SVProgressHUD
   - SwiftyJSON
+  - SWTableViewCell
   - YYText
   - ZipArchive
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AMap3DMap: 4d0a53d0e57c7c758560225dfdaf593b306bd468
   AMapFoundation: 458974f46a39df8407fd818ab83d2630d494c726
   AMapLocation: 6016f0e09c127461c9c8e36945f34c0f037ad962
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
@@ -59,9 +75,10 @@ SPEC CHECKSUMS:
   SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: af2331274aea097e1e143cd40376909d3a6b0b9d
+PODFILE CHECKSUM: fa468876fbcdfa62d958529c0651788417ef89e9
 
 COCOAPODS: 1.2.1

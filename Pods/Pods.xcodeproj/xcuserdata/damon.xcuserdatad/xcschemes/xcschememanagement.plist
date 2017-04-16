@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Charts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SWTableViewCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,12 +92,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A8A0663845350F162330F5D24F22C9A</key>
+		<key>0B50273EB3BBC0E56C7FBE0246501781</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>11C9E703EC912D04EA76AC998F465476</key>
+		<key>119E45B120C6A187DD8241B51D36AA51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40CFE54EF8D78BB89C0007B70582FCDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +117,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55EA8E1C9C6771E82FA6E4B3908F9DFF</key>
+		<key>5587DD587A48494DB28574724A5237D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74CF0B504DC8FE18A666E4269A62357F</key>
+		<key>5E21E36E12AA789B278BF58EF54BD1D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>825CD188AC16F6505CD2AF5356151E0C</key>
+		<key>61D8DC1CBD72E5474765DB190B3843D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6EA3D86B58AB6B6E4EC5A01973D56022</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8739AAC8A937DCFF8582EDFD1CF8BA3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,27 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96A6002DE472FC60C2006A20F4DDF17D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B217D4B2185DEA2FB7C3DD58EB2E243B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BF401D110BE7A1BD0EF4AA6F6F4CCAFC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD911F415FF76FA81B92653A50818E1C</key>
+		<key>DC17C2C75EF202FDB929C4C97552AD5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -153,6 +168,11 @@
 			<true/>
 		</dict>
 		<key>F307B842FF76B2DE6C55DB67C0885325</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F905FEA8DE2BA70940618A4023B8EF40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
