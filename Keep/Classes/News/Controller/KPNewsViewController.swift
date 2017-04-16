@@ -8,6 +8,8 @@
 
 import UIKit
 import MJRefresh
+import RealmSwift
+import SQLite
 
 let KPNewsHotCollectionCellIdentifier = "KPNewsHotCollectionCellIdentifier"
 

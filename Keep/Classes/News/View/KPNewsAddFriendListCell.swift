@@ -15,6 +15,13 @@ class KPNewsAddFriendListCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupUI()
+        
+        
+        
+        
+        
+        
+        
     }
     
     fileprivate func setupUI() {

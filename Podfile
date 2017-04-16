@@ -17,5 +17,8 @@ pod "ZipArchive"
 pod "AMap3DMap"
 pod "AMapLocation"
 pod "MJRefresh"
+pod "RealmSwift"
+pod "SQLite.swift"
+
 
 end
