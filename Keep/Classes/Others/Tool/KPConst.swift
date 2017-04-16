@@ -41,6 +41,17 @@ func KPTable() -> UIColor {
     return KPColor(229.0, g: 235.0, b: 239.0, a: 1.0)
 }
 
+func KPSWColor() -> UIColor {
+    return KPColor(199.0, g: 199.0, b: 204.0, a: 1.0)
+}
+
+func KPRed() -> UIColor {
+    return KPColor(252.0, g: 61.0, b: 57.0, a: 1.0)
+}
+
+
+
+
 /// iPhone 5
 let isIPhone5 = SCREENH == 568 ? true : false
 /// iPhone 6
