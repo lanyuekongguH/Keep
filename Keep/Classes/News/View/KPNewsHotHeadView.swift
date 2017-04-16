@@ -16,6 +16,10 @@ class KPNewsHotHeadView: UIView {
         setupUI()
     }
     
+    
+    
+    
+    
     fileprivate func setupUI() {
         
     }
