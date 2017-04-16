@@ -21,5 +21,6 @@ pod "RealmSwift"
 pod "SQLite.swift"
 pod “ChameleonFramework/Swift”, :git => 'https://github.com/ViccAlexander/Chameleon.git'
 pod "SWTableViewCell"
+pod "GPUImage"
 
 end

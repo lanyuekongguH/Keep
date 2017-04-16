@@ -11,6 +11,7 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - GPUImage (0.1.7)
   - IQKeyboardManagerSwift (4.0.9)
   - Kingfisher (3.6.2)
   - MBProgressHUD (1.0.0)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - AMapLocation
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Charts
+  - GPUImage
   - IQKeyboardManagerSwift
   - Kingfisher
   - MBProgressHUD
@@ -65,6 +67,7 @@ SPEC CHECKSUMS:
   AMapLocation: 6016f0e09c127461c9c8e36945f34c0f037ad962
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -79,6 +82,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: fa468876fbcdfa62d958529c0651788417ef89e9
+PODFILE CHECKSUM: 1f0168efd28dcd110d0f2ae180fb5abd93b7dbe5
 
 COCOAPODS: 1.2.1
