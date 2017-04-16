@@ -11,6 +11,8 @@ import MJRefresh
 
 let KPNewsHotCollectionCellIdentifier = "KPNewsHotCollectionCellIdentifier"
 
+let KPNewsHotHeadViewIdentifier = "KPNewsHotHeadViewIdentifier"
+
 class KPNewsViewController: KPBaseViewController {
 
     fileprivate var hotItems = [KPNewsHotItem]()
@@ -50,13 +52,17 @@ class KPNewsViewController: KPBaseViewController {
         navigationItem.rightBarButtonItem = rightItem
     
         
-        let layout = UICollectionViewFlowLayout.init()
+        let layout = UICollectionViewFlowLayout()
         
         layout.itemSize = CGSize(width: (SCREENW - 3 * 15)/2.0, height: (SCREENW - 3 * 15)/2.0 + 80)
+        layout.headerReferenceSize = CGSize(width: SCREENW, height: 150)
         
-        let collectionView = UICollectionView.init(frame:         CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
         
         collectionView.register(KPNewsHotCollectionCell.self, forCellWithReuseIdentifier: KPNewsHotCollectionCellIdentifier)
+        
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KPNewsHotHeadViewIdentifier)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
@@ -68,8 +74,6 @@ class KPNewsViewController: KPBaseViewController {
     }
     
     @objc fileprivate func loadBannerData() {
-        
-//        self.hotItems = [KPNewsHotItem]()
         
         KPNetworkTool.shareNetworkTool.loadNewsHotData(last: lastID) {[weak self]
         
@@ -91,11 +95,17 @@ class KPNewsViewController: KPBaseViewController {
                 self?.refreshControl.endRefreshing()
             }
             
-            
             self?.collectionView?.reloadData()
         }
-        
     }
+    
+    fileprivate lazy var hotImageView: UIImageView = {
+    
+        let hotImageView = UIImageView()
+        hotImageView.frame = CGRect.init(x: 0, y: 0, width: SCREENW, height: 150)
+        return hotImageView
+    }()
+    
     
 //    fileprivate lazy var segmentView: KPStoreTabView = {
 //        let segmentView = KPSegmentView()
@@ -122,7 +132,6 @@ class KPNewsViewController: KPBaseViewController {
     func leftItemClick() {
         let addFriendVC = KPAddFriendController()
         navigationController?.pushViewController(addFriendVC, animated: true)
-        
     }
 }
 
@@ -162,6 +171,23 @@ extension KPNewsViewController: UICollectionViewDataSource {
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KPNewsHotHeadViewIdentifier, for: indexPath as IndexPath)
+            
+            headerView.addSubview(hotImageView)
+            return headerView
+            
+        } else {
+            
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: KPNewsHotHeadViewIdentifier, for: indexPath as IndexPath)
+            footerView.addSubview(hotImageView)
+
+            return footerView
+        }
+    }
 }
 
 extension KPNewsViewController: UICollectionViewDelegateFlowLayout {
