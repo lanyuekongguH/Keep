@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 import SwiftyJSON
+import SDWebImage
 
 class KPNetworkTool: NSObject {
 
@@ -200,7 +201,7 @@ class KPNetworkTool: NSObject {
                 
                 if let data = json["data"].dictionaryObject {
                     
-                    let item = KPNewsLikersListItem(dict: data as! [String: AnyObject])
+                    let item = KPNewsLikersListItem(dict: data as [String: AnyObject])
                     finished(item)
                     
                 }
@@ -208,6 +209,39 @@ class KPNetworkTool: NSObject {
         }
     }
     
+    func loadWebpData(urlStr url:String?, _ finished:@escaping (Data?) ->()) {
+        
+        
+        let url = "http://static1.keepcdn.com/picture/2017/04/16/20/9f0acd7751def8c752ec3e73915964eba2777620_2000x1500.jpg?imageMogr2/thumbnail/720x720/format/webp/quality/90"
+        
+        Alamofire.download(url).responseData { (response) in
+            
+            if let data = response.result.value {
+                
+                finished(data)
+            }
+        }
     
+        
+        
+//        Alamofire.request(url).responseJSON { response in
+//            
+//            print(response)
+//            
+//            guard response.result.isSuccess else {
+//                SVProgressHUD.showError(withStatus: "加载失败...")
+//                return
+//            }
+//            
+//            if let value = response.result.value {
+//                
+//               
+//                print(value)
+//                
+//            }
+//        }
+        
+    }
+
     
 }

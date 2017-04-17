@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SQLite.swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -94,15 +99,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>libwebp.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E71BCA20E7726D2BCFA89C6846629F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18DEF356F0CD944B6C6B18F8B0734AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2597E77C6D3830202BFB48C276629F0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FD3B3D96E3CD12788E7C2A6B829070C</key>
+		<key>2807B93328F75CE89A58EB89762727D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3037DCD7123E6B8D5591D382ABBF95FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,27 +137,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4759802105ABDFE19039D2A0AE811097</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59578F7476AD12B76E35DD3FDA723EEF</key>
+		<key>6527FF53CEEE9DEE4743CC71BB33521B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5ADC663AD25B1DE6CAD23636BDFEE130</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E53B341057BFE9084DA6CA8FEF2BFEE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E3E232614CDF7A9F6847CBD092F4874</key>
+		<key>6A4EDD9B7CD6F9FF5346BF2908EF6C5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,22 +167,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D85F3DE416E495B0241E15F26A70FB9</key>
+		<key>A79DC8F5606F6D28D8D17C45867D0779</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92C74FD576BC15AA78E2D14AEC7382AA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BA80F61D5486D4FF938CC9BDE417A9B4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE7AD4875E985D430F7C3BC32347B9B5</key>
+		<key>B326808C67C6E86DDEFF4C3F7AF9AF1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,12 +187,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E237219D49DEF4B2324F76225481D865</key>
+		<key>E3F36F9EF312C4C52447CD4C83DBB6D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED6761A40B57DDCA24551D69EABDC1C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F307B842FF76B2DE6C55DB67C0885325</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F33B19C12D4136DF418AD6938CBC220F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

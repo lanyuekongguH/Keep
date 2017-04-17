@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class KPNewsHotCollectionCell: UICollectionViewCell {
     
@@ -32,6 +33,11 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
                 let cellWidth = frame.width
                 
                 imageView.kf.setImage(with: URL(string: hotItem.photo!), placeholder: UIImage(named: "placeholder200_200"))
+                
+//                KPNetworkTool.shareNetworkTool.loadWebpData(urlStr: nil) {[weak self]  data in
+//                    
+//                    self?.imageView.image = UIImage.sd_image(withWebPData: data)
+//                }
                 
                 contentLable.text = hotItem.content
                 iconImageView.kf.setImage(with: URL(string: (hotItem.author?.avatar!)!))

@@ -14,6 +14,30 @@ PODS:
   - GPUImage (0.1.7)
   - IQKeyboardManagerSwift (4.0.9)
   - Kingfisher (3.6.2)
+  - libwebp (0.5.1):
+    - libwebp/core (= 0.5.1)
+    - libwebp/dec (= 0.5.1)
+    - libwebp/demux (= 0.5.1)
+    - libwebp/dsp (= 0.5.1)
+    - libwebp/enc (= 0.5.1)
+    - libwebp/mux (= 0.5.1)
+    - libwebp/utils (= 0.5.1)
+    - libwebp/webp (= 0.5.1)
+  - libwebp/core (0.5.1):
+    - libwebp/webp
+  - libwebp/dec (0.5.1):
+    - libwebp/core
+  - libwebp/demux (0.5.1):
+    - libwebp/core
+  - libwebp/dsp (0.5.1):
+    - libwebp/core
+  - libwebp/enc (0.5.1):
+    - libwebp/core
+  - libwebp/mux (0.5.1):
+    - libwebp/core
+  - libwebp/utils (0.5.1):
+    - libwebp/core
+  - libwebp/webp (0.5.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - Realm (2.5.1):
@@ -21,6 +45,12 @@ PODS:
   - Realm/Headers (2.5.1)
   - RealmSwift (2.5.1):
     - Realm (= 2.5.1)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SDWebImage/WebP (4.0.0):
+    - libwebp
+    - SDWebImage/Core
   - SnapKit (3.2.0)
   - SQLite.swift (0.11.2):
     - SQLite.swift/standard (= 0.11.2)
@@ -43,6 +73,8 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - RealmSwift
+  - SDWebImage
+  - SDWebImage/WebP
   - SnapKit
   - SQLite.swift
   - SVProgressHUD
@@ -70,10 +102,12 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Realm: 32f86104d37c8521f864d4274050b38ba6190733
   RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
@@ -82,6 +116,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 1f0168efd28dcd110d0f2ae180fb5abd93b7dbe5
+PODFILE CHECKSUM: 5535453f1286ea6c6489aad9c07911315e005864
 
 COCOAPODS: 1.1.1

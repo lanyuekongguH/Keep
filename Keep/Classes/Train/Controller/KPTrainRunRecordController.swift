@@ -17,6 +17,9 @@ class KPTrainRunRecordController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backClick))
 
+        
+        
+        
     }
     
     func backClick() {
