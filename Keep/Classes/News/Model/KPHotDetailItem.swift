@@ -33,7 +33,7 @@ class KPHotDetailItem: NSObject {
     var id: String?
     var contentType: Array<Any>?
     var likers: Array<KPNewsLikersItem>?
-    var likes: String?
+    var likes: Int = 0
     var comments: String?
 
     var author: KPNewsAuthorItem?
@@ -96,6 +96,8 @@ class KPHotDetailItem: NSObject {
             
             likers = likersItem
         }
+        
+        likes = dict["likes"] as! Int
         
         if let data = dict["author"] {
             

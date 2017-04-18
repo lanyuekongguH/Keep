@@ -32,12 +32,10 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
             
                 let cellWidth = frame.width
                 
-                imageView.kf.setImage(with: URL(string: hotItem.photo!), placeholder: UIImage(named: "placeholder200_200"))
+                let urlStr = "\(hotItem.photo!)?imageMogr2/thumbnail/720x720/format/webp/quality/90"
                 
-//                KPNetworkTool.shareNetworkTool.loadWebpData(urlStr: nil) {[weak self]  data in
-//                    
-//                    self?.imageView.image = UIImage.sd_image(withWebPData: data)
-//                }
+                imageView.sd_setImage(with: URL(string: urlStr), placeholderImage: UIImage(named: "placeholder200_200"), options: .retryFailed, completed: { (image, error, cacheType, imageURL) in
+                })
                 
                 contentLable.text = hotItem.content
                 iconImageView.kf.setImage(with: URL(string: (hotItem.author?.avatar!)!))

@@ -34,22 +34,23 @@ class KPHotDetailController: KPBaseViewController {
     
     fileprivate func loadDetailData() {
 
+        tableView?.isHidden = true
+        
         KPNetworkTool.shareNetworkTool.loadNewsHotDetailData(userID: userID) { [weak self]
             
             (hotDetailItem) in
             
+            self?.tableView?.isHidden = false
+
             if let hotDetailItem = hotDetailItem {
                 
                 self?.hotDetailItem = hotDetailItem
-                
             }
             
             if let likerArray = hotDetailItem?.likers {
             
                 self?.likers = likerArray
-                
             }
-            
             self?.tableView?.reloadData()
         }
         
@@ -58,6 +59,8 @@ class KPHotDetailController: KPBaseViewController {
             
             (comments) in
             
+               self?.tableView?.isHidden = false
+
                self?.comments = comments!
             
                self?.tableView?.reloadData()
@@ -92,7 +95,6 @@ class KPHotDetailController: KPBaseViewController {
     
     
     }
-    
 }
 
 extension KPHotDetailController: UITableViewDelegate {
@@ -142,21 +144,18 @@ extension KPHotDetailController: UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsDetailAuthorCellIdentifier) as! KPNewsDetailAuthorCell
             cell.hotDetailItem = hotDetailItem
-            
             return cell
         } else if indexPath.section == 1 {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsFollowCellIdentifier) as! KPNewsFollowCell
+            cell.hotDetailItem = hotDetailItem
             return cell
 
         } else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsRecommendUserCellIdentifier) as! KPNewsRecommendUserCell
-            
             cell.commentsItem = comments[indexPath.row]
-            
             return cell
-
         }
     }
     
@@ -178,7 +177,6 @@ extension KPHotDetailController: UITableViewDataSource {
             return 90
         }
     }
-
 }
 
 
