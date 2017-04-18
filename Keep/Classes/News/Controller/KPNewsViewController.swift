@@ -38,7 +38,6 @@ class KPNewsViewController: KPBaseViewController {
         
         collectionView?.addSubview(refreshControl)
     }
-
     
     fileprivate func setupUI() {
     
@@ -53,11 +52,9 @@ class KPNewsViewController: KPBaseViewController {
         navigationItem.leftBarButtonItem = leftItem
         navigationItem.rightBarButtonItem = rightItem
     
-        
         let layout = UICollectionViewFlowLayout()
-        
         layout.itemSize = CGSize(width: (SCREENW - 3 * 15)/2.0, height: (SCREENW - 3 * 15)/2.0 + 80)
-        layout.headerReferenceSize = CGSize(width: SCREENW, height: 150)
+//        layout.headerReferenceSize = CGSize(width: SCREENW, height: 150)
         
         let collectionView = UICollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
         
@@ -104,7 +101,38 @@ class KPNewsViewController: KPBaseViewController {
     fileprivate lazy var hotImageView: UIImageView = {
     
         let hotImageView = UIImageView()
-        hotImageView.frame = CGRect.init(x: 0, y: 0, width: SCREENW, height: 150)
+        
+        let urlStr = "http://static1.keepcdn.com/picture/2017/04/18/09/5fc733ac81925e13e031b8d8be0acbd282ee1465_1920x1080.jpg"
+        hotImageView.kf.setImage(with: URL(string: urlStr), placeholder: nil)
+        let photoSize = urlStr.getImageViewSize()
+        hotImageView.frame = CGRect(x: 0, y: 0, width: photoSize.width, height: photoSize.height)
+        
+        let hotLabel = UILabel()
+        hotLabel.text = "Hot Video"
+        hotLabel.frame = CGRect(x: (SCREENW - 100)/2.0, y: 60, width: 100, height: 20)
+        hotLabel.font = UIFont.systemFont(ofSize: 17)
+        hotLabel.textColor = UIColor.white
+        hotLabel.textAlignment = .center
+        hotImageView.addSubview(hotLabel)
+
+        let lineView = UIView()
+        lineView.backgroundColor = UIColor.white
+        lineView.frame = CGRect(x: (SCREENW - 30)/2.0, y: 85, width: 30, height: 1.5)
+        hotImageView.addSubview(lineView)
+        
+        let todayHotLabel = UILabel()
+        todayHotLabel.frame = CGRect(x: (SCREENW - 200)/2.0, y: 105, width: 200, height: 20)
+        todayHotLabel.text = "今日热门视频"
+        todayHotLabel.textColor = UIColor.white
+        todayHotLabel.textAlignment = .center
+        todayHotLabel.font = UIFont.systemFont(ofSize: 20)
+        hotImageView.addSubview(todayHotLabel)
+        
+        let videoImageView = UIImageView()
+        videoImageView.image = UIImage(named: "video_play_samll")
+        videoImageView.frame = CGRect(x: (SCREENW - 40)/2.0, y: 140, width: 40, height: 40)
+        hotImageView.addSubview(videoImageView)
+        
         return hotImageView
     }()
     
@@ -184,7 +212,7 @@ extension KPNewsViewController: UICollectionViewDataSource {
             
         } else {
             
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: KPNewsHotHeadViewIdentifier, for: indexPath as IndexPath)
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KPNewsHotHeadViewIdentifier, for: indexPath as IndexPath)
             footerView.addSubview(hotImageView)
 
             return footerView
@@ -196,7 +224,7 @@ extension KPNewsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     
-        return UIEdgeInsetsMake(0, 15, 0, 15)
+        return UIEdgeInsetsMake(15, 15, 0, 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -204,6 +232,11 @@ extension KPNewsViewController: UICollectionViewDelegateFlowLayout {
         return 30
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    
+        let urlStr = "http://static1.keepcdn.com/picture/2017/04/18/09/5fc733ac81925e13e031b8d8be0acbd282ee1465_1920x1080.jpg"
+        return urlStr.getImageViewSize()
+    }
 }
 
 

@@ -181,10 +181,8 @@ class KPNetworkTool: NSObject {
 
     /// 加载喜欢的人列表数据
     func loadNewsHotLikesData(userID userId:String?, _ finished:@escaping (KPNewsLikersListItem?) ->()) {
-        
-        // https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf/likes
 
-        let url = "https://api.gotokeep.com/v1.1/entries/58e5a8ade1d6d419ae92dabf/likes"
+        let url = "https://api.gotokeep.com/v1.1/entries/\(userId!)/likes"
         
         Alamofire.request(url).responseJSON { response in
             
@@ -203,7 +201,6 @@ class KPNetworkTool: NSObject {
                     
                     let item = KPNewsLikersListItem(dict: data as [String: AnyObject])
                     finished(item)
-                    
                 }
             }
         }
@@ -221,26 +218,6 @@ class KPNetworkTool: NSObject {
                 finished(data)
             }
         }
-    
-        
-        
-//        Alamofire.request(url).responseJSON { response in
-//            
-//            print(response)
-//            
-//            guard response.result.isSuccess else {
-//                SVProgressHUD.showError(withStatus: "加载失败...")
-//                return
-//            }
-//            
-//            if let value = response.result.value {
-//                
-//               
-//                print(value)
-//                
-//            }
-//        }
-        
     }
 
     
