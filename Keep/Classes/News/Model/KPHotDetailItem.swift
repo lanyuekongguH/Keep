@@ -33,7 +33,7 @@ class KPHotDetailItem: NSObject {
     var id: String?
     var contentType: Array<Any>?
     var likers: Array<KPNewsLikersItem>?
-    var likes: Int = 0
+    var likes: Int?
     var comments: String?
 
     var author: KPNewsAuthorItem?
@@ -44,14 +44,19 @@ class KPHotDetailItem: NSObject {
 
     var _id: String?
 
-    var externalShareCount: Int = 0
-    var favoriteCount: Int = 0
+    var externalShareCount: Int?
+    var favoriteCount: Int?
     var now: String?
 
     var video: String?
     var province: String?
     var citycode: String?
     var sampleComments: Array<Any>?
+    var videoLength: Int?
+    var videoVoice: String?
+    var videoPlayCount: Int?
+    var meta: String?
+
     
     init(dict: [String: AnyObject]) {
         
@@ -97,7 +102,7 @@ class KPHotDetailItem: NSObject {
             likers = likersItem
         }
         
-        likes = dict["likes"] as! Int
+        likes = dict["likes"] as? Int
         
         if let data = dict["author"] {
             
@@ -110,10 +115,18 @@ class KPHotDetailItem: NSObject {
         commentUsers = dict["commentUsers"] as? String
         _id = dict["_id"] as? String
         
-        externalShareCount = (dict["externalShareCount"] as? Int)!
-        favoriteCount = (dict["favoriteCount"] as? Int)!
+        externalShareCount = dict["externalShareCount"] as? Int
+        favoriteCount = dict["favoriteCount"] as? Int
         
         now = dict["now"] as? String
 
+        video = dict["video"] as? String
+        province = dict["province"] as? String
+        citycode = dict["citycode"] as? String
+        sampleComments = dict["sampleComments"] as? Array
+        videoLength = dict["videoLength"] as? Int
+        videoVoice = dict["videoVoice"] as? String
+        videoLength = dict["videoLength"] as? Int
+        videoPlayCount = dict["videoPlayCount"] as? Int
     }
 }

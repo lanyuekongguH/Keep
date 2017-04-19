@@ -144,6 +144,7 @@ extension KPHotDetailController: UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsDetailAuthorCellIdentifier) as! KPNewsDetailAuthorCell
             cell.hotDetailItem = hotDetailItem
+            cell.bottomView.delegate = self
             return cell
         } else if indexPath.section == 1 {
         
@@ -179,4 +180,10 @@ extension KPHotDetailController: UITableViewDataSource {
     }
 }
 
+extension KPHotDetailController: KPNewsHotBottomButtonDelegate {
 
+    func newsHotBottomButton(_ bottomView:KPNewsHotBottomView, button:UIButton) {
+    
+        print("点击了 \(button.tag)")
+    }
+}

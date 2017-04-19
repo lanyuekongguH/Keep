@@ -55,6 +55,9 @@
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
 		E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823F1E8FB591004F575B /* KPWidgetButton.swift */; };
 		E47A834E1E94E057004F575B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47A834D1E94E057004F575B /* Media.xcassets */; };
+		E48DEBAF1EA60EAF005D3408 /* KPNewsHotVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */; };
+		E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */; };
+		E48DEBB31EA6FA4D005D3408 /* KPNewsHotBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */; };
 		E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699D1E76973800028DF0 /* BannerData.geojson */; };
 		E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699F1E76A78800028DF0 /* StoreListData.geojson */; };
 		E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */; };
@@ -211,6 +214,9 @@
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
 		E47A823F1E8FB591004F575B /* KPWidgetButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWidgetButton.swift; sourceTree = "<group>"; };
 		E47A834D1E94E057004F575B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keep/Media.xcassets; sourceTree = SOURCE_ROOT; };
+		E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoController.swift; sourceTree = "<group>"; };
+		E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoCell.swift; sourceTree = "<group>"; };
+		E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotBottomView.swift; sourceTree = "<group>"; };
 		E48F699D1E76973800028DF0 /* BannerData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BannerData.geojson; sourceTree = "<group>"; };
 		E48F699F1E76A78800028DF0 /* StoreListData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreListData.geojson; sourceTree = "<group>"; };
 		E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTodayWidgetTool.swift; sourceTree = "<group>"; };
@@ -538,6 +544,7 @@
 				E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */,
 				E4F011D21E979D630043B61D /* KPHotDetailController.swift */,
 				E4694FDC1E9F95F900B5026E /* KPNewsLikeListController.swift */,
+				E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -570,6 +577,8 @@
 				E44F27DF1EA334F5002A1B5A /* KPNewsAddFriendListCell.swift */,
 				E44F27E11EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift */,
 				E44F27E31EA335D4002A1B5A /* KPNewsAddFriendButton.swift */,
+				E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */,
+				E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -977,6 +986,7 @@
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4694FD71E9E333400B5026E /* KPNewsFollowCell.swift in Sources */,
 				E4F2C9831EA32BD900466199 /* KPNewsHotHeadView.swift in Sources */,
+				E48DEBB31EA6FA4D005D3408 /* KPNewsHotBottomView.swift in Sources */,
 				E4F011CD1E9743D40043B61D /* KPNewsAuthorItem.swift in Sources */,
 				E4051EC61E77C86C007801CA /* String+KP.swift in Sources */,
 				E44F27E21EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift in Sources */,
@@ -991,6 +1001,7 @@
 				E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */,
 				E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */,
 				E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */,
+				E48DEBAF1EA60EAF005D3408 /* KPNewsHotVideoController.swift in Sources */,
 				E40166D81E8D07CE00C41F96 /* KPOfflineMapController.swift in Sources */,
 				E4694FDD1E9F95F900B5026E /* KPNewsLikeListController.swift in Sources */,
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
@@ -1008,6 +1019,7 @@
 				E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */,
 				E4A5D9311E70064500F91783 /* KPNewsViewController.swift in Sources */,
 				E4F011D51E979E3A0043B61D /* KPNewDetailLikersCell.swift in Sources */,
+				E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */,
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
 				E4694FD11E9CC96A00B5026E /* KPHealthListController.swift in Sources */,
 				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,

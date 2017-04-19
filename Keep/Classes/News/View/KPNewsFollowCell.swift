@@ -27,7 +27,7 @@ class KPNewsFollowCell: UITableViewCell {
             
             if let hotDetailItem = hotDetailItem {
                 
-                likesLabel.text = "\(hotDetailItem.likes) 加油"
+                likesLabel.text = "\(hotDetailItem.likes!) 加油"
                 
                 if iconsArray.count == 0 {
                     
@@ -41,9 +41,9 @@ class KPNewsFollowCell: UITableViewCell {
                     }
                 }
                 
-                let count = (hotDetailItem.likes > 5) ? 5 : hotDetailItem.likes
+                let count = (hotDetailItem.likes! > 5) ? 5 : hotDetailItem.likes
                 
-                for i in 0...count {
+                for i in 0...count! - 1 {
                 
                     let icon = iconsArray[i]
                     

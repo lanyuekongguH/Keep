@@ -25,16 +25,12 @@ class KPNewsDetailAuthorCell: UITableViewCell {
         
         addSubview(favoriteCountLable)
         addSubview(lineView)
-        
-        addSubview(favoritedButton)
-        addSubview(commentButton)
-        addSubview(shareButton)
-        addSubview(moreButton)
+
+        addSubview(bottomView)
 
         self.backgroundColor = UIColor.white
     }
 
-    
     var hotDetailItem: KPHotDetailItem? {
         didSet {
             
@@ -56,7 +52,7 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                 
                 contentLable.text = hotDetailItem.content
                 
-                favoriteCountLable.text = "\(hotDetailItem.externalShareCount) 分享  \(hotDetailItem.favoriteCount) 收藏"
+                favoriteCountLable.text = "\(hotDetailItem.externalShareCount!) 分享  \(hotDetailItem.favoriteCount!) 收藏"
                     
                 iconImageView.snp.updateConstraints { (make) in
                     make.width.height.equalTo(30)
@@ -121,28 +117,11 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                     make.left.equalTo(20)
                 }
                 
-                favoritedButton.snp.updateConstraints { (make) in
-                    make.width.height.equalTo(30)
-                    make.top.equalTo(lineView.snp.bottom).offset(15)
-                    make.left.equalTo(contentLable)
-                }
-                
-                commentButton.snp.updateConstraints { (make) in
-                    make.width.height.equalTo(30)
-                    make.top.equalTo(lineView.snp.bottom).offset(15)
-                    make.left.equalTo(favoritedButton.snp.right).offset(20)
-                }
-                
-                shareButton.snp.updateConstraints { (make) in
-                    make.width.height.equalTo(30)
-                    make.top.equalTo(lineView.snp.bottom).offset(15)
-                    make.left.equalTo(commentButton.snp.right).offset(20)
-                }
-                
-                moreButton.snp.updateConstraints { (make) in
-                    make.width.height.equalTo(30)
-                    make.top.equalTo(lineView.snp.bottom).offset(15)
-                    make.left.equalTo(SCREENW - 30 - 20)
+                bottomView.snp.updateConstraints { (make) in
+                    make.width.equalTo(SCREENW)
+                    make.height.equalTo(60)
+                    make.top.equalTo(lineView.snp.bottom)
+                    make.left.equalTo(0)
                 }
             }
         }
@@ -161,10 +140,6 @@ class KPNewsDetailAuthorCell: UITableViewCell {
             return CGFloat(height)
             
         } else { return 0.1 }
-    }
-    
-    required init?(coder aDecoder: NSCoder){
-        fatalError("init(coder:) has not been implemented")
     }
     
     fileprivate lazy var iconImageView: UIImageView = {
@@ -224,36 +199,13 @@ class KPNewsDetailAuthorCell: UITableViewCell {
         return lineView
     }()
     
-    fileprivate lazy var favoritedButton: UIButton = {
+    public lazy var bottomView: KPNewsHotBottomView = {
         
-        let favoritedButton = UIButton()
-        favoritedButton.setImage(UIImage(named: "icon_timeline_like"), for: .normal)
-        favoritedButton.setImage(UIImage(named: "icon_timeline_like"), for: .highlighted)
-        return favoritedButton
+        let bottomView = KPNewsHotBottomView()
+        return bottomView
     }()
     
-    fileprivate lazy var commentButton: UIButton = {
-        
-        let commentButton = UIButton()
-        commentButton.setImage(UIImage(named: "icon_timeline_comment"), for: .normal)
-        commentButton.setImage(UIImage(named: "icon_timeline_comment"), for: .highlighted)
-        return commentButton
-    }()
-    
-    fileprivate lazy var shareButton: UIButton = {
-        
-        let shareButton = UIButton()
-        shareButton.setImage(UIImage(named: "icon_timeline_share"), for: .normal)
-        shareButton.setImage(UIImage(named: "icon_timeline_share"), for: .highlighted)
-        return shareButton
-    }()
-    
-    fileprivate lazy var moreButton: UIButton = {
-        
-        let moreButton = UIButton()
-        moreButton.setImage(UIImage(named: "icon_timeline_more"), for: .normal)
-        moreButton.setImage(UIImage(named: "icon_timeline_more"), for: .highlighted)
-        return moreButton
-    }()
-    
+    required init?(coder aDecoder: NSCoder){
+        fatalError("init(coder:) has not been implemented")
+    }
 }

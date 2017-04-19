@@ -220,5 +220,47 @@ class KPNetworkTool: NSObject {
         }
     }
 
+    func loadNewsHotVideoData(last lastId:String?, _ finished:@escaping ([KPNewsHotItem]) ->()) {
+
+        //    https://api.gotokeep.com/social/v2/video/timeline/hot?limit=20
+
+        var url: String
+        
+        if let lastId = lastId {
+            url = "https://api.gotokeep.com/social/v3/timeline/hot?lastId=\(lastId)"
+            
+        } else {
+            url = "https://api.gotokeep.com/social/v2/video/timeline/hot?limit=20"
+        }
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            print(response)
+            
+            guard response.result.isSuccess else {
+                SVProgressHUD.showError(withStatus: "加载失败...")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let data = json["data"].arrayObject {
+                    var hotItems = [KPNewsHotItem]()
+                    
+                    for dict in data {
+                        let item = KPNewsHotItem(dict: dict as! [String: AnyObject])
+                        hotItems.append(item)
+                    }
+                    
+                    let lastID = json["data"]["lastId"].string
+                    
+                    finished(hotItems)
+                }
+            }
+        }
+
+    }
     
 }

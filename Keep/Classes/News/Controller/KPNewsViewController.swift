@@ -54,7 +54,6 @@ class KPNewsViewController: KPBaseViewController {
     
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (SCREENW - 3 * 15)/2.0, height: (SCREENW - 3 * 15)/2.0 + 80)
-//        layout.headerReferenceSize = CGSize(width: SCREENW, height: 150)
         
         let collectionView = UICollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
         
@@ -102,6 +101,10 @@ class KPNewsViewController: KPBaseViewController {
     
         let hotImageView = UIImageView()
         
+        hotImageView.isUserInteractionEnabled = true
+        let ges = UITapGestureRecognizer(target: self, action: #selector(clickHotVideo))
+        hotImageView.addGestureRecognizer(ges)
+        
         let urlStr = "http://static1.keepcdn.com/picture/2017/04/18/09/5fc733ac81925e13e031b8d8be0acbd282ee1465_1920x1080.jpg"
         hotImageView.kf.setImage(with: URL(string: urlStr), placeholder: nil)
         let photoSize = urlStr.getImageViewSize()
@@ -136,6 +139,12 @@ class KPNewsViewController: KPBaseViewController {
         return hotImageView
     }()
     
+    
+    @objc fileprivate func clickHotVideo() {
+    
+        let hotVideoVC = KPNewsHotVideoController()
+        self.navigationController?.pushViewController(hotVideoVC, animated: true)
+    }
     
 //    fileprivate lazy var segmentView: KPStoreTabView = {
 //        let segmentView = KPSegmentView()
