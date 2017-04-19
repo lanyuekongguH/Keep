@@ -220,14 +220,14 @@ class KPNetworkTool: NSObject {
         }
     }
 
-    func loadNewsHotVideoData(last lastId:String?, _ finished:@escaping ([KPNewsHotItem]) ->()) {
+    func loadNewsHotVideoData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
 
         //    https://api.gotokeep.com/social/v2/video/timeline/hot?limit=20
 
         var url: String
         
         if let lastId = lastId {
-            url = "https://api.gotokeep.com/social/v3/timeline/hot?lastId=\(lastId)"
+            url = "https://api.gotokeep.com/social/v2/video/timeline/hot?lastId=\(lastId)&limit=20"
             
         } else {
             url = "https://api.gotokeep.com/social/v2/video/timeline/hot?limit=20"
@@ -247,16 +247,16 @@ class KPNetworkTool: NSObject {
                 let json = JSON(value)
                 
                 if let data = json["data"].arrayObject {
-                    var hotItems = [KPNewsHotItem]()
+                    var hotItems = [KPHotDetailItem]()
                     
                     for dict in data {
-                        let item = KPNewsHotItem(dict: dict as! [String: AnyObject])
+                        let item = KPHotDetailItem(dict: dict as! [String: AnyObject])
                         hotItems.append(item)
                     }
                     
-                    let lastID = json["data"]["lastId"].string
+                    let lastID = json["lastId"].string
                     
-                    finished(hotItems)
+                    finished(hotItems,lastID)
                 }
             }
         }

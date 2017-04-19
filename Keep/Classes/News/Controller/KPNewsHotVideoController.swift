@@ -7,29 +7,50 @@
 //
 
 import UIKit
+import MJRefresh
+
+let KPNewsHotVideoCellIdentifier = "KPNewsHotVideoCellIdentifier"
 
 class KPNewsHotVideoController: KPBaseViewController {
-
-    var userID: String?
+    
+    var lastId: String?
 
     var tableView: UITableView?
 
-    fileprivate var hotVideoItems = [KPNewsHotItem]()
+    var refreshControl = UIRefreshControl()
+    
+    let footer = MJRefreshAutoNormalFooter()
+    
+    fileprivate var itemsArray = [KPHotDetailItem]()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         setupUI()
         
+        loadHotVideoListData()
+    }
+
+    @objc fileprivate func loadHotVideoListData() {
         
-        KPNetworkTool.shareNetworkTool.loadNewsHotVideoData(last: userID) {
-        
-            (item) in
-        
+        KPNetworkTool.shareNetworkTool.loadNewsHotVideoData(last: lastId) {
+            
+            [weak self] (item, lastId) in
+            
+            if self?.lastId != nil {
+                
+                self?.itemsArray.append(contentsOf: item)
+                self?.tableView?.mj_footer.endRefreshing()
+                
+            } else {
+                self?.itemsArray = item
+            }
+            
+            self?.lastId = lastId
+
+            self?.tableView?.reloadData()
         }
-        
-        
-        
     }
 
     fileprivate func setupUI() {
@@ -39,13 +60,19 @@ class KPNewsHotVideoController: KPBaseViewController {
         let tableView = UITableView.init(frame: view.bounds, style: .plain)
         tableView.backgroundColor = KPTable()
         
-        tableView.register(KPNewsDetailAuthorCell.self, forCellReuseIdentifier: KPNewsDetailAuthorCellIdentifier)
+        tableView.register(KPNewsHotVideoCell.self, forCellReuseIdentifier: KPNewsHotVideoCellIdentifier)
                 
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
         self.tableView = tableView
+        
+        refreshControl.addTarget(self, action: #selector(loadHotVideoListData), for: .valueChanged)
+        self.tableView?.addSubview(refreshControl)
+        
+        footer.setRefreshingTarget(self, refreshingAction: #selector(KPNewsHotVideoController.loadHotVideoListData))
+        self.tableView?.mj_footer = footer
     }
 }
 
@@ -65,13 +92,13 @@ extension KPNewsHotVideoController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return hotVideoItems.count
+        return itemsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsLikersListCellIdentifier) as! KPNewsLikersListCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsHotVideoCellIdentifier) as! KPNewsHotVideoCell
+        cell.hotDetailItem = itemsArray[indexPath.row]
         return cell
     }
     
@@ -82,7 +109,7 @@ extension KPNewsHotVideoController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        return KPNewsHotVideoCell.heightOfHotVideoCell(itemsArray[indexPath.row])
     }
     
 }
