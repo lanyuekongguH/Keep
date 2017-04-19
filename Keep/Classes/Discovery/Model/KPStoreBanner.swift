@@ -11,11 +11,11 @@ import UIKit
 class KPStoreBanner: NSObject {
 
     var productId: String?
-    var originPrice: Int = 0
-    var specialOfferPrice: Int = 0
+    var originPrice: Int?
+    var specialOfferPrice: Int?
     var name: String?
     var message: String?
-    var time: Int = 0
+    var time: Int?
     var image: String?
     var url: String?
     

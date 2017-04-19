@@ -44,7 +44,7 @@ class KPWidgetViewController: UIViewController, NCWidgetProviding {
     
     func gotoapp(_ button:UIButton) {
         
-        var hostStr: String?
+        var hostStr: String!
         
         switch button.tag {
         case 1: hostStr = "Keep.Shortcut.Run"
@@ -54,7 +54,8 @@ class KPWidgetViewController: UIViewController, NCWidgetProviding {
         default:
             hostStr = "Keep.Shortcut.Run"
         }
-        self.extensionContext?.open(URL(string: "com.cmb.widget://\(hostStr!)")!, completionHandler: { (success) in
+        
+        self.extensionContext?.open(URL(string: "com.cmb.widget://\(hostStr)")!, completionHandler: { (success) in
         })
     }
     

@@ -20,6 +20,12 @@ class KPNewsHotVideoCell: UITableViewCell {
         addSubview(nameLable)
         addSubview(timeLable)
         addSubview(videoImageView)
+        
+        addSubview(playImageView)
+        addSubview(countdownImageView)
+        addSubview(countdownLable)
+        addSubview(playCountLable)
+        
         addSubview(contentLable)
         addSubview(bottomView)
         addSubview(lineView)
@@ -39,8 +45,10 @@ class KPNewsHotVideoCell: UITableViewCell {
                 }
                 
                 nameLable.text = hotDetailItem.author?.username
+
+                timeLable.text = hotDetailItem.created
                 
-                timeLable.text = hotDetailItem.now
+                print("hotDetailItem.now",hotDetailItem.created ?? "dd")
                 
                 if let photo = hotDetailItem.photo {
                     
@@ -56,19 +64,22 @@ class KPNewsHotVideoCell: UITableViewCell {
                 }
                 
                 nameLable.snp.updateConstraints { (make) in
-                    make.width.equalTo(30)
-                    make.height.equalTo(100)
+                    make.width.equalTo(200)
+                    make.height.equalTo(30)
                     make.top.equalTo(15)
                     make.left.equalTo(iconImageView.snp.right).offset(10)
                 }
                 
-                let timeW = timeLable.text?.boundingRectWithFont(timeLable.font).width
+                if let text = timeLable.text {
                 
-//                timeLable.snp.updateConstraints { (make) in
-//                    make.width.height.equalTo(30)
-//                    make.top.equalTo(15)
-//                    make.left.equalTo(SCREENW - timeW! - 10)
-//                }
+                    let timeW = text.boundingRectWithFont(timeLable.font).width
+                    timeLable.snp.updateConstraints { (make) in
+                        make.height.equalTo(30)
+                        make.width.equalTo(timeW)
+                        make.top.equalTo(15)
+                        make.left.equalTo(SCREENW - timeW - 10)
+                    }
+                }
                 
                 if let photo = hotDetailItem.photo {
                     
@@ -80,15 +91,47 @@ class KPNewsHotVideoCell: UITableViewCell {
                         make.top.equalTo(iconImageView.snp.bottom).offset(15)
                         make.left.equalTo(0)
                     }
+                    
+                    playImageView.snp.updateConstraints { (make) in
+                        make.width.height.equalTo(79)
+                        make.top.equalTo(videoImageView).offset((photoSize.height - 79)/2.0)
+                        make.left.equalTo((SCREENW - 79)/2.0)
+                    }
+                    
+                    countdownImageView.snp.updateConstraints { (make) in
+                        make.width.height.equalTo(79)
+                        make.top.equalTo(videoImageView).offset((photoSize.height - 79)/2.0)
+                        make.left.equalTo((SCREENW - 79)/2.0)
+                    }
+                    
+                    countdownLable.snp.updateConstraints { (make) in
+                        make.width.height.equalTo(79)
+                        make.top.equalTo(videoImageView).offset((photoSize.height - 79)/2.0)
+                        make.left.equalTo((SCREENW - 79)/2.0)
+                    }
+                    
+                    playCountLable.snp.updateConstraints { (make) in
+                        make.width.height.equalTo(79)
+                        make.top.equalTo(videoImageView).offset((photoSize.height - 79)/2.0)
+                        make.left.equalTo((SCREENW - 79)/2.0)
+                    }
                 }
                 
-                let contentSize = contentLable.text?.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), contentLable.font)
                 
-                contentLable.snp.updateConstraints { (make) in
-                    make.width.equalTo((contentSize?.width)!)
-                    make.height.equalTo((contentSize?.height)!)
-                    make.top.equalTo(videoImageView.snp.bottom).offset(15)
-                    make.left.equalTo(20)
+                if let text = contentLable.text {
+                
+                    var contentSize = text.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), contentLable.font)
+                    
+                    if contentSize.height > CGFloat(100) {
+                        contentSize.height = 100
+                    }
+                    
+                    contentLable.snp.updateConstraints { (make) in
+                        make.width.equalTo(contentSize.width)
+                        make.height.equalTo(contentSize.height)
+                        make.top.equalTo(videoImageView.snp.bottom).offset(15)
+                        make.left.equalTo(20)
+                    }
                 }
                 
                 bottomView.snp.updateConstraints { (make) in
@@ -113,13 +156,20 @@ class KPNewsHotVideoCell: UITableViewCell {
         
         if let item = item {
             
-            let photoSize = item.photo?.getImageViewSize()
+            if let photo = item.photo, let content = item.content {
             
-            let contentSize = item.content?.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), UIFont.systemFont(ofSize: 15))
+                let photoSize = photo.getImageViewSize()
+                
+                var contentSize = content.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), UIFont.systemFont(ofSize: 15))
+                
+                if contentSize.height > CGFloat(100) {
+                    contentSize.height = 100
+                }
             
-            let height = 15 + 30 + 15 + 15 + 25 + 60 + (photoSize?.height)! + (contentSize?.height)!
-            
-            return CGFloat(height)
+                //let height = 15 + 30 + 15 + 15 + 25 + 60 + photoSize.height + contentSize.height
+                let height = 160 + photoSize.height + contentSize.height
+                return CGFloat(height)
+            } else { return 0.1 }
             
         } else { return 0.1 }
     }
@@ -136,7 +186,7 @@ class KPNewsHotVideoCell: UITableViewCell {
         
         let nameLable = UILabel()
         nameLable.font = UIFont.systemFont(ofSize: 15)
-        nameLable.textColor = KPGray()
+        nameLable.textColor = UIColor.black
         return nameLable
     }()
     
@@ -154,11 +204,42 @@ class KPNewsHotVideoCell: UITableViewCell {
         return videoImageView
     }()
     
+    fileprivate lazy var playImageView: UIImageView = {
+        
+        let playImageView = UIImageView()
+        playImageView.image = UIImage(named: "video_play_big")
+        return playImageView
+    }()
+    
+    
+    fileprivate lazy var playCountLable: UILabel = {
+        
+        let playCountLable = UILabel()
+        playCountLable.font = UIFont.systemFont(ofSize: 15)
+        playCountLable.textColor = UIColor.white
+        return playCountLable
+    }()
+    
+    fileprivate lazy var countdownImageView: UIImageView = {
+        
+        let countdownImageView = UIImageView()
+        return countdownImageView
+    }()
+
+    fileprivate lazy var countdownLable: UILabel = {
+        
+        let countdownLable = UILabel()
+        countdownLable.font = UIFont.systemFont(ofSize: 15)
+        countdownLable.textColor = UIColor.white
+        return countdownLable
+    }()
+    
     fileprivate lazy var contentLable: UILabel = {
         
         let contentLable = UILabel()
         contentLable.numberOfLines = 0
         contentLable.font = UIFont.systemFont(ofSize: 15)
+        contentLable.textColor = KPDetail()
         return contentLable
     }()
     

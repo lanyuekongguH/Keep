@@ -10,14 +10,13 @@ import UIKit
 
 extension UIImage {
 
-    class func stretchImage(_ name: String) -> UIImage {
+    class func stretchImage(_ name: String) -> UIImage? {
         return self.stretchImage(name, Int(0.5), Int(0.5))
     }
 
-    class func stretchImage(_ name: String, _ leftScale:Int, _ topScale:Int) -> UIImage {
-        let image = UIImage(named: name)
+    class func stretchImage(_ name: String, _ leftScale:Int, _ topScale:Int) -> UIImage? {
         
-        return (image?.stretchableImage(withLeftCapWidth: leftScale, topCapHeight: topScale))!
+        return UIImage(named: name)?.stretchableImage(withLeftCapWidth: leftScale, topCapHeight: topScale)
     }
 
 }

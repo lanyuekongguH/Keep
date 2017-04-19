@@ -49,8 +49,13 @@ func KPRed() -> UIColor {
     return KPColor(252.0, g: 61.0, b: 57.0, a: 1.0)
 }
 
+func KPDetail() -> UIColor {
+    return KPColor(55.0, g: 55.0, b: 55.0, a: 1.0)
+}
 
-
+func KPComment() -> UIColor {
+    return KPColor(114.0, g: 114.0, b: 114.0, a: 1.0)
+}
 
 /// iPhone 5
 let isIPhone5 = SCREENH == 568 ? true : false

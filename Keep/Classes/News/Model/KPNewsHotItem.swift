@@ -13,7 +13,7 @@ class KPNewsHotItem: NSObject {
 
     var reason: String?
     var achievements: Array<Any>?
-    var internalShareCount: Int = 0
+    var internalShareCount: Int?
     var stateValue: String?
     var feel: String?
     var type: String?
@@ -25,11 +25,11 @@ class KPNewsHotItem: NSObject {
     var originalMd5: String?
     var sampleComments: String?
     var state: String?
-    var viewCount: Int = 0
+    var viewCount: Int?
     var id: String?
     var contentType: Array<Any>?
     
-    var likes: Int = 0
+    var likes: Int?
     var comments: String?
     var author: KPNewsAuthorItem?
     
@@ -38,7 +38,7 @@ class KPNewsHotItem: NSObject {
     var photo: String?
     var commentUsers: String?
     var externalShareCount: String?
-    var favoriteCount: Int = 0
+    var favoriteCount: Int?
     
     
     init(dict: [String: AnyObject]) {
@@ -47,7 +47,7 @@ class KPNewsHotItem: NSObject {
         
         reason = dict["reason"] as? String
         achievements = dict["achievements"] as? Array
-        internalShareCount = dict["internalShareCount"] as! Int
+        internalShareCount = dict["internalShareCount"] as? Int
         stateValue = dict["stateValue"] as? String
         feel = dict["feel"] as? String
         type = dict["type"] as? String
@@ -58,10 +58,10 @@ class KPNewsHotItem: NSObject {
         originalMd5 = dict["originalMd5"] as? String
         sampleComments = dict["sampleComments"] as? String
         state = dict["state"] as? String
-        viewCount = dict["viewCount"] as! Int
+        viewCount = dict["viewCount"] as? Int
         id = dict["id"] as? String
         contentType = dict["contentType"] as? Array
-        likes = dict["likes"] as! Int
+        likes = dict["likes"] as? Int
         comments = dict["comments"] as? String
         author = KPNewsAuthorItem(dict: dict["author"] as! [String: AnyObject])
         created = dict["created"] as? String
@@ -69,7 +69,7 @@ class KPNewsHotItem: NSObject {
         photo = dict["photo"] as? String
         commentUsers = dict["id"] as? String
         externalShareCount = dict["contentType"] as? String
-        favoriteCount = dict["favoriteCount"] as! Int
+        favoriteCount = dict["favoriteCount"] as? Int
     }
     
 //    "reason": "grouped",

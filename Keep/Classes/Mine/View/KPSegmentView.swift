@@ -16,16 +16,18 @@ class KPSegmentView: UIView {
 
     weak var delegate: KPSegmentViewDelegate?
     
-    var titiles: Array<Any>? {
+    var titiles: Array<String>? {
         didSet {
             
-            if (titiles?.count)! < 2 {
-                return
-            }
+            if let titiles = titiles {
             
-            leftButton.setTitle(titiles?[0] as! String? , for: UIControlState())
-            rightButton.setTitle(titiles?[1] as! String?, for: UIControlState())
-
+                if titiles.count < 2 {
+                    return
+                }
+                
+                leftButton.setTitle(titiles[0] , for: UIControlState())
+                rightButton.setTitle(titiles[1], for: UIControlState())
+            }
         }
     }
     

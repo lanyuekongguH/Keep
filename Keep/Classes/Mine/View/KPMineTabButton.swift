@@ -23,15 +23,17 @@ class KPMineTabButton: UIButton {
         super.layoutSubviews()
         
         // 按钮图片和标题总高度
-        let totalHeight: CGFloat
-        totalHeight = ((self.imageView?.frame.size.height)! + (self.titleLabel?.frame.size.height)!);
+        var totalHeight: CGFloat = 0
         
-        // 设置按钮图片偏移
-        self.imageEdgeInsets = UIEdgeInsetsMake(-(totalHeight - (self.imageView?.frame.size.height)!), 0.0, 0.0, -(self.titleLabel?.frame.size.width)!)
-        
-        
-        // 设置按钮标题偏移
-        self.titleEdgeInsets = UIEdgeInsetsMake(0.0, -(self.imageView?.frame.size.width)!, -(totalHeight - (self.titleLabel?.frame.size.height)!),0.0)
+        if let imageView = self.imageView, let titleLabel = self.titleLabel {
+            totalHeight = imageView.frame.size.height + titleLabel.frame.size.height;
+            
+            // 设置按钮图片偏移
+            self.imageEdgeInsets = UIEdgeInsetsMake(-(totalHeight - imageView.frame.size.height), 0.0, 0.0, -titleLabel.frame.size.width)
+            
+            // 设置按钮标题偏移
+            self.titleEdgeInsets = UIEdgeInsetsMake(0.0, -imageView.frame.size.width, -(totalHeight - titleLabel.frame.size.height),0.0)
+        }
     }
     
     required init?(coder aDecoder: NSCoder){

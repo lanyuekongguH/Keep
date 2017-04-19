@@ -20,7 +20,11 @@ extension String {
     }
     
     func toCGFloat() -> CGFloat? {
-        return CGFloat(NumberFormatter().number(from: self)!)
+        
+        if let f = NumberFormatter().number(from: self) {
+        
+            return CGFloat(f)
+        } else { return 0 }
     }
 }
 
@@ -40,10 +44,13 @@ extension String {
 
         imageH = self.substring(with: (range2?.upperBound)!..<(range3?.lowerBound)!)
 
-        let rate = (imageH?.toCGFloat())! / (imageW?.toCGFloat())!
+        if let imageH = imageH?.toCGFloat(), let imageW = imageW?.toCGFloat() {
         
-        return  CGSize(width: SCREENW, height: SCREENW * rate)
-
+            let rate = imageH / imageW
+            return CGSize.init(width: SCREENW, height: SCREENW * rate)
+        }
+        
+        return  CGSize.zero
     }
     
     

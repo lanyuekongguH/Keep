@@ -21,8 +21,6 @@ class KPNetworkTool: NSObject {
     /// 加载banner数据
     func loadStoreBannerData(_ finished:@escaping ([KPStoreBanner]) ->()) {
         
-        //https://store.gotokeep.com/api/v1/banner/1
-        
         let path = Bundle.main.path(forResource: "BannerData", ofType: "geojson")
         let contentData = NSData.init(contentsOfFile: path!)
         let json = JSON(contentData as Any)
@@ -45,8 +43,6 @@ class KPNetworkTool: NSObject {
     func loadStoreListData(_ request:@escaping ([Any]) ->()) {
     
         let url = "https://store.gotokeep.com/api/v1.0/subject/recommondAreaList?count=7"
-        
-        //https://store.gotokeep.com/api/v1/banner/1
 
         Alamofire.request(url).responseJSON { response in
             
@@ -59,14 +55,8 @@ class KPNetworkTool: NSObject {
             
             if let value = response.result.value {
                 
-                let json = JSON(value)
-                
-                print("dddddddddd",json)
-
-//                request(json)
             }
         }
-    
     }
     
     
@@ -74,8 +64,6 @@ class KPNetworkTool: NSObject {
 
     /// 加载热门数据
     func loadNewsHotData(last lastId:String?, _ finished:@escaping ([KPNewsHotItem],String?) ->()) {
-        
-        //https://api.gotokeep.com/social/v3/timeline/hot?lastId=58d8701be1d6d416109a6980
 
         var url: String
         
@@ -208,7 +196,6 @@ class KPNetworkTool: NSObject {
     
     func loadWebpData(urlStr url:String?, _ finished:@escaping (Data?) ->()) {
         
-        
         let url = "http://static1.keepcdn.com/picture/2017/04/16/20/9f0acd7751def8c752ec3e73915964eba2777620_2000x1500.jpg?imageMogr2/thumbnail/720x720/format/webp/quality/90"
         
         Alamofire.download(url).responseData { (response) in
@@ -221,8 +208,6 @@ class KPNetworkTool: NSObject {
     }
 
     func loadNewsHotVideoData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
-
-        //    https://api.gotokeep.com/social/v2/video/timeline/hot?limit=20
 
         var url: String
         
@@ -260,7 +245,6 @@ class KPNetworkTool: NSObject {
                 }
             }
         }
-
     }
     
 }

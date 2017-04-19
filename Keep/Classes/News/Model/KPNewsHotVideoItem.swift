@@ -45,8 +45,8 @@ class KPNewsHotVideoItem: NSObject {
     
     var _id: String?
     
-    var externalShareCount: Int = 0
-    var favoriteCount: Int = 0
+    var externalShareCount: Int?
+    var favoriteCount: Int?
     var now: String?
     
 }

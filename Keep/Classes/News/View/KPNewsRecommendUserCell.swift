@@ -59,13 +59,16 @@ class KPNewsRecommendUserCell: UITableViewCell {
                     make.left.equalTo(iconImageView.snp.right).offset(10)
                 }
                 
-                let content = contentLable.text?.boundingRectWithSize(CGSize.init(width: SCREENW - 20 - 30 - 20 - 10, height: CGFloat(MAXFRAG)), contentLable.font)
+                if let text = contentLable.text {
                 
-                contentLable.snp.updateConstraints { (make) in
-                    make.width.equalTo((content?.width)!)
-                    make.height.equalTo((content?.height)!)
-                    make.top.equalTo(iconImageView.snp.bottom).offset(10)
-                    make.left.equalTo(nameLable)
+                    let content = text.boundingRectWithSize(CGSize.init(width: SCREENW - 20 - 30 - 20 - 10, height: CGFloat(MAXFRAG)), contentLable.font)
+                    
+                    contentLable.snp.updateConstraints { (make) in
+                        make.width.equalTo(content.width)
+                        make.height.equalTo(content.height)
+                        make.top.equalTo(iconImageView.snp.bottom).offset(10)
+                        make.left.equalTo(nameLable)
+                    }
                 }
                 
                 likeButton.snp.updateConstraints { (make) in

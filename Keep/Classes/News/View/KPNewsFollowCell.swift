@@ -27,28 +27,35 @@ class KPNewsFollowCell: UITableViewCell {
             
             if let hotDetailItem = hotDetailItem {
                 
-                likesLabel.text = "\(hotDetailItem.likes!) 加油"
+                if let likes = hotDetailItem.likes, let likers = hotDetailItem.likers {
                 
-                if iconsArray.count == 0 {
+                    likesLabel.text = "\(likes) 加油"
                     
-                    for i in 0...5 {
-                    
-                        let icon = UIImageView()
-                        icon.frame = CGRect(x: i * 26, y: 0, width: 30, height: 30)
-                        icon.layer.masksToBounds = true
-                        icon.layer.cornerRadius = 15
-                        iconsArray.append(icon)
+                    if iconsArray.count == 0 {
+                        
+                        for i in 0...5 {
+                            
+                            let icon = UIImageView()
+                            icon.frame = CGRect(x: i * 26, y: 0, width: 30, height: 30)
+                            icon.layer.masksToBounds = true
+                            icon.layer.cornerRadius = 15
+                            iconsArray.append(icon)
+                        }
                     }
-                }
-                
-                let count = (hotDetailItem.likes! > 5) ? 5 : hotDetailItem.likes
-                
-                for i in 0...count! - 1 {
-                
-                    let icon = iconsArray[i]
                     
-                    icon.kf.setImage(with: URL(string: (hotDetailItem.likers?[i].avatar!)!), placeholder: nil)
-                    iconsView.addSubview(icon)
+                    let count = (likes > 5) ? 5 : hotDetailItem.likes
+                    
+                    for i in 0...count! - 1 {
+                        
+                        let icon = iconsArray[i]
+                        
+                        if let avatar = likers[i].avatar {
+                            
+                            icon.kf.setImage(with: URL(string: avatar), placeholder: nil)
+                        }
+                        
+                        iconsView.addSubview(icon)
+                    }
                 }
                 
                 let likeNumberW = likesLabel.text?.boundingRectWithFont(likesLabel.font).width

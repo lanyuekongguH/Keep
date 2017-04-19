@@ -38,10 +38,18 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
                 })
                 
                 contentLable.text = hotItem.content
-                iconImageView.kf.setImage(with: URL(string: (hotItem.author?.avatar!)!))
+                
+                if let avatar = hotItem.author?.avatar {
+                
+                    iconImageView.kf.setImage(with: URL(string: avatar))
+                }
+                
                 nameLable.text = hotItem.author?.username
                 likeImageView.image = UIImage(named: "icon_timeline_liked")
-                likeNumberLabel.text = String(hotItem.likes)
+                
+                if let likes = hotItem.likes {
+                    likeNumberLabel.text = String(likes)
+                }
                 
                 imageView.snp.updateConstraints { (make) in
                     make.width.height.equalTo(cellWidth)
@@ -69,10 +77,14 @@ class KPNewsHotCollectionCell: UICollectionViewCell {
                     make.left.equalTo(iconImageView.snp.right).offset(5)
                 }
                 
-                let likeNumberW = String(hotItem.likes).boundingRectWithFont(likeNumberLabel.font).width
+                var likeNumberW :CGFloat = 0
+                    
+                if let likes = hotItem.likes{
+                
+                    likeNumberW = String(likes).boundingRectWithFont(likeNumberLabel.font).width
+                }
                 
                 let likeImageViewX = cellWidth - likeNumberW - 16 - 5
-                
                 
                 likeImageView.snp.updateConstraints { (make) in
                     make.width.equalTo(16)

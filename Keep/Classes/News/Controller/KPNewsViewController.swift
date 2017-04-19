@@ -113,7 +113,7 @@ class KPNewsViewController: KPBaseViewController {
         let hotLabel = UILabel()
         hotLabel.text = "Hot Video"
         hotLabel.frame = CGRect(x: (SCREENW - 100)/2.0, y: 60, width: 100, height: 20)
-        hotLabel.font = UIFont.systemFont(ofSize: 17)
+        hotLabel.font = UIFont.boldSystemFont(ofSize: 17)
         hotLabel.textColor = UIColor.white
         hotLabel.textAlignment = .center
         hotImageView.addSubview(hotLabel)
@@ -127,10 +127,15 @@ class KPNewsViewController: KPBaseViewController {
         todayHotLabel.frame = CGRect(x: (SCREENW - 200)/2.0, y: 105, width: 200, height: 20)
         todayHotLabel.text = "今日热门视频"
         todayHotLabel.textColor = UIColor.white
+        todayHotLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        let attributedString = NSMutableAttributedString(string: todayHotLabel.text!, attributes: [NSKernAttributeName: (10)])
+        let style = NSMutableParagraphStyle()
+        attributedString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: (todayHotLabel.text?.characters.count)!))
+        todayHotLabel.attributedText = attributedString
         todayHotLabel.textAlignment = .center
-        todayHotLabel.font = UIFont.systemFont(ofSize: 20)
+
         hotImageView.addSubview(todayHotLabel)
-        
+
         let videoImageView = UIImageView()
         videoImageView.image = UIImage(named: "video_play_samll")
         videoImageView.frame = CGRect(x: (SCREENW - 40)/2.0, y: 140, width: 40, height: 40)

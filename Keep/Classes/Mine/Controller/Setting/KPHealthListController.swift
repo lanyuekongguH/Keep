@@ -95,12 +95,11 @@ class KPHealthListController: KPBaseViewController {
     
         var yVals = [ChartDataEntry]()
         
-        
         let stepCountArray = dataArray.reversed()
         
         for i in 0...6 {
         
-            let val = dataArray[6 - i].stepCount
+            let val = dataArray[6 - i].stepCount!
             
             yVals.append(ChartDataEntry(x: Double(i), y: Double(val)))
         }

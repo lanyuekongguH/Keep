@@ -88,12 +88,14 @@ class KPNewsDetailAuthorCell: UITableViewCell {
                 
                 let contentSize = contentLable.text?.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), contentLable.font)
 
-                contentLable.snp.updateConstraints { (make) in
-                    
-                    make.width.equalTo((contentSize?.width)!)
-                    make.height.equalTo((contentSize?.height)!)
-                    make.top.equalTo(photoImageView.snp.bottom).offset(15)
-                    make.left.equalTo(20)
+                if let contentSize = contentSize {
+                    contentLable.snp.updateConstraints { (make) in
+                        
+                        make.width.equalTo(contentSize.width)
+                        make.height.equalTo(contentSize.height)
+                        make.top.equalTo(photoImageView.snp.bottom).offset(15)
+                        make.left.equalTo(20)
+                    }
                 }
                 
                 likedButton.snp.updateConstraints { (make) in
@@ -135,9 +137,11 @@ class KPNewsDetailAuthorCell: UITableViewCell {
             
             let contentSize = item.content?.boundingRectWithSize(CGSize(width: SCREENW - (40), height: 9999), UIFont.systemFont(ofSize: 15))
             
-            let height = 15 + 30 + 15 + 15 + 25 + 60 + (photoSize?.height)! + (contentSize?.height)!
-
-            return CGFloat(height)
+            if let photoSize = photoSize, let contentSize = contentSize {
+                let height = 15 + 30 + 15 + 15 + 25 + 60 + photoSize.height + contentSize.height
+                
+                return CGFloat(height)
+            } else { return 0.1 }
             
         } else { return 0.1 }
     }

@@ -26,9 +26,11 @@ class KPStoreBannerView: UIView {
                 
                 detailLabel.text = banner.message
                 
-                specialOfferPriceLabel.text = "¥\(banner.specialOfferPrice / 100)"
+                if let specialOfferPrice = banner.specialOfferPrice, let originPrice = banner.originPrice {
                 
-                originPriceLabel.text = "¥\(banner.originPrice / 100)"
+                    specialOfferPriceLabel.text = "¥\(specialOfferPrice / 100)"
+                    originPriceLabel.text = "¥\(originPrice / 100)"
+                }
                 
                 timeLabel.text = "¥\(banner.time)"
                 
@@ -50,28 +52,38 @@ class KPStoreBannerView: UIView {
                 
                 specialOfferPriceLabel.snp.makeConstraints { (make) in
                     
-                    let size = specialOfferPriceLabel.text?.boundingRectWithFont(specialOfferPriceLabel.font)
-                    make.height.equalTo((size?.height)!)
-                    make.width.equalTo((size?.width)!)
-                    make.top.equalTo(detailLabel.snp.bottom).offset(20)
-                    make.left.equalTo(30)
+                    if let text = specialOfferPriceLabel.text {
+                    
+                        let size = text.boundingRectWithFont(specialOfferPriceLabel.font)
+                        make.height.equalTo(size.height)
+                        make.width.equalTo(size.width)
+                        make.top.equalTo(detailLabel.snp.bottom).offset(20)
+                        make.left.equalTo(30)
+                    }
                 }
                 
                 originPriceLabel.snp.makeConstraints { (make) in
-                    let size = originPriceLabel.text?.boundingRectWithFont(originPriceLabel.font)
-                    make.height.equalTo((size?.height)!)
                     
-                    make.width.equalTo((size?.width)!)
-                    make.bottom.equalTo(specialOfferPriceLabel).offset(-2)
-                    make.left.equalTo(specialOfferPriceLabel.snp.right).offset(15)
+                    if let text = originPriceLabel.text {
+                    
+                        let size = text.boundingRectWithFont(originPriceLabel.font)
+                        make.height.equalTo(size.height)
+                        make.width.equalTo(size.width)
+                        make.bottom.equalTo(specialOfferPriceLabel).offset(-2)
+                        make.left.equalTo(specialOfferPriceLabel.snp.right).offset(15)
+                    }
                 }
                 
                 timeLabel.snp.makeConstraints { (make) in
-                    let size = timeLabel.text?.boundingRectWithFont(timeLabel.font)
-                    make.height.equalTo((size?.height)!)
-                    make.width.equalTo((size?.width)!)
+                    
+                    if let text = timeLabel.text {
+                    
+                        let size = text.boundingRectWithFont(timeLabel.font)
+                        make.height.equalTo(size.height)
+                        make.width.equalTo(size.width)
                     make.top.equalTo(specialOfferPriceLabel.snp.bottom).offset(15)
-                    make.left.equalTo(30)
+                        make.left.equalTo(30)
+                    }
                 }
                 
                 storeImageView.snp.makeConstraints { (make) in

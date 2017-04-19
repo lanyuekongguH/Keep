@@ -15,16 +15,15 @@ class KPNewsCommentsItem: NSObject {
     var created: String?
     var refe: String?
     var hasLiked: Bool?
-    var stateValue: Int = 0
+    var stateValue: Int?
     var id: String?
     var _id: String?
     var state: String?
     var content: String?
-    var likes: Int = 0
+    var likes: Int?
     
     init(dict: [String: AnyObject]) {
         super.init()
-        
         
         refe_type = dict["refe_type"] as? String
         
@@ -37,12 +36,12 @@ class KPNewsCommentsItem: NSObject {
         refe = dict["refe"] as? String
         
         hasLiked = dict["hasLiked"] as? Bool
-        stateValue = dict["stateValue"] as! Int
+        stateValue = dict["stateValue"] as? Int
         id = dict["id"] as? String
         _id = dict["_id"] as? String
         state = dict["state"] as? String
         content = dict["content"] as? String
-        likes = dict["likes"] as! Int
+        likes = dict["likes"] as? Int
         
     }
     

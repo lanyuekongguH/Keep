@@ -54,13 +54,16 @@ class KPStoreTabView: UIView {
     
     func selectedButtonClick(_ button:UIButton) {
         
-        let index = button.tag
+        if let titles = titles {
         
-        let buttonW = SCREENW / CGFloat((titles?.count)!)
-
-        selectedView.frame = CGRect.init(x: (buttonW-60)/2.0 + buttonW * CGFloat(index), y: 38, width: 60, height: 2)
-
-        delegate?.storeTabView(self, button: button)
+            let index = button.tag
+            
+            let buttonW = SCREENW / CGFloat(titles.count)
+            
+            selectedView.frame = CGRect.init(x: (buttonW-60)/2.0 + buttonW * CGFloat(index), y: 38, width: 60, height: 2)
+            
+            delegate?.storeTabView(self, button: button)
+        }
     }
     
     fileprivate lazy var selectedView: UIView = {
