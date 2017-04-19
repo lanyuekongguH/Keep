@@ -52,10 +52,6 @@ class KPNetworkTool: NSObject {
                 SVProgressHUD.showError(withStatus: "加载失败...")
                 return
             }
-            
-            if let value = response.result.value {
-                
-            }
         }
     }
     

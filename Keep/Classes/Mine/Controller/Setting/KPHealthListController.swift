@@ -94,9 +94,7 @@ class KPHealthListController: KPBaseViewController {
     func dataWithCount(_ count:Int, _ range:Double) -> LineChartData {
     
         var yVals = [ChartDataEntry]()
-        
-        let stepCountArray = dataArray.reversed()
-        
+                
         for i in 0...6 {
         
             let val = dataArray[6 - i].stepCount!

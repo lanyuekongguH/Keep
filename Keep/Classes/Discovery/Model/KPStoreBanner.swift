@@ -24,11 +24,11 @@ class KPStoreBanner: NSObject {
         super.init()
         
         productId = dict["productId"] as? String
-        originPrice = dict["originPrice"] as! Int
-        specialOfferPrice = dict["specialOfferPrice"] as! Int
+        originPrice = dict["originPrice"] as? Int
+        specialOfferPrice = dict["specialOfferPrice"] as? Int
         name = dict["name"] as? String
         message = dict["message"] as? String
-        time = dict["time"] as! Int
+        time = dict["time"] as? Int
         image = dict["image"] as? String
         url = dict["url"] as? String
     }
