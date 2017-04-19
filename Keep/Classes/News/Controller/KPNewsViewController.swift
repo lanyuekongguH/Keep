@@ -151,17 +151,9 @@ class KPNewsViewController: KPBaseViewController {
         self.navigationController?.pushViewController(hotVideoVC, animated: true)
     }
     
-//    fileprivate lazy var segmentView: KPStoreTabView = {
-//        let segmentView = KPSegmentView()
-//        segmentView.frame = CGRect(x: 0, y: 0, width: 150, height: 44)
-//        segmentView.titiles = ["热门","关注","同城"]
-//        return segmentView
-//    }()
-//    
     fileprivate lazy var segmentView: KPSegmentView = {
-        let segmentView = KPSegmentView()
-        segmentView.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
-        segmentView.titiles = ["好友","小组"]
+        let segmentView = KPSegmentView(frame: CGRect(x: 0, y: 0, width: 0, height: 44), ["热门","关注","同城"])
+        segmentView.delegate = self
         return segmentView
     }()
     
@@ -253,6 +245,12 @@ extension KPNewsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension KPNewsViewController: KPSegmentViewDelegate {
 
+    func segmentView(_ segmentView: KPSegmentView, button: UIButton) {
+        
+        print("点击了",button.tag)
+    }
 
+}
 

@@ -16,43 +16,26 @@ class KPSegmentView: UIView {
 
     weak var delegate: KPSegmentViewDelegate?
     
-    var titiles: Array<String>? {
-        didSet {
-            
-            if let titiles = titiles {
-            
-                if titiles.count < 2 {
-                    return
-                }
-                
-                leftButton.setTitle(titiles[0] , for: UIControlState())
-                rightButton.setTitle(titiles[1], for: UIControlState())
-            }
-        }
-    }
+    init(frame:CGRect,_ titles:[String]) {
     
-    override init(frame:CGRect) {
-        super.init(frame: frame)
+        let W = titles.count * (40 + 20) - 20
+        let cgrect = CGRect.init(x: 0, y: 0, width: W, height: Int(frame.size.height))
         
-        addSubview(leftButton)
+        super.init(frame: cgrect)
         
-        addSubview(rightButton)
+        for i in 0...titles.count - 1 {
+            
+            let button = UIButton()
+            button.tag = i
+            button.setTitle(titles[i], for: UIControlState())
+            button.addTarget(self, action: #selector(segmentButtonClick(_:)), for: .touchUpInside)
+            button.setTitleColor(UIColor.white, for: UIControlState())
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            button.frame = CGRect(x: i * (40 + 20), y: 10, width: 40, height: 25)
+            addSubview(button)
+        }
         
         addSubview(bottomView)
-        
-        leftButton.snp.makeConstraints { (make) in
-            make.width.equalTo(40)
-            make.height.equalTo(25)
-            make.top.equalTo(10)
-            make.left.equalTo(0)
-        }
-        
-        rightButton.snp.makeConstraints { (make) in
-            make.width.equalTo(40)
-            make.height.equalTo(25)
-            make.top.equalTo(10)
-            make.left.equalTo(leftButton.snp.right).offset(20)
-        }
         
         bottomView.snp.makeConstraints { (make) in
             make.width.equalTo(30)
@@ -60,27 +43,8 @@ class KPSegmentView: UIView {
             make.bottom.equalTo(0)
             make.left.equalTo(0)
         }
-    }
-    
-    fileprivate lazy var leftButton: UIButton = {
-    
-        let leftButton = UIButton()
-        leftButton.tag = 1
-        leftButton.setTitleColor(UIColor.white, for: UIControlState())
-        leftButton.addTarget(self, action: #selector(segmentButtonClick(_:)), for: .touchUpInside)
-        leftButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        return leftButton
-    }()
-    
-    fileprivate lazy var rightButton: UIButton = {
         
-        let rightButton = UIButton()
-        rightButton.tag = 2
-        rightButton.setTitleColor(UIColor.white, for: UIControlState())
-        rightButton.addTarget(self, action: #selector(segmentButtonClick(_:)), for: .touchUpInside)
-        rightButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        return rightButton
-    }()
+    }
     
     fileprivate lazy var bottomView: UIView = {
         
@@ -91,32 +55,16 @@ class KPSegmentView: UIView {
     
     func segmentButtonClick(_ button:UIButton) {
     
-        if button.tag == 1 {
-        
-            UIView.animate(withDuration: 0.25, animations: {
-                self.bottomView.snp.remakeConstraints({ (make) in
-                    
-                    make.left.equalTo(self.leftButton.snp.left)
-                    make.width.equalTo(30)
-                    make.height.equalTo(2)
-                    make.bottom.equalTo(0)
-                })
-                self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.bottomView.snp.remakeConstraints({ (make) in
+                
+                make.left.equalTo(button.tag * (40 + 20))
+                make.width.equalTo(30)
+                make.height.equalTo(2)
+                make.bottom.equalTo(0)
             })
-            
-        } else {
-        
-            UIView.animate(withDuration: 0.25, animations: {
-                self.bottomView.snp.remakeConstraints({ (make) in
-                    
-                    make.left.equalTo(self.rightButton.snp.left)
-                    make.width.equalTo(30)
-                    make.height.equalTo(2)
-                    make.bottom.equalTo(0)
-                })
-                self.layoutIfNeeded()
-            })
-        }
+            self.layoutIfNeeded()
+        })
         
         delegate?.segmentView(self, button: button)
     }

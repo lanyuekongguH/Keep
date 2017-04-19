@@ -28,9 +28,7 @@ class KPInfoViewController: UIViewController {
     }
     
     fileprivate lazy var segmentView: KPSegmentView = {
-        let segmentView = KPSegmentView()
-        segmentView.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
-        segmentView.titiles = ["通知","消息"]
+        let segmentView = KPSegmentView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 44), ["通知","消息"])
         return segmentView
     }()
     
@@ -43,7 +41,6 @@ class KPInfoViewController: UIViewController {
         
         return segmentedControl
     }()
-    
 }
 
 extension KPInfoViewController: KPSegmentViewDelegate {
