@@ -19,12 +19,20 @@ class KPNewsViewController: KPBaseViewController {
 
     fileprivate var hotItems = [KPNewsHotItem]()
 
-    var collectionView: UICollectionView?
+    var scrollView: UIScrollView?
     
+    var hotCollectionView: UICollectionView?
     var refreshControl = UIRefreshControl()
-    
     let footer = MJRefreshAutoNormalFooter()
-
+    
+    var followTableView: UITableView?
+    var followRefreshControl = UIRefreshControl()
+    let followFooter = MJRefreshAutoNormalFooter()
+    
+    var cityTableView: UITableView?
+    var cityRefreshControl = UIRefreshControl()
+    let cityFooter = MJRefreshAutoNormalFooter()
+    
     var lastID : String?
 
     override func viewDidLoad() {
@@ -36,7 +44,7 @@ class KPNewsViewController: KPBaseViewController {
         
         refreshControl.addTarget(self, action: #selector(loadBannerData), for: .valueChanged)
         
-        collectionView?.addSubview(refreshControl)
+        hotCollectionView?.addSubview(refreshControl)
     }
     
     fileprivate func setupUI() {
@@ -52,23 +60,27 @@ class KPNewsViewController: KPBaseViewController {
         navigationItem.leftBarButtonItem = leftItem
         navigationItem.rightBarButtonItem = rightItem
     
+        // UICollectionView
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (SCREENW - 3 * 15)/2.0, height: (SCREENW - 3 * 15)/2.0 + 80)
         
-        let collectionView = UICollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
+        let hotCollectionView = UICollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
         
-        collectionView.register(KPNewsHotCollectionCell.self, forCellWithReuseIdentifier: KPNewsHotCollectionCellIdentifier)
+        hotCollectionView.register(KPNewsHotCollectionCell.self, forCellWithReuseIdentifier: KPNewsHotCollectionCellIdentifier)
         
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KPNewsHotHeadViewIdentifier)
+        hotCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KPNewsHotHeadViewIdentifier)
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        view.addSubview(collectionView)
-        self.collectionView = collectionView
+        hotCollectionView.delegate = self
+        hotCollectionView.dataSource = self
+        hotCollectionView.backgroundColor = UIColor.white
+        view.addSubview(hotCollectionView)
+        self.hotCollectionView = hotCollectionView
         
         footer.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadBannerData))
-        self.collectionView?.mj_footer = footer
+        self.hotCollectionView?.mj_footer = footer
+        
+        
+        
     }
     
     @objc fileprivate func loadBannerData() {
@@ -82,7 +94,7 @@ class KPNewsViewController: KPBaseViewController {
             if self?.lastID != nil {
             
                 self?.hotItems.append(contentsOf: data.0)
-                self?.collectionView?.mj_footer.endRefreshing()
+                self?.hotCollectionView?.mj_footer.endRefreshing()
                 
             } else {
                 self?.hotItems = data.0
@@ -93,7 +105,7 @@ class KPNewsViewController: KPBaseViewController {
                 self?.refreshControl.endRefreshing()
             }
             
-            self?.collectionView?.reloadData()
+            self?.hotCollectionView?.reloadData()
         }
     }
     
