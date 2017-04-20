@@ -29,6 +29,32 @@ extension String {
 }
 
 extension String {
+
+    /// 返回日期
+//    func kp_getDateTime() -> String? {
+
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "zh_CN")
+//        dateFormatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd HH:mm:ss")
+//        let delta = Date().timeIntervalSince(publishTime)
+
+//        if (delta <= 0) {
+//            return "刚刚"
+//        }
+//        else if (delta < 60) {
+//            return "\(Int(delta))秒前"
+//        }
+//        else if (delta < 3600) {
+//            return "\(Int(delta / 60))分钟前"
+//        }
+//        else {
+//            
+//        }
+        
+//    }
+}
+
+extension String {
     
     /// 返回图片大小比例
     func getImageViewSize() -> CGSize {
