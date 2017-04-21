@@ -46,6 +46,25 @@ class KPSegmentView: UIView {
         
     }
     
+    var offsetRate: CGFloat? {
+        didSet {
+            
+            guard let offsetRate = offsetRate else {
+                return
+            }
+            
+            print(offsetRate)
+            
+            self.bottomView.snp.remakeConstraints({ (make) in
+                
+                make.left.equalTo(offsetRate * (40 + 20) + 5)
+                make.width.equalTo(30)
+                make.height.equalTo(2)
+                make.bottom.equalTo(0)
+            })
+        }
+    }
+    
     fileprivate lazy var bottomView: UIView = {
         
         let bottomView = UIView()
@@ -58,7 +77,7 @@ class KPSegmentView: UIView {
         UIView.animate(withDuration: 0.25, animations: {
             self.bottomView.snp.remakeConstraints({ (make) in
                 
-                make.left.equalTo(button.tag * (40 + 20))
+                make.left.equalTo(button.tag * (40 + 20) + 5)
                 make.width.equalTo(30)
                 make.height.equalTo(2)
                 make.bottom.equalTo(0)

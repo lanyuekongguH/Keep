@@ -18,6 +18,8 @@ let KPNewsHotHeadViewIdentifier = "KPNewsHotHeadViewIdentifier"
 class KPNewsViewController: KPBaseViewController {
 
     fileprivate var hotItems = [KPNewsHotItem]()
+    fileprivate var followItems = [KPNewsHotItem]()
+    fileprivate var cityItems = [KPNewsHotItem]()
 
     var scrollView: UIScrollView?
     
@@ -41,16 +43,12 @@ class KPNewsViewController: KPBaseViewController {
         setupUI()
         
         loadBannerData()
-        
-        refreshControl.addTarget(self, action: #selector(loadBannerData), for: .valueChanged)
-        
-        hotCollectionView?.addSubview(refreshControl)
     }
     
     fileprivate func setupUI() {
     
         view.backgroundColor = KPBg()
-        
+        self.automaticallyAdjustsScrollViewInsets = false;
         navigationItem.titleView = segmentView
         
         let rightItem = UIBarButtonItem(image: UIImage(named: "add"), style: .plain, target: self, action: #selector(rightItemClick))
@@ -67,20 +65,66 @@ class KPNewsViewController: KPBaseViewController {
         let hotCollectionView = UICollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:CGSize(width: SCREENW, height: (SCREENH - 44))), collectionViewLayout: layout)
         
         hotCollectionView.register(KPNewsHotCollectionCell.self, forCellWithReuseIdentifier: KPNewsHotCollectionCellIdentifier)
-        
         hotCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KPNewsHotHeadViewIdentifier)
         
         hotCollectionView.delegate = self
         hotCollectionView.dataSource = self
         hotCollectionView.backgroundColor = UIColor.white
-        view.addSubview(hotCollectionView)
         self.hotCollectionView = hotCollectionView
+        
+        refreshControl.addTarget(self, action: #selector(loadBannerData), for: .valueChanged)
+        self.hotCollectionView?.addSubview(refreshControl)
         
         footer.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadBannerData))
         self.hotCollectionView?.mj_footer = footer
         
+        /// 关注
+        let followTableView = UITableView(frame: CGRect(x: SCREENW, y: 0, width: SCREENW, height: SCREENH - 44), style: .plain)
+        followTableView.backgroundColor = KPTable()
+        followTableView.register(KPNewsDetailAuthorCell.self, forCellReuseIdentifier: KPNewsDetailAuthorCellIdentifier)
+        followTableView.tableFooterView = UIView()
+        followTableView.delegate = self
+        followTableView.dataSource = self
+        self.followTableView = followTableView
+        followRefreshControl.addTarget(self, action: #selector(loadFollowsData), for: .valueChanged)
+        self.followTableView?.addSubview(followRefreshControl)
+        
+        followFooter.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadFollowsData))
+        self.followTableView?.mj_footer = followFooter
         
         
+        /// 同城
+        let cityTableView = UITableView(frame: CGRect(x:SCREENW * 2, y: 0, width: SCREENW, height: SCREENH - 44), style: .plain)
+        cityTableView.backgroundColor = KPTable()
+        cityTableView.register(KPNewsDetailAuthorCell.self, forCellReuseIdentifier: KPNewsDetailAuthorCellIdentifier)
+        cityTableView.tableFooterView = UIView()
+        cityTableView.delegate = self
+        cityTableView.dataSource = self
+        self.cityTableView = cityTableView
+        
+        cityRefreshControl.addTarget(self, action: #selector(loadCityData), for: .valueChanged)
+        self.cityTableView?.addSubview(cityRefreshControl)
+        
+        cityFooter.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadCityData))
+        self.cityTableView?.mj_footer = cityFooter
+        
+        let scrollView = UIScrollView(frame: CGRect(x:0, y: 64, width: SCREENW, height: SCREENH - 64))
+        
+        scrollView.contentSize = CGSize(width: SCREENW * 3, height: SCREENH - 44)
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.bounces = false
+        scrollView.delegate = self
+        self.scrollView = scrollView
+        
+        scrollView.addSubview(hotCollectionView)
+
+        scrollView.addSubview(followTableView)
+
+        scrollView.addSubview(cityTableView)
+        
+        self.view.addSubview(scrollView)
     }
     
     @objc fileprivate func loadBannerData() {
@@ -107,6 +151,16 @@ class KPNewsViewController: KPBaseViewController {
             
             self?.hotCollectionView?.reloadData()
         }
+    }
+    
+    @objc fileprivate func loadFollowsData() {
+
+        
+    }
+    
+    @objc fileprivate func loadCityData() {
+        
+        
     }
     
     fileprivate lazy var hotImageView: UIImageView = {
@@ -257,11 +311,59 @@ extension KPNewsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension KPNewsViewController: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        if indexPath.section == 1 {
+            
+        }
+    }
+}
+
+extension KPNewsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return followItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsLikersListCellIdentifier) as! KPNewsLikersListCell
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 50
+    }
+    
+}
+
 extension KPNewsViewController: KPSegmentViewDelegate {
 
     func segmentView(_ segmentView: KPSegmentView, button: UIButton) {
         
-        print("点击了",button.tag)
+        scrollView?.setContentOffset(CGPoint(x: button.tag * Int(SCREENW), y: 0), animated: true)
+        
+    }
+
+}
+
+extension KPNewsViewController: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+        segmentView.offsetRate = scrollView.contentOffset.x / SCREENW
     }
 
 }
