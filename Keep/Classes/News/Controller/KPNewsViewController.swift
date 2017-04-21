@@ -18,8 +18,8 @@ let KPNewsHotHeadViewIdentifier = "KPNewsHotHeadViewIdentifier"
 class KPNewsViewController: KPBaseViewController {
 
     fileprivate var hotItems = [KPNewsHotItem]()
-    fileprivate var followItems = [KPNewsHotItem]()
-    fileprivate var cityItems = [KPNewsHotItem]()
+    fileprivate var followItems = [KPHotDetailItem]()
+    fileprivate var cityItems = [KPHotDetailItem]()
 
     var scrollView: UIScrollView?
     
@@ -42,7 +42,12 @@ class KPNewsViewController: KPBaseViewController {
 
         setupUI()
         
-        loadBannerData()
+        loadHotData()
+        
+        loadFollowsData()
+
+        loadCityData()
+
     }
     
     fileprivate func setupUI() {
@@ -72,16 +77,17 @@ class KPNewsViewController: KPBaseViewController {
         hotCollectionView.backgroundColor = UIColor.white
         self.hotCollectionView = hotCollectionView
         
-        refreshControl.addTarget(self, action: #selector(loadBannerData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(loadHotData), for: .valueChanged)
         self.hotCollectionView?.addSubview(refreshControl)
         
-        footer.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadBannerData))
+        footer.setRefreshingTarget(self, refreshingAction: #selector(KPNewsViewController.loadHotData))
         self.hotCollectionView?.mj_footer = footer
         
         /// 关注
         let followTableView = UITableView(frame: CGRect(x: SCREENW, y: 0, width: SCREENW, height: SCREENH - 44), style: .plain)
         followTableView.backgroundColor = KPTable()
         followTableView.register(KPNewsDetailAuthorCell.self, forCellReuseIdentifier: KPNewsDetailAuthorCellIdentifier)
+        
         followTableView.tableFooterView = UIView()
         followTableView.delegate = self
         followTableView.dataSource = self
@@ -127,9 +133,9 @@ class KPNewsViewController: KPBaseViewController {
         self.view.addSubview(scrollView)
     }
     
-    @objc fileprivate func loadBannerData() {
+    @objc fileprivate func loadHotData() {
         
-        KPNetworkTool.shareNetworkTool.loadNewsHotData(last: lastID) {[weak self]
+        KPNetworkTool.shareNetworkTool.loadNewsHotData(last: nil) {[weak self]
         
             (data) in
             
@@ -155,6 +161,28 @@ class KPNewsViewController: KPBaseViewController {
     
     @objc fileprivate func loadFollowsData() {
 
+        KPNetworkTool.shareNetworkTool.loadNewsFollowListData(last: lastID) { [weak self]
+            
+            (data) in
+
+            self?.lastID = data.1
+
+            if self?.lastID != nil {
+                
+                self?.followItems.append(contentsOf: data.0)
+                self?.followTableView?.mj_footer.endRefreshing()
+                
+            } else {
+                self?.followItems = data.0
+            }
+            
+            if (self?.followRefreshControl.isRefreshing)! {
+                
+                self?.followRefreshControl.endRefreshing()
+            }
+            
+            self?.followTableView?.reloadData()
+        }
         
     }
     
@@ -332,8 +360,9 @@ extension KPNewsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsLikersListCellIdentifier) as! KPNewsLikersListCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: KPNewsDetailAuthorCellIdentifier) as! KPNewsDetailAuthorCell
+        cell.hotDetailItem = followItems[indexPath.row]
+        cell.bottomView.delegate = self
         return cell
     }
     
@@ -344,7 +373,7 @@ extension KPNewsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        return KPNewsDetailAuthorCell.heightOfAuthorCell(followItems[indexPath.row])
     }
     
 }
@@ -354,9 +383,7 @@ extension KPNewsViewController: KPSegmentViewDelegate {
     func segmentView(_ segmentView: KPSegmentView, button: UIButton) {
         
         scrollView?.setContentOffset(CGPoint(x: button.tag * Int(SCREENW), y: 0), animated: true)
-        
     }
-
 }
 
 extension KPNewsViewController: UIScrollViewDelegate {
@@ -365,6 +392,13 @@ extension KPNewsViewController: UIScrollViewDelegate {
     
         segmentView.offsetRate = scrollView.contentOffset.x / SCREENW
     }
-
 }
+
+extension KPNewsViewController: KPNewsHotBottomButtonDelegate {
+
+    func newsHotBottomButton(_ bottomView:KPNewsHotBottomView, button:UIButton) {
+    
+    }
+}
+
 

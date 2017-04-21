@@ -53,8 +53,6 @@ class KPSegmentView: UIView {
                 return
             }
             
-            print(offsetRate)
-            
             self.bottomView.snp.remakeConstraints({ (make) in
                 
                 make.left.equalTo(offsetRate * (40 + 20) + 5)

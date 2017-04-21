@@ -55,8 +55,12 @@ class KPHotDetailItem: NSObject {
     var videoLength: Int?
     var videoVoice: String?
     var videoPlayCount: Int?
-    var meta: String?
 
+    var traininglog: String?
+    var plan: String?
+    var workout: String?
+    var meta: KPNewsMetaItem?
+    var timezone: String?
     
     init(dict: [String: AnyObject]) {
         
@@ -128,5 +132,15 @@ class KPHotDetailItem: NSObject {
         videoVoice = dict["videoVoice"] as? String
         videoLength = dict["videoLength"] as? Int
         videoPlayCount = dict["videoPlayCount"] as? Int
+        
+        traininglog = dict["traininglog"] as? String
+        plan = dict["plan"] as? String
+        workout = dict["workout"] as? String
+        
+        if let dic = dict["meta"] {
+            meta = KPNewsMetaItem(dict: dic as! [String: AnyObject])
+        }
+    
+        timezone = dict["timezone"] as? String
     }
 }

@@ -68,7 +68,6 @@ class KPNetworkTool: NSObject {
 
         } else {
             url = "https://api.gotokeep.com/social/v3/timeline/hot"
-
         }
         
         Alamofire.request(url).responseJSON { response in
@@ -242,5 +241,59 @@ class KPNetworkTool: NSObject {
             }
         }
     }
+    
+    
+    func loadNewsFollowListData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
+        
+        // https://api.gotokeep.com/social/v2/follow/timeline
+        
+        var url: String
+        
+        if let lastId = lastId {
+            url = "https://api.gotokeep.com/social/v3/timeline/hot?lastId=\(lastId)"
+            
+        } else {
+            url = "https://api.gotokeep.com/social/v2/follow/timeline"
+            
+        }
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            print(response)
+            
+            guard response.result.isSuccess else {
+                SVProgressHUD.showError(withStatus: "加载失败...")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let data = json["data"]["timeline"].arrayObject {
+                    var followItems = [KPHotDetailItem]()
+                    
+                    for dict in data {
+                        let item = KPHotDetailItem(dict: dict as! [String: AnyObject])
+                        followItems.append(item)
+                    }
+                    
+                    let lastID = json["data"]["lastId"].string
+                    
+                    finished(followItems, lastID)
+                }
+            }
+        }
+
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     
 }
