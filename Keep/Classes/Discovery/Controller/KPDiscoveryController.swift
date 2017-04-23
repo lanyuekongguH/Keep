@@ -18,6 +18,14 @@ class KPDiscoveryController: KPBaseViewController {
 
     var tableView: UITableView?
 
+    
+    fileprivate var hotItems = [KPNewsHotItem]()
+    fileprivate var followItems = [KPHotDetailItem]()
+    fileprivate var cityItems = [KPHotDetailItem]()
+    
+    var scrollView: UIScrollView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

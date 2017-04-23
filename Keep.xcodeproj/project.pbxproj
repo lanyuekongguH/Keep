@@ -31,6 +31,7 @@
 		E44F27E01EA334F5002A1B5A /* KPNewsAddFriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F27DF1EA334F5002A1B5A /* KPNewsAddFriendListCell.swift */; };
 		E44F27E21EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F27E11EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift */; };
 		E44F27E41EA335D4002A1B5A /* KPNewsAddFriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F27E31EA335D4002A1B5A /* KPNewsAddFriendButton.swift */; };
+		E45B5D621EACECCA004FD585 /* KPTainPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B5D611EACECCA004FD585 /* KPTainPlanController.swift */; };
 		E45D45B41E70020000AA79C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D45B31E70020000AA79C5 /* AppDelegate.swift */; };
 		E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45D45B71E70020000AA79C5 /* Main.storyboard */; };
 		E45D45BB1E70020000AA79C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45D45BA1E70020000AA79C5 /* Assets.xcassets */; };
@@ -185,6 +186,7 @@
 		E44F27DF1EA334F5002A1B5A /* KPNewsAddFriendListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAddFriendListCell.swift; sourceTree = "<group>"; };
 		E44F27E11EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAddFriendInviteCell.swift; sourceTree = "<group>"; };
 		E44F27E31EA335D4002A1B5A /* KPNewsAddFriendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAddFriendButton.swift; sourceTree = "<group>"; };
+		E45B5D611EACECCA004FD585 /* KPTainPlanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTainPlanController.swift; sourceTree = "<group>"; };
 		E45D45B01E70020000AA79C5 /* Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45D45B31E70020000AA79C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E45D45B81E70020000AA79C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -614,6 +616,7 @@
 				E4A5D9341E7007D000F91783 /* KPTrainViewController.swift */,
 				E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */,
 				E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */,
+				E45B5D611EACECCA004FD585 /* KPTainPlanController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -999,6 +1002,7 @@
 				E40166E61E8D085000C41F96 /* KPAboutMeViewController.swift in Sources */,
 				E4A5D92B1E70058D00F91783 /* KPInfoViewController.swift in Sources */,
 				E4F011CB1E9645340043B61D /* KPNewsHotItem.swift in Sources */,
+				E45B5D621EACECCA004FD585 /* KPTainPlanController.swift in Sources */,
 				E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */,
 				E4F011C71E9644700043B61D /* KPStoreTabView.swift in Sources */,
 				E4694FCF1E9C918C00B5026E /* KPHealthData.swift in Sources */,
