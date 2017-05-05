@@ -22,6 +22,7 @@
 		E4051EC61E77C86C007801CA /* String+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EC51E77C86C007801CA /* String+KP.swift */; };
 		E40989AB1EBC815F004B1AEB /* TrainListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AA1EBC815F004B1AEB /* TrainListData.geojson */; };
 		E40989AD1EBC8282004B1AEB /* DietListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AC1EBC8282004B1AEB /* DietListData.geojson */; };
+		E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40989AE1EBC856C004B1AEB /* KPDietItem.swift */; };
 		E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */; };
 		E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C31E7133F20024EE1B /* KPMineTabButton.swift */; };
 		E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C61E713F940024EE1B /* UITableView+KP.swift */; };
@@ -182,6 +183,7 @@
 		E4051EC51E77C86C007801CA /* String+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KP.swift"; sourceTree = "<group>"; };
 		E40989AA1EBC815F004B1AEB /* TrainListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TrainListData.geojson; sourceTree = "<group>"; };
 		E40989AC1EBC8282004B1AEB /* DietListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DietListData.geojson; sourceTree = "<group>"; };
+		E40989AE1EBC856C004B1AEB /* KPDietItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDietItem.swift; sourceTree = "<group>"; };
 		E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButtonCell.swift; sourceTree = "<group>"; };
 		E41861C31E7133F20024EE1B /* KPMineTabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButton.swift; sourceTree = "<group>"; };
 		E41861C61E713F940024EE1B /* UITableView+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+KP.swift"; sourceTree = "<group>"; };
@@ -715,6 +717,7 @@
 			children = (
 				E4F011BA1E9644670043B61D /* KPStoreBanner.swift */,
 				E4F011BB1E9644670043B61D /* KPStoreList.swift */,
+				E40989AE1EBC856C004B1AEB /* KPDietItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1034,6 +1037,7 @@
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
 				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
 				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,
+				E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */,
 				E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */,
 				E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */,
 				E40166E21E8D081E00C41F96 /* KPCacheManagerController.swift in Sources */,
