@@ -72,70 +72,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Keep/Classes/Others/Tool/KPNetworkTool.swift"
-            timestampString = "514457997.93701"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "loadNewsFollowListData(last:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Keep/Classes/Others/Tool/KPNetworkTool.swift"
-            timestampString = "514458004.101482"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "loadNewsFollowListData(last:_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Keep.KPNetworkTool.loadNewsFollowListData (last : Swift.Optional&lt;Swift.String&gt;, (Swift.Array&lt;Keep.KPHotDetailItem&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Keep"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/damon/Desktop/KeepCodes/KeepCode/Keep/Classes/Others/Tool/KPNetworkTool.swift"
-                  timestampString = "514458041.950141"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "260"
-                  endingLineNumber = "260"
-                  offsetFromSymbolStart = "416">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Keep.KPNetworkTool.(loadNewsFollowListData (last : Swift.Optional&lt;Swift.String&gt;, (Swift.Array&lt;Keep.KPHotDetailItem&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Keep"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/damon/Desktop/KeepCodes/KeepCode/Keep/Classes/Others/Tool/KPNetworkTool.swift"
-                  timestampString = "514458041.955602"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "262"
-                  endingLineNumber = "262"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Keep/Classes/Others/Tool/KPNetworkTool.swift"
             timestampString = "514458483.699211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -152,7 +88,7 @@
                   moduleName = "Keep"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/damon/Desktop/KeepCodes/KeepCode/Keep/Classes/Others/Tool/KPNetworkTool.swift"
-                  timestampString = "514458483.955773"
+                  timestampString = "515659587.967986"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "216"
@@ -167,7 +103,7 @@
                   moduleName = "Keep"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/damon/Desktop/KeepCodes/KeepCode/Keep/Classes/Others/Tool/KPNetworkTool.swift"
-                  timestampString = "514458483.961446"
+                  timestampString = "515659587.970621"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "218"

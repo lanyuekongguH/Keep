@@ -284,13 +284,27 @@ class KPNetworkTool: NSObject {
                 }
             }
         }
+    }
+    
+    
+    func loadTrainListData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
 
-        
+        //https://api.gotokeep.com/training/v2/course/discover?count=20
         
         
         
     }
     
+    
+    func loadAdsBannerData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
+        
+        //https://api.gotokeep.com/v1.1/ads/banner?type=2
+
+        //饮食
+        //https://api.gotokeep.com/v1.1/ads/banner?type=4
+        
+        
+    }
     
     
     

@@ -20,6 +20,8 @@
 		E40166E41E8D082D00C41F96 /* KPAccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40166E31E8D082D00C41F96 /* KPAccountBindingController.swift */; };
 		E40166E61E8D085000C41F96 /* KPAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40166E51E8D085000C41F96 /* KPAboutMeViewController.swift */; };
 		E4051EC61E77C86C007801CA /* String+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4051EC51E77C86C007801CA /* String+KP.swift */; };
+		E40989AB1EBC815F004B1AEB /* TrainListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AA1EBC815F004B1AEB /* TrainListData.geojson */; };
+		E40989AD1EBC8282004B1AEB /* DietListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AC1EBC8282004B1AEB /* DietListData.geojson */; };
 		E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */; };
 		E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C31E7133F20024EE1B /* KPMineTabButton.swift */; };
 		E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C61E713F940024EE1B /* UITableView+KP.swift */; };
@@ -178,6 +180,8 @@
 		E40167BA1E8F88DF00C41F96 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		E40167BC1E8F88E600C41F96 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Keep-astugrteyiuwajdbhrlprwipuopz/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		E4051EC51E77C86C007801CA /* String+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KP.swift"; sourceTree = "<group>"; };
+		E40989AA1EBC815F004B1AEB /* TrainListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TrainListData.geojson; sourceTree = "<group>"; };
+		E40989AC1EBC8282004B1AEB /* DietListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DietListData.geojson; sourceTree = "<group>"; };
 		E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButtonCell.swift; sourceTree = "<group>"; };
 		E41861C31E7133F20024EE1B /* KPMineTabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButton.swift; sourceTree = "<group>"; };
 		E41861C61E713F940024EE1B /* UITableView+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+KP.swift"; sourceTree = "<group>"; };
@@ -437,6 +441,8 @@
 			children = (
 				E48F699D1E76973800028DF0 /* BannerData.geojson */,
 				E48F699F1E76A78800028DF0 /* StoreListData.geojson */,
+				E40989AA1EBC815F004B1AEB /* TrainListData.geojson */,
+				E40989AC1EBC8282004B1AEB /* DietListData.geojson */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -868,11 +874,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A9464B1E7158B10040ED47 /* KPTrainTotalCountCell.xib in Resources */,
+				E40989AD1EBC8282004B1AEB /* DietListData.geojson in Resources */,
 				E45D45BB1E70020000AA79C5 /* Assets.xcassets in Resources */,
 				E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */,
 				E4694FC91E9B990900B5026E /* KPTrainAddCell.xib in Resources */,
 				E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */,
 				E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */,
+				E40989AB1EBC815F004B1AEB /* TrainListData.geojson in Resources */,
 				E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */,
 				E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */,
 				E4F011DB1E97A2030043B61D /* KPNewsLikersListCell.xib in Resources */,
