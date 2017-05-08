@@ -23,6 +23,8 @@
 		E40989AB1EBC815F004B1AEB /* TrainListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AA1EBC815F004B1AEB /* TrainListData.geojson */; };
 		E40989AD1EBC8282004B1AEB /* DietListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AC1EBC8282004B1AEB /* DietListData.geojson */; };
 		E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40989AE1EBC856C004B1AEB /* KPDietItem.swift */; };
+		E40989B11EC01B67004B1AEB /* KPTimerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40989B01EC01B67004B1AEB /* KPTimerScrollView.swift */; };
+		E40989B31EC01F84004B1AEB /* KPDiscoveryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40989B21EC01F84004B1AEB /* KPDiscoveryTabView.swift */; };
 		E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */; };
 		E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C31E7133F20024EE1B /* KPMineTabButton.swift */; };
 		E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861C61E713F940024EE1B /* UITableView+KP.swift */; };
@@ -184,6 +186,8 @@
 		E40989AA1EBC815F004B1AEB /* TrainListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TrainListData.geojson; sourceTree = "<group>"; };
 		E40989AC1EBC8282004B1AEB /* DietListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DietListData.geojson; sourceTree = "<group>"; };
 		E40989AE1EBC856C004B1AEB /* KPDietItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDietItem.swift; sourceTree = "<group>"; };
+		E40989B01EC01B67004B1AEB /* KPTimerScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTimerScrollView.swift; sourceTree = "<group>"; };
+		E40989B21EC01F84004B1AEB /* KPDiscoveryTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDiscoveryTabView.swift; sourceTree = "<group>"; };
 		E41861BF1E712FA10024EE1B /* KPMineTabButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButtonCell.swift; sourceTree = "<group>"; };
 		E41861C31E7133F20024EE1B /* KPMineTabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineTabButton.swift; sourceTree = "<group>"; };
 		E41861C61E713F940024EE1B /* UITableView+KP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+KP.swift"; sourceTree = "<group>"; };
@@ -730,6 +734,8 @@
 				E4F011C01E9644700043B61D /* KPStoreCarouselCell.swift */,
 				E4F011C11E9644700043B61D /* KPStoreProductCell.swift */,
 				E4F011C21E9644700043B61D /* KPStoreTabView.swift */,
+				E40989B01EC01B67004B1AEB /* KPTimerScrollView.swift */,
+				E40989B21EC01F84004B1AEB /* KPDiscoveryTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -987,6 +993,7 @@
 				E40166D61E8D07C400C41F96 /* KPTrainSettingController.swift in Sources */,
 				E4F011DD1E97A26A0043B61D /* KPNewsDetailAuthorCell.swift in Sources */,
 				E4F011BC1E9644670043B61D /* KPStoreBanner.swift in Sources */,
+				E40989B31EC01F84004B1AEB /* KPDiscoveryTabView.swift in Sources */,
 				E4F011C31E9644700043B61D /* KPStoreBannerCell.swift in Sources */,
 				E4694FD31E9CC98E00B5026E /* KPHealthListCell.swift in Sources */,
 				E4AADE0B1E8C982C00477C61 /* KPNetworkViewController.swift in Sources */,
@@ -1055,6 +1062,7 @@
 				E45B5D681EACF1EE004FD585 /* KPNewsTagController.swift in Sources */,
 				E4694FD11E9CC96A00B5026E /* KPHealthListController.swift in Sources */,
 				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,
+				E40989B11EC01B67004B1AEB /* KPTimerScrollView.swift in Sources */,
 				E44F27E01EA334F5002A1B5A /* KPNewsAddFriendListCell.swift in Sources */,
 				E4F011D11E9799040043B61D /* KPHotDetailItem.swift in Sources */,
 				E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */,

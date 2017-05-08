@@ -61,7 +61,15 @@ extension String {
     
         let range1 = self.range(of: "_")
         let range2 = self.range(of: "x")
-        let range3 = self.range(of: ".jpg")
+        
+        var range3 =  self.range(of: ".jpg")
+        
+        if self.contains(".jpg") {
+            range3 = self.range(of: ".jpg")
+        } else if self.contains(".png") {
+            range3 = self.range(of: ".png")
+
+        }
 
         let imageW: String?
         let imageH: String?
