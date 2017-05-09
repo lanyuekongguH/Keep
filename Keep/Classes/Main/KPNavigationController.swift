@@ -12,6 +12,8 @@ class KPNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interactivePopGestureRecognizer?.delegate = self
     }
     
     override class func initialize() {
@@ -23,6 +25,7 @@ class KPNavigationController: UINavigationController {
         navBar.tintColor = UIColor.white
         navBar.titleTextAttributes = [
             NSFontAttributeName: UIFont.systemFont(ofSize: 17),NSForegroundColorAttributeName: UIColor.white]
+
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -37,5 +40,13 @@ class KPNavigationController: UINavigationController {
     @objc fileprivate func backClick(){
         popViewController(animated: true)
     }
-
+    
 }
+
+extension KPNavigationController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return self.childViewControllers.count > 1
+    }
+}
+
