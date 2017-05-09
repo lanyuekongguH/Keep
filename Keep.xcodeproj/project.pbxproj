@@ -96,7 +96,6 @@
 		E4AADE091E8C97F500477C61 /* KPConventionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE081E8C97F500477C61 /* KPConventionViewController.swift */; };
 		E4AADE0B1E8C982C00477C61 /* KPNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE0A1E8C982C00477C61 /* KPNetworkViewController.swift */; };
 		E4AADE0D1E8C985600477C61 /* KPHelpFeedBackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */; };
-		E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B4865D1E8BB31E00C17363 /* Info.plist */; };
 		E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B74A671E70F131009EE6BC /* KPMineListCell.swift */; };
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
 		E4BA87501EA0D423000C09D2 /* KPNewsHotVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA874F1EA0D423000C09D2 /* KPNewsHotVideoItem.swift */; };
@@ -891,7 +890,6 @@
 				E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */,
 				E40989AB1EBC815F004B1AEB /* TrainListData.geojson in Resources */,
 				E45D45B91E70020000AA79C5 /* Main.storyboard in Resources */,
-				E4B4865E1E8BB31E00C17363 /* Info.plist in Resources */,
 				E4F011DB1E97A2030043B61D /* KPNewsLikersListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1156,6 +1154,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1205,6 +1204,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
