@@ -13,6 +13,17 @@ let KPStoreCarouselCellIdentifier = "KPStoreCarouselCellIdentifier"
 let KPStoreBannerCellIdentifier = "KPStoreBannerCellIdentifier"
 let KPStoreProductCellIdentifier = "KPStoreProductCellIdentifier"
 
+enum TableViewType : Int {
+    
+    case featured
+    
+    case train
+    
+    case diet
+    
+    case mall
+}
+
 class KPDiscoveryController: KPBaseViewController {
 
     fileprivate var banners = [KPStoreBanner]()
@@ -62,6 +73,7 @@ class KPDiscoveryController: KPBaseViewController {
         
         // 精选
         let featuredTableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        featuredTableView.tag = TableViewType.featured.rawValue
         featuredTableView.backgroundColor = KPBg()
         featuredTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
         featuredTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
@@ -77,6 +89,7 @@ class KPDiscoveryController: KPBaseViewController {
         
         // 训练
         let trainTableView = UITableView(frame: CGRect(x: SCREENW, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        trainTableView.tag = TableViewType.featured.rawValue
         trainTableView.backgroundColor = KPBg()
         trainTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
         trainTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
@@ -92,6 +105,7 @@ class KPDiscoveryController: KPBaseViewController {
         
         // 饮食
         let dietTableView = UITableView(frame: CGRect(x: SCREENW * 2, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        dietTableView.tag = TableViewType.featured.rawValue
         dietTableView.backgroundColor = KPBg()
         dietTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
         dietTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
@@ -107,6 +121,7 @@ class KPDiscoveryController: KPBaseViewController {
         
         // 商城
         let mallTableView = UITableView(frame: CGRect(x: SCREENW * 3, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        mallTableView.tag = TableViewType.featured.rawValue
         mallTableView.backgroundColor = KPBg()
         mallTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
         mallTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
@@ -148,6 +163,17 @@ class KPDiscoveryController: KPBaseViewController {
     }
     
     fileprivate func loadBannerData() {
+        
+        
+        KPNetworkTool.shareNetworkTool.loadAdsBannerData(url: "https://api.gotokeep.com/v1.1/ads/banner?type=2", {[weak self](banners) in
+        
+
+            print("banners",banners)
+            
+        })
+
+
+        
         KPNetworkTool.shareNetworkTool.loadStoreBannerData{ [weak self](banners) in
             
             self?.banners = banners
@@ -173,10 +199,15 @@ extension KPDiscoveryController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let webVc = KPWKWebViewController()
+        navigationController?.pushViewController(webVc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        if section != 0 {
+            return 10
+        }
+        return 0.1
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -205,6 +236,36 @@ extension KPDiscoveryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+//        switch tableView.tag {
+//            
+//        case TableViewType.featured.rawValue:
+//            {
+//            
+//                print("ddd")
+//            }
+//            
+//        case TableViewType.train.rawValue:
+//            {
+//                print("ddd")
+//
+//            }
+//
+//        case TableViewType.diet.rawValue:
+//            {
+//                print("ddd")
+//            
+//            }
+//        case TableViewType.mall.rawValue:
+//            {
+//                print("ddd")
+//                
+//            }
+//            
+//        }
+        
+        
         
         var cell = UITableViewCell()
         

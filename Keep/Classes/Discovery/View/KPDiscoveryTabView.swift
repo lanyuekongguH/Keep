@@ -54,11 +54,6 @@ class KPDiscoveryTabView: UIView {
                     button.setTitleColor(KPGreen(), for: .selected)
                     button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
                     
-//                    if i == 1000 {
-//                        selectButton?.isSelected = false
-//                        selectButton = button
-//                        selectButton?.isSelected = true
-//                    }
                     addSubview(button)
                 }
                 

@@ -296,18 +296,49 @@ class KPNetworkTool: NSObject {
     }
     
     
-    func loadAdsBannerData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
+    func loadAdsBannerData(url:String?, _ finished:@escaping ([KPDiscoveryBannerItem]) ->()) {
         
+        //训练
         //https://api.gotokeep.com/v1.1/ads/banner?type=2
 
         //饮食
         //https://api.gotokeep.com/v1.1/ads/banner?type=4
         
+        //商城
+        //https://store.gotokeep.com/api/v1.0/subject/bannerList
+        //运动装备
+        //https://store.gotokeep.com/api/v2/vcategory?cid=0
+        //消息
+        //https://store.gotokeep.com/api/v1.0/subject/noticeList
         
+        
+        Alamofire.request(url!).responseJSON { response in
+            
+            print(response)
+            
+            guard response.result.isSuccess else {
+                SVProgressHUD.showError(withStatus: "加载失败...")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let data = json["data"].arrayObject {
+
+                    var items = [KPDiscoveryBannerItem]()
+                    
+                    for dict in data {
+                        let item = KPDiscoveryBannerItem(dict: dict as! [String: AnyObject])
+                        items.append(item)
+                    }
+                    
+                    finished(items)
+                }
+            }
+        }
     }
-    
-    
-    
     
     
 }

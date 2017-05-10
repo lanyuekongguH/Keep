@@ -98,6 +98,11 @@
 		E4AADE0D1E8C985600477C61 /* KPHelpFeedBackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADE0C1E8C985600477C61 /* KPHelpFeedBackController.swift */; };
 		E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B74A671E70F131009EE6BC /* KPMineListCell.swift */; };
 		E4B74A6A1E70F131009EE6BC /* KPMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B74A681E70F131009EE6BC /* KPMineListCell.xib */; };
+		E4B88F381EC300A8004E728F /* KPWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B88F371EC300A8004E728F /* KPWKWebViewController.swift */; };
+		E4B88F3A1EC30587004E728F /* KPDiscoveryTrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B88F391EC30587004E728F /* KPDiscoveryTrainCell.swift */; };
+		E4B88F3C1EC305B6004E728F /* KPDiscoveryDietCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B88F3B1EC305B6004E728F /* KPDiscoveryDietCell.swift */; };
+		E4B88F3E1EC307DA004E728F /* KPDiscoveryBannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B88F3D1EC307DA004E728F /* KPDiscoveryBannerItem.swift */; };
+		E4B88F401EC30EE9004E728F /* KPDiscoveryHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B88F3F1EC30EE9004E728F /* KPDiscoveryHeadCell.swift */; };
 		E4BA87501EA0D423000C09D2 /* KPNewsHotVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA874F1EA0D423000C09D2 /* KPNewsHotVideoItem.swift */; };
 		E4C465981EA9FA3200465109 /* KPNewsMetaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C465971EA9FA3200465109 /* KPNewsMetaItem.swift */; };
 		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
@@ -268,6 +273,11 @@
 		E4B4865D1E8BB31E00C17363 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Classes/Info.plist; sourceTree = "<group>"; };
 		E4B74A671E70F131009EE6BC /* KPMineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineListCell.swift; sourceTree = "<group>"; };
 		E4B74A681E70F131009EE6BC /* KPMineListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPMineListCell.xib; sourceTree = "<group>"; };
+		E4B88F371EC300A8004E728F /* KPWKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWKWebViewController.swift; sourceTree = "<group>"; };
+		E4B88F391EC30587004E728F /* KPDiscoveryTrainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDiscoveryTrainCell.swift; sourceTree = "<group>"; };
+		E4B88F3B1EC305B6004E728F /* KPDiscoveryDietCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDiscoveryDietCell.swift; sourceTree = "<group>"; };
+		E4B88F3D1EC307DA004E728F /* KPDiscoveryBannerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDiscoveryBannerItem.swift; sourceTree = "<group>"; };
+		E4B88F3F1EC30EE9004E728F /* KPDiscoveryHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDiscoveryHeadCell.swift; sourceTree = "<group>"; };
 		E4BA874F1EA0D423000C09D2 /* KPNewsHotVideoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoItem.swift; sourceTree = "<group>"; };
 		E4C465971EA9FA3200465109 /* KPNewsMetaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsMetaItem.swift; sourceTree = "<group>"; };
 		E4CB0C1E1E95F59F0028E918 /* Keep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keep.entitlements; sourceTree = "<group>"; };
@@ -488,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A5D9391E700BB700F91783 /* KPDiscoveryController.swift */,
+				E4B88F371EC300A8004E728F /* KPWKWebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -721,6 +732,7 @@
 				E4F011BA1E9644670043B61D /* KPStoreBanner.swift */,
 				E4F011BB1E9644670043B61D /* KPStoreList.swift */,
 				E40989AE1EBC856C004B1AEB /* KPDietItem.swift */,
+				E4B88F3D1EC307DA004E728F /* KPDiscoveryBannerItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -735,6 +747,9 @@
 				E4F011C21E9644700043B61D /* KPStoreTabView.swift */,
 				E40989B01EC01B67004B1AEB /* KPTimerScrollView.swift */,
 				E40989B21EC01F84004B1AEB /* KPDiscoveryTabView.swift */,
+				E4B88F391EC30587004E728F /* KPDiscoveryTrainCell.swift */,
+				E4B88F3B1EC305B6004E728F /* KPDiscoveryDietCell.swift */,
+				E4B88F3F1EC30EE9004E728F /* KPDiscoveryHeadCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -979,6 +994,7 @@
 				E4A5D92D1E7005BE00F91783 /* KPPersonInfoController.swift in Sources */,
 				E45B5D661EACF1C6004FD585 /* KPNewsFindUserController.swift in Sources */,
 				E41861CC1E7149740024EE1B /* KPMineCollectionController.swift in Sources */,
+				E4B88F3A1EC30587004E728F /* KPDiscoveryTrainCell.swift in Sources */,
 				E4A5D9381E7009A900F91783 /* KPConst.swift in Sources */,
 				E4F011CF1E97988A0043B61D /* KPNewsLikersItem.swift in Sources */,
 				E4A9464A1E7158B10040ED47 /* KPTrainTotalCountCell.swift in Sources */,
@@ -1011,6 +1027,7 @@
 				E40166D31E8D07AD00C41F96 /* KPPrivacyViewController.swift in Sources */,
 				E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */,
 				E4F011C51E9644700043B61D /* KPStoreCarouselCell.swift in Sources */,
+				E4B88F381EC300A8004E728F /* KPWKWebViewController.swift in Sources */,
 				E4694FC81E9B990900B5026E /* KPTrainAddCell.swift in Sources */,
 				E40166DC1E8D07EF00C41F96 /* KPManageAccountController.swift in Sources */,
 				E4AADE031E8C976800477C61 /* KPScanViewController.swift in Sources */,
@@ -1018,6 +1035,7 @@
 				E4694FBF1E9B987700B5026E /* KPTrainRecommendCell.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4694FD71E9E333400B5026E /* KPNewsFollowCell.swift in Sources */,
+				E4B88F401EC30EE9004E728F /* KPDiscoveryHeadCell.swift in Sources */,
 				E4F2C9831EA32BD900466199 /* KPNewsHotHeadView.swift in Sources */,
 				E48DEBB31EA6FA4D005D3408 /* KPNewsHotBottomView.swift in Sources */,
 				E4F011CD1E9743D40043B61D /* KPNewsAuthorItem.swift in Sources */,
@@ -1033,6 +1051,7 @@
 				E4AADE001E8BC36600477C61 /* KPShortcutItems.swift in Sources */,
 				E4F011C71E9644700043B61D /* KPStoreTabView.swift in Sources */,
 				E4694FCF1E9C918C00B5026E /* KPHealthData.swift in Sources */,
+				E4B88F3E1EC307DA004E728F /* KPDiscoveryBannerItem.swift in Sources */,
 				E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */,
 				E41861C11E712FA10024EE1B /* KPMineTabButtonCell.swift in Sources */,
 				E4B74A691E70F131009EE6BC /* KPMineListCell.swift in Sources */,
@@ -1066,6 +1085,7 @@
 				E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */,
 				E4F011C61E9644700043B61D /* KPStoreProductCell.swift in Sources */,
 				E4AADE0D1E8C985600477C61 /* KPHelpFeedBackController.swift in Sources */,
+				E4B88F3C1EC305B6004E728F /* KPDiscoveryDietCell.swift in Sources */,
 				E41861CA1E7149140024EE1B /* KPMineHistoryController.swift in Sources */,
 				E41861D31E7150DC0024EE1B /* KPMineSettingCell.swift in Sources */,
 			);
