@@ -115,7 +115,6 @@ class KPNewsViewController: KPBaseViewController {
         self.cityTableView?.mj_footer = cityFooter
         
         let scrollView = UIScrollView(frame: CGRect(x:0, y: 64, width: SCREENW, height: SCREENH - 64))
-        
         scrollView.contentSize = CGSize(width: SCREENW * 3, height: SCREENH - 44)
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false

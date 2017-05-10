@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 let KPStoreCarouselCellIdentifier = "KPStoreCarouselCellIdentifier"
 let KPStoreBannerCellIdentifier = "KPStoreBannerCellIdentifier"
@@ -16,20 +17,24 @@ class KPDiscoveryController: KPBaseViewController {
 
     fileprivate var banners = [KPStoreBanner]()
 
-    var tableView: UITableView?
+    fileprivate var featuredTableView: UITableView?
+    fileprivate var trainTableView: UITableView?
+    fileprivate var dietTableView: UITableView?
+    fileprivate var mallTableView: UITableView?
 
-    
+    fileprivate var featuredRefreshControl = UIRefreshControl()
+    fileprivate var trainRefreshControl = UIRefreshControl()
+    fileprivate var dietRefreshControl = UIRefreshControl()
+    fileprivate var mallRefreshControl = UIRefreshControl()
+
     fileprivate var hotItems = [KPNewsHotItem]()
     fileprivate var followItems = [KPHotDetailItem]()
     fileprivate var cityItems = [KPHotDetailItem]()
     
-    var scrollView: UIScrollView?
-    
+    fileprivate var scrollView: UIScrollView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.white
         
         navigationItem.titleView = searchBar
 
@@ -40,20 +45,106 @@ class KPDiscoveryController: KPBaseViewController {
 
     fileprivate func setupUI() {
 
-        let tableView = UITableView(frame: CGRect.init(x: 0, y: 64 + 44, width: SCREENW, height: SCREENH - (64 + 44)), style: .grouped)
+        view.backgroundColor = KPBg()
+        self.automaticallyAdjustsScrollViewInsets = false;
+
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 64 + 44, width: SCREENW, height: SCREENH - (64 + 44)))
+        scrollView.backgroundColor = KPBg()
+        scrollView.contentSize = CGSize(width: SCREENW * 4, height: SCREENH - (64 + 44))
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.isDirectionalLockEnabled = true
+        scrollView.bounces = false
+        scrollView.delegate = self
+        self.scrollView = scrollView
+        view.addSubview(scrollView)
         
-        tableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
-        tableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
-        tableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        // 精选
+        let featuredTableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        featuredTableView.backgroundColor = KPBg()
+        featuredTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
+        featuredTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
+        featuredTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        featuredTableView.tableFooterView = UIView()
+        featuredTableView.delegate = self
+        featuredTableView.dataSource = self
+        scrollView.addSubview(featuredTableView)
+        self.featuredTableView = featuredTableView
         
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.addSubview(tableView)
-        self.tableView = tableView
+        featuredRefreshControl.addTarget(self, action: #selector(loadNewData), for: .valueChanged)
+        self.featuredTableView?.addSubview(featuredRefreshControl)
+        
+        // 训练
+        let trainTableView = UITableView(frame: CGRect(x: SCREENW, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        trainTableView.backgroundColor = KPBg()
+        trainTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
+        trainTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
+        trainTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        trainTableView.tableFooterView = UIView()
+        trainTableView.delegate = self
+        trainTableView.dataSource = self
+        scrollView.addSubview(trainTableView)
+        self.trainTableView = trainTableView
+        
+        trainRefreshControl.addTarget(self, action: #selector(loadNewData), for: .valueChanged)
+        self.trainTableView?.addSubview(trainRefreshControl)
+        
+        // 饮食
+        let dietTableView = UITableView(frame: CGRect(x: SCREENW * 2, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        dietTableView.backgroundColor = KPBg()
+        dietTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
+        dietTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
+        dietTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        dietTableView.tableFooterView = UIView()
+        dietTableView.delegate = self
+        dietTableView.dataSource = self
+        scrollView.addSubview(dietTableView)
+        self.dietTableView = dietTableView
+        
+        dietRefreshControl.addTarget(self, action: #selector(loadNewData), for: .valueChanged)
+        self.dietTableView?.addSubview(dietRefreshControl)
+        
+        // 商城
+        let mallTableView = UITableView(frame: CGRect(x: SCREENW * 3, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        mallTableView.backgroundColor = KPBg()
+        mallTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
+        mallTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
+        mallTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        mallTableView.tableFooterView = UIView()
+        mallTableView.delegate = self
+        mallTableView.dataSource = self
+        scrollView.addSubview(mallTableView)
+        self.mallTableView = mallTableView
+        
+        mallRefreshControl.addTarget(self, action: #selector(loadNewData), for: .valueChanged)
+        self.mallTableView?.addSubview(mallRefreshControl)
         
         tabView.tabTitles = ["精选","训练","饮食","商城"]
         view.addSubview(tabView)
+    }
+    
+    func loadNewData() {
+
+        if self.featuredRefreshControl.isRefreshing {
+            
+            self.featuredRefreshControl.endRefreshing()
+        }
+        
+        if self.trainRefreshControl.isRefreshing {
+            
+            self.trainRefreshControl.endRefreshing()
+        }
+        
+        if self.dietRefreshControl.isRefreshing {
+            
+            self.dietRefreshControl.endRefreshing()
+        }
+        
+        if self.mallRefreshControl.isRefreshing {
+            
+            self.mallRefreshControl.endRefreshing()
+        }
     }
     
     fileprivate func loadBannerData() {
@@ -90,6 +181,13 @@ extension KPDiscoveryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.frame = CGRect.init(x: 0, y: 0, width: SCREENW, height: 10)
+        view.backgroundColor = KPBg()
+        return view
     }
 }
 
@@ -142,9 +240,21 @@ extension KPDiscoveryController: UITableViewDataSource {
     
 }
 
+extension KPDiscoveryController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if scrollView.isDragging {
+        
+            tabView.offsetRate = scrollView.contentOffset.x / SCREENW
+        }
+    }
+}
+
 extension KPDiscoveryController: KPDiscoveryTabButtonDelegate {
     
     func discoveryTabView(_ tabView: KPDiscoveryTabView, button: UIButton) {
         
+        scrollView?.setContentOffset(CGPoint(x: (button.tag - 1000) * Int(SCREENW), y: 0), animated: true)
     }
 }
