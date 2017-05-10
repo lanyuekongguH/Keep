@@ -40,7 +40,7 @@ class KPDiscoveryController: KPBaseViewController {
 
     fileprivate func setupUI() {
 
-        let tableView = UITableView.init(frame: view.bounds, style: .grouped)
+        let tableView = UITableView(frame: CGRect.init(x: 0, y: 64 + 44, width: SCREENW, height: SCREENH - (64 + 44)), style: .grouped)
         
         tableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
         tableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
@@ -51,6 +51,9 @@ class KPDiscoveryController: KPBaseViewController {
         tableView.dataSource = self
         view.addSubview(tableView)
         self.tableView = tableView
+        
+        tabView.tabTitles = ["精选","训练","饮食","商城"]
+        view.addSubview(tabView)
     }
     
     fileprivate func loadBannerData() {
@@ -67,6 +70,12 @@ class KPDiscoveryController: KPBaseViewController {
         return searchBar
     }()
     
+    fileprivate lazy var tabView: KPDiscoveryTabView = {
+        let tabView = KPDiscoveryTabView()
+        tabView.delegate = self
+        tabView.frame = CGRect(x: 0, y: 64, width: SCREENW, height: 44)
+        return tabView
+    }()
 }
 
 extension KPDiscoveryController: UITableViewDelegate {
@@ -133,3 +142,9 @@ extension KPDiscoveryController: UITableViewDataSource {
     
 }
 
+extension KPDiscoveryController: KPDiscoveryTabButtonDelegate {
+    
+    func discoveryTabView(_ tabView: KPDiscoveryTabView, button: UIButton) {
+        
+    }
+}
