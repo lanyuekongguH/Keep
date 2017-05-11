@@ -18,7 +18,7 @@ class KPDiscoveryDietCell: UITableViewCell {
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(arrowButton)
-        contentView.addSubview(timerScrollView)
+        contentView.addSubview(dietScrollView)
         contentView.addSubview(lineView)
         contentView.addSubview(contentLabel)
     }
@@ -51,7 +51,7 @@ class KPDiscoveryDietCell: UITableViewCell {
                     make.top.equalTo(0)
                 })
                 
-                self.timerScrollView.snp.makeConstraints({ (make) in
+                self.dietScrollView.snp.makeConstraints({ (make) in
                     
                     make.left.equalTo(0)
                     make.width.equalTo(SCREENW)
@@ -64,7 +64,7 @@ class KPDiscoveryDietCell: UITableViewCell {
                     make.left.equalTo(10)
                     make.width.equalTo(SCREENW-10)
                     make.height.equalTo(0.5)
-                    make.top.equalTo(self.timerScrollView.snp.bottom).offset(0)
+                    make.top.equalTo(self.dietScrollView.snp.bottom).offset(0)
                 })
                 
                 let contentSize = contentLabel.text?.boundingRectWithSize(CGSize.init(width: SCREENW - 20, height: 9999), contentLabel.font)
@@ -100,10 +100,10 @@ class KPDiscoveryDietCell: UITableViewCell {
         return arrowButton
     }()
     
-    fileprivate lazy var timerScrollView: KPTimerScrollView = {
+    fileprivate lazy var dietScrollView: KPDietScrollView = {
         
-        let timerScrollView = KPTimerScrollView()
-        return timerScrollView
+        let dietScrollView = KPDietScrollView()
+        return dietScrollView
     }()
     
     fileprivate lazy var lineView: UIView = {

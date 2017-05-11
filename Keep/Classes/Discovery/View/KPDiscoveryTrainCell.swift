@@ -18,7 +18,7 @@ class KPDiscoveryTrainCell: UITableViewCell {
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(arrowButton)
-        contentView.addSubview(timerScrollView)
+        contentView.addSubview(trainScrollView)
     }
     
     var courses:KPDiscoveryTrainItem? {
@@ -29,7 +29,7 @@ class KPDiscoveryTrainCell: UITableViewCell {
                 
                 titleLabel.text = sectionName
                 
-                timerScrollView.plans = plans
+                trainScrollView.plans = plans
                 
                 self.titleLabel.snp.makeConstraints({ (make) in
                     
@@ -47,7 +47,7 @@ class KPDiscoveryTrainCell: UITableViewCell {
                     make.top.equalTo(0)
                 })
                 
-                self.timerScrollView.snp.makeConstraints({ (make) in
+                self.trainScrollView.snp.makeConstraints({ (make) in
                     
                     make.left.equalTo(0)
                     make.width.equalTo(SCREENW)
@@ -74,10 +74,10 @@ class KPDiscoveryTrainCell: UITableViewCell {
         return arrowButton
     }()
     
-    fileprivate lazy var timerScrollView: KPTimerScrollView = {
+    fileprivate lazy var trainScrollView: KPTrainScrollView = {
         
-        let timerScrollView = KPTimerScrollView()
-        return timerScrollView
+        let trainScrollView = KPTrainScrollView()
+        return trainScrollView
     }()
     
     required init?(coder aDecoder: NSCoder){

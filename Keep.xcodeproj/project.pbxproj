@@ -65,6 +65,8 @@
 		E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823F1E8FB591004F575B /* KPWidgetButton.swift */; };
 		E47A834E1E94E057004F575B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47A834D1E94E057004F575B /* Media.xcassets */; };
 		E481E03F1EC4668A00D005A7 /* KPDietSingleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481E03E1EC4668A00D005A7 /* KPDietSingleItem.swift */; };
+		E481E0411EC46CEE00D005A7 /* KPDietScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481E0401EC46CED00D005A7 /* KPDietScrollView.swift */; };
+		E481E0431EC46D0600D005A7 /* KPTrainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481E0421EC46D0600D005A7 /* KPTrainScrollView.swift */; };
 		E48DEBAF1EA60EAF005D3408 /* KPNewsHotVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */; };
 		E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */; };
 		E48DEBB31EA6FA4D005D3408 /* KPNewsHotBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */; };
@@ -241,6 +243,8 @@
 		E47A823F1E8FB591004F575B /* KPWidgetButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWidgetButton.swift; sourceTree = "<group>"; };
 		E47A834D1E94E057004F575B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keep/Media.xcassets; sourceTree = SOURCE_ROOT; };
 		E481E03E1EC4668A00D005A7 /* KPDietSingleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDietSingleItem.swift; sourceTree = "<group>"; };
+		E481E0401EC46CED00D005A7 /* KPDietScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDietScrollView.swift; sourceTree = "<group>"; };
+		E481E0421EC46D0600D005A7 /* KPTrainScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainScrollView.swift; sourceTree = "<group>"; };
 		E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoController.swift; sourceTree = "<group>"; };
 		E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoCell.swift; sourceTree = "<group>"; };
 		E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotBottomView.swift; sourceTree = "<group>"; };
@@ -759,6 +763,8 @@
 				E4B88F391EC30587004E728F /* KPDiscoveryTrainCell.swift */,
 				E4B88F3B1EC305B6004E728F /* KPDiscoveryDietCell.swift */,
 				E4B88F3F1EC30EE9004E728F /* KPDiscoveryHeadCell.swift */,
+				E481E0401EC46CED00D005A7 /* KPDietScrollView.swift */,
+				E481E0421EC46D0600D005A7 /* KPTrainScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,6 +1036,7 @@
 				E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */,
 				E4F011BD1E9644670043B61D /* KPStoreList.swift in Sources */,
 				E45D45B41E70020000AA79C5 /* AppDelegate.swift in Sources */,
+				E481E0431EC46D0600D005A7 /* KPTrainScrollView.swift in Sources */,
 				E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */,
 				E4F011C41E9644700043B61D /* KPStoreBannerView.swift in Sources */,
 				E41861C41E7133F20024EE1B /* KPMineTabButton.swift in Sources */,
@@ -1085,6 +1092,7 @@
 				E4AADE071E8C97BA00477C61 /* KPCommunityViewController.swift in Sources */,
 				E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */,
 				E4A5D9311E70064500F91783 /* KPNewsViewController.swift in Sources */,
+				E481E0411EC46CEE00D005A7 /* KPDietScrollView.swift in Sources */,
 				E4F011D51E979E3A0043B61D /* KPNewDetailLikersCell.swift in Sources */,
 				E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */,
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
