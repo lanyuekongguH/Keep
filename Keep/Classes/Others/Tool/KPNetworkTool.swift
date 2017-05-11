@@ -289,9 +289,6 @@ class KPNetworkTool: NSObject {
     
     func loadTrainListData(_ finished:@escaping ([KPDiscoveryTrainItem]) ->()) {
 
-        //https://api.gotokeep.com/training/v2/course/discover?count=20
-        
-        
         let path = Bundle.main.path(forResource: "TrainListData", ofType: "geojson")
         let contentData = NSData.init(contentsOfFile: path!)
         let json = JSON(contentData as Any)
@@ -309,6 +306,24 @@ class KPNetworkTool: NSObject {
         }
     }
     
+    func loadDietListData(_ finished:@escaping ([KPDietItem]) ->()) {
+        
+        let path = Bundle.main.path(forResource: "DietListData", ofType: "geojson")
+        let contentData = NSData.init(contentsOfFile: path!)
+        let json = JSON(contentData as Any)
+        
+        if let data = json["data"]["content"]["recipeTags"].arrayObject {
+            var bannerArray = [KPDietItem]()
+            
+            for dict in data {
+                let title = KPDietItem(dict: dict as! [String: AnyObject])
+                bannerArray.append(title)
+            }
+            
+            finished(bannerArray)
+            print(bannerArray)
+        }
+    }
     
     func loadAdsBannerData(url:String?, _ finished:@escaping ([KPDiscoveryBannerItem]) ->()) {
         

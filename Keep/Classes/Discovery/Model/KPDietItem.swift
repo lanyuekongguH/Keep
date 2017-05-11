@@ -24,6 +24,17 @@ class KPDietItem: NSObject {
         content = dict["content"] as? String
         recipes = dict["recipes"] as? Array
         
+        if let recipesArray = dict["recipes"] as? [AnyObject] {
+            
+            var recipesItem = [KPDietSingleItem]()
+            
+            for item in recipesArray {
+                let item = KPDietSingleItem(dict: item as! [String: AnyObject])
+                recipesItem.append(item)
+            }
+            
+            recipes = recipesItem
+        }
         
     }
     

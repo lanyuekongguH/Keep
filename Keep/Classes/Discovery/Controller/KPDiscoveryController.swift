@@ -179,6 +179,13 @@ class KPDiscoveryController: KPBaseViewController {
             self?.trainTableView?.reloadData()
         }
 
+        KPNetworkTool.shareNetworkTool.loadDietListData{ [weak self](trainItems) in
+            
+            print("trainItems",trainItems)
+            
+        }
+        
+        
         
         KPNetworkTool.shareNetworkTool.loadStoreBannerData{ [weak self](banners) in
             

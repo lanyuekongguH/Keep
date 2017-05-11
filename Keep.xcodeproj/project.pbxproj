@@ -64,6 +64,7 @@
 		E47A823E1E8FB2FC004F575B /* KPWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */; };
 		E47A82401E8FB591004F575B /* KPWidgetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A823F1E8FB591004F575B /* KPWidgetButton.swift */; };
 		E47A834E1E94E057004F575B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47A834D1E94E057004F575B /* Media.xcassets */; };
+		E481E03F1EC4668A00D005A7 /* KPDietSingleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481E03E1EC4668A00D005A7 /* KPDietSingleItem.swift */; };
 		E48DEBAF1EA60EAF005D3408 /* KPNewsHotVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */; };
 		E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */; };
 		E48DEBB31EA6FA4D005D3408 /* KPNewsHotBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */; };
@@ -239,6 +240,7 @@
 		E47A823D1E8FB2FC004F575B /* KPWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPWidgetViewController.swift; path = Keep/KPWidgetViewController.swift; sourceTree = SOURCE_ROOT; };
 		E47A823F1E8FB591004F575B /* KPWidgetButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPWidgetButton.swift; sourceTree = "<group>"; };
 		E47A834D1E94E057004F575B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Keep/Media.xcassets; sourceTree = SOURCE_ROOT; };
+		E481E03E1EC4668A00D005A7 /* KPDietSingleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDietSingleItem.swift; sourceTree = "<group>"; };
 		E48DEBAE1EA60EAF005D3408 /* KPNewsHotVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoController.swift; sourceTree = "<group>"; };
 		E48DEBB01EA6F9CC005D3408 /* KPNewsHotVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotVideoCell.swift; sourceTree = "<group>"; };
 		E48DEBB21EA6FA4D005D3408 /* KPNewsHotBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotBottomView.swift; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 				E4F011BA1E9644670043B61D /* KPStoreBanner.swift */,
 				E4F011BB1E9644670043B61D /* KPStoreList.swift */,
 				E40989AE1EBC856C004B1AEB /* KPDietItem.swift */,
+				E481E03E1EC4668A00D005A7 /* KPDietSingleItem.swift */,
 				E4B88F3D1EC307DA004E728F /* KPDiscoveryBannerItem.swift */,
 				E4B88F411EC3F544004E728F /* KPDiscoveryTrainItem.swift */,
 				E4B88F431EC3F566004E728F /* KPDiscoveryPlanItem.swift */,
@@ -1069,6 +1072,7 @@
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
 				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
 				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,
+				E481E03F1EC4668A00D005A7 /* KPDietSingleItem.swift in Sources */,
 				E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */,
 				E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */,
 				E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */,
