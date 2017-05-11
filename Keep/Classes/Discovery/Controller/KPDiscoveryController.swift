@@ -13,6 +13,8 @@ let KPStoreCarouselCellIdentifier = "KPStoreCarouselCellIdentifier"
 let KPStoreBannerCellIdentifier = "KPStoreBannerCellIdentifier"
 let KPStoreProductCellIdentifier = "KPStoreProductCellIdentifier"
 
+let KPDiscoveryTrainCellIdentifier = "KPDiscoveryTrainCellIdentifier"
+
 enum TableViewType : Int {
     
     case featured
@@ -38,10 +40,11 @@ class KPDiscoveryController: KPBaseViewController {
     fileprivate var dietRefreshControl = UIRefreshControl()
     fileprivate var mallRefreshControl = UIRefreshControl()
 
-    fileprivate var hotItems = [KPNewsHotItem]()
-    fileprivate var followItems = [KPHotDetailItem]()
-    fileprivate var cityItems = [KPHotDetailItem]()
-    
+    fileprivate var featuredItems = [KPNewsHotItem]()
+    fileprivate var trainItems = [KPDiscoveryTrainItem]()
+    fileprivate var dietItems = [KPHotDetailItem]()
+    fileprivate var mallItems = [KPHotDetailItem]()
+
     fileprivate var scrollView: UIScrollView?
     
     override func viewDidLoad() {
@@ -59,7 +62,7 @@ class KPDiscoveryController: KPBaseViewController {
         view.backgroundColor = KPBg()
         self.automaticallyAdjustsScrollViewInsets = false;
 
-        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 64 + 44, width: SCREENW, height: SCREENH - (64 + 44)))
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 64 + 44, width: SCREENW, height: SCREENH - (64 + 44 + 49)))
         scrollView.backgroundColor = KPBg()
         scrollView.contentSize = CGSize(width: SCREENW * 4, height: SCREENH - (64 + 44))
         scrollView.isPagingEnabled = true
@@ -72,12 +75,11 @@ class KPDiscoveryController: KPBaseViewController {
         view.addSubview(scrollView)
         
         // 精选
-        let featuredTableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
+        let featuredTableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH - (64 + 44 + 49)), style: .plain)
+        featuredTableView.separatorStyle = .none
         featuredTableView.tag = TableViewType.featured.rawValue
         featuredTableView.backgroundColor = KPBg()
-        featuredTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
-        featuredTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
-        featuredTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        featuredTableView.register(KPDiscoveryTrainCell.self, forCellReuseIdentifier: KPDiscoveryTrainCellIdentifier)
         featuredTableView.tableFooterView = UIView()
         featuredTableView.delegate = self
         featuredTableView.dataSource = self
@@ -88,12 +90,11 @@ class KPDiscoveryController: KPBaseViewController {
         self.featuredTableView?.addSubview(featuredRefreshControl)
         
         // 训练
-        let trainTableView = UITableView(frame: CGRect(x: SCREENW, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
-        trainTableView.tag = TableViewType.featured.rawValue
+        let trainTableView = UITableView(frame: CGRect(x: SCREENW, y: 0, width: SCREENW, height: SCREENH - (64 + 44 + 49)), style: .plain)
+        trainTableView.separatorStyle = .none
+        trainTableView.tag = TableViewType.train.rawValue
         trainTableView.backgroundColor = KPBg()
-        trainTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
-        trainTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
-        trainTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        trainTableView.register(KPDiscoveryTrainCell.self, forCellReuseIdentifier: KPDiscoveryTrainCellIdentifier)
         trainTableView.tableFooterView = UIView()
         trainTableView.delegate = self
         trainTableView.dataSource = self
@@ -104,12 +105,11 @@ class KPDiscoveryController: KPBaseViewController {
         self.trainTableView?.addSubview(trainRefreshControl)
         
         // 饮食
-        let dietTableView = UITableView(frame: CGRect(x: SCREENW * 2, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
-        dietTableView.tag = TableViewType.featured.rawValue
+        let dietTableView = UITableView(frame: CGRect(x: SCREENW * 2, y: 0, width: SCREENW, height: SCREENH - (64 + 44 + 49)), style: .plain)
+        dietTableView.separatorStyle = .none
+        dietTableView.tag = TableViewType.diet.rawValue
         dietTableView.backgroundColor = KPBg()
-        dietTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
-        dietTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
-        dietTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        dietTableView.register(KPDiscoveryTrainCell.self, forCellReuseIdentifier: KPDiscoveryTrainCellIdentifier)
         dietTableView.tableFooterView = UIView()
         dietTableView.delegate = self
         dietTableView.dataSource = self
@@ -120,12 +120,11 @@ class KPDiscoveryController: KPBaseViewController {
         self.dietTableView?.addSubview(dietRefreshControl)
         
         // 商城
-        let mallTableView = UITableView(frame: CGRect(x: SCREENW * 3, y: 0, width: SCREENW, height: SCREENH - (64 + 44)), style: .plain)
-        mallTableView.tag = TableViewType.featured.rawValue
+        let mallTableView = UITableView(frame: CGRect(x: SCREENW * 3, y: 0, width: SCREENW, height: SCREENH - (64 + 44 + 49)), style: .plain)
+        mallTableView.separatorStyle = .none
+        mallTableView.tag = TableViewType.mall.rawValue
         mallTableView.backgroundColor = KPBg()
-        mallTableView.register(KPStoreCarouselCell.self, forCellReuseIdentifier: KPStoreCarouselCellIdentifier)
-        mallTableView.register(KPStoreBannerCell.self, forCellReuseIdentifier: KPStoreBannerCellIdentifier)
-        mallTableView.register(KPStoreProductCell.self, forCellReuseIdentifier: KPStoreProductCellIdentifier)
+        mallTableView.register(KPDiscoveryTrainCell.self, forCellReuseIdentifier: KPDiscoveryTrainCellIdentifier)
         mallTableView.tableFooterView = UIView()
         mallTableView.delegate = self
         mallTableView.dataSource = self
@@ -167,11 +166,18 @@ class KPDiscoveryController: KPBaseViewController {
         
         KPNetworkTool.shareNetworkTool.loadAdsBannerData(url: "https://api.gotokeep.com/v1.1/ads/banner?type=2", {[weak self](banners) in
         
-
             print("banners",banners)
             
         })
 
+        KPNetworkTool.shareNetworkTool.loadTrainListData{ [weak self](trainItems) in
+            
+            print("trainItems",trainItems)
+
+            self?.trainItems = trainItems
+            
+            self?.trainTableView?.reloadData()
+        }
 
         
         KPNetworkTool.shareNetworkTool.loadStoreBannerData{ [weak self](banners) in
@@ -226,77 +232,94 @@ extension KPDiscoveryController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 1
-        } else {
-            return 1
-        }
+        return self.trainItems.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-//        switch tableView.tag {
-//            
-//        case TableViewType.featured.rawValue:
-//            {
-//            
-//                print("ddd")
-//            }
-//            
-//        case TableViewType.train.rawValue:
-//            {
-//                print("ddd")
-//
-//            }
-//
-//        case TableViewType.diet.rawValue:
-//            {
-//                print("ddd")
-//            
-//            }
-//        case TableViewType.mall.rawValue:
-//            {
-//                print("ddd")
-//                
-//            }
-//            
-//        }
-        
-        
-        
         var cell = UITableViewCell()
-        
-        if indexPath.section == 0 {
+
+        switch tableView.tag {
             
-            cell = tableView.dequeueReusableCell(withIdentifier: KPStoreCarouselCellIdentifier) as! KPStoreCarouselCell
+            case TableViewType.featured.rawValue:
             
-        } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: KPStoreBannerCellIdentifier) as! KPStoreBannerCell
-            
-            var mineListCell = KPStoreBannerCell()
-            mineListCell = cell as! KPStoreBannerCell;
-            
-            mineListCell.banners = banners
-            return mineListCell
+                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
+                var trainCell = KPDiscoveryTrainCell()
+                
+                trainCell.selectionStyle = .none
+                trainCell = cell as! KPDiscoveryTrainCell;
+                
+                trainCell.courses = trainItems[indexPath.row]
+                return trainCell
+
+//                if indexPath.section == 0 {
+//                    
+//                    cell = tableView.dequeueReusableCell(withIdentifier: KPStoreCarouselCellIdentifier) as! KPStoreCarouselCell
+//                } else {
+//                    cell = tableView.dequeueReusableCell(withIdentifier: KPStoreBannerCellIdentifier) as! KPStoreBannerCell
+//                    var mineListCell = KPStoreBannerCell()
+//                    mineListCell = cell as! KPStoreBannerCell;
+//                    mineListCell.banners = banners
+//                    return mineListCell
+//                }
+            case TableViewType.train.rawValue:
+                
+                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
+
+                var trainCell = KPDiscoveryTrainCell()
+                trainCell.selectionStyle = .none
+
+                trainCell = cell as! KPDiscoveryTrainCell;
+
+                trainCell.courses = trainItems[indexPath.row]
+                
+                return trainCell
+
+            case TableViewType.diet.rawValue:
+                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
+                
+                var trainCell = KPDiscoveryTrainCell()
+                
+                trainCell = cell as! KPDiscoveryTrainCell;
+                
+                trainCell.courses = trainItems[indexPath.row]
+                
+                return trainCell
+            case TableViewType.mall.rawValue:
+                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
+                
+                var trainCell = KPDiscoveryTrainCell()
+                
+                trainCell = cell as! KPDiscoveryTrainCell;
+                
+                trainCell.courses = trainItems[indexPath.row]
+                
+                return trainCell
+            default:
+                
+                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
+                
+                var trainCell = KPDiscoveryTrainCell()
+                
+                trainCell = cell as! KPDiscoveryTrainCell;
+                
+                trainCell.courses = trainItems[indexPath.row]
+                
+                return trainCell
         }
-        
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 || indexPath.section == 2 {
-            return 190
-        } else {
-            return 100
-        }
+        
+        return 180
     }
     
 }

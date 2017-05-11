@@ -24,7 +24,6 @@ class KPDiscoveryHeadCell: UITableViewCell {
                 
                 let size = tabTitles[0].getImageViewSize()
                 timerScrollView.frame = CGRect.init(x: 0, y: 0, width: SCREENW, height: size.height)
-                timerScrollView.imageNames = tabTitles
             }
             
         }

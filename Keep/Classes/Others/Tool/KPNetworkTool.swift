@@ -287,12 +287,26 @@ class KPNetworkTool: NSObject {
     }
     
     
-    func loadTrainListData(last lastId:String?, _ finished:@escaping ([KPHotDetailItem],String?) ->()) {
+    func loadTrainListData(_ finished:@escaping ([KPDiscoveryTrainItem]) ->()) {
 
         //https://api.gotokeep.com/training/v2/course/discover?count=20
         
         
+        let path = Bundle.main.path(forResource: "TrainListData", ofType: "geojson")
+        let contentData = NSData.init(contentsOfFile: path!)
+        let json = JSON(contentData as Any)
         
+        if let data = json["data"]["courses"].arrayObject {
+            var bannerArray = [KPDiscoveryTrainItem]()
+            
+            for dict in data {
+                let title = KPDiscoveryTrainItem(dict: dict as! [String: AnyObject])
+                bannerArray.append(title)
+            }
+            
+            finished(bannerArray)
+            print(bannerArray)
+        }
     }
     
     
@@ -339,6 +353,10 @@ class KPNetworkTool: NSObject {
             }
         }
     }
+    
+    
+    
+    
     
     
 }
