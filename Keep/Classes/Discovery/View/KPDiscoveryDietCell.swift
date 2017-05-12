@@ -29,10 +29,11 @@ class KPDiscoveryDietCell: UITableViewCell {
             
             if let diet = diet {
                 
+                if let name = diet.name, let content = diet.content, let recipes = diet.recipes {
                 
-                if let content = diet.content {
-                
+                    titleLabel.text = name
                     contentLabel.text = content
+                    dietScrollView.diets = recipes
                 }
                 
                 self.titleLabel.snp.makeConstraints({ (make) in
@@ -55,8 +56,8 @@ class KPDiscoveryDietCell: UITableViewCell {
                     
                     make.left.equalTo(0)
                     make.width.equalTo(SCREENW)
-                    make.height.equalTo(120)
-                    make.top.equalTo(self.titleLabel.snp.bottom).offset(0)
+                    make.height.equalTo(120 + 15 + 5 + 12 + 2)
+                    make.top.equalTo(self.titleLabel.snp.bottom)
                 })
                 
                 self.lineView.snp.makeConstraints({ (make) in
@@ -83,6 +84,23 @@ class KPDiscoveryDietCell: UITableViewCell {
         }
     }
     
+    class func heightOfDietCell(_ item: KPDietItem?) -> CGFloat {
+        
+        if let item = item {
+            
+            let contentSize = item.content?.boundingRectWithSize(CGSize(width: SCREENW - 20, height: 9999), UIFont.boldSystemFont(ofSize: 12))
+
+            if let contentSize = contentSize {
+            
+                return 40 + 120 + 15 + 5 + 12 + 2 + 10 + contentSize.height + 10
+            } else {
+            
+                return 40 + 120 + 10
+            }
+        }
+        
+        return 0.1
+    }
     
     fileprivate lazy var titleLabel: UILabel = {
         
@@ -109,7 +127,7 @@ class KPDiscoveryDietCell: UITableViewCell {
     fileprivate lazy var lineView: UIView = {
         
         let lineView = UIView()
-        lineView.backgroundColor = KPLightGray()
+        lineView.backgroundColor = KPLine()
         return lineView
     }()
     
@@ -117,6 +135,7 @@ class KPDiscoveryDietCell: UITableViewCell {
         
         let contentLabel = UILabel()
         contentLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        contentLabel.numberOfLines = 0
         contentLabel.textColor = KPTheme()
         return contentLabel
     }()

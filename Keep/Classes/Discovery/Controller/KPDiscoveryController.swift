@@ -14,6 +14,9 @@ let KPStoreBannerCellIdentifier = "KPStoreBannerCellIdentifier"
 let KPStoreProductCellIdentifier = "KPStoreProductCellIdentifier"
 
 let KPDiscoveryTrainCellIdentifier = "KPDiscoveryTrainCellIdentifier"
+let KPDiscoveryDietCellIdentifier = "KPDiscoveryDietCellIdentifier"
+
+
 
 enum TableViewType : Int {
     
@@ -42,7 +45,7 @@ class KPDiscoveryController: KPBaseViewController {
 
     fileprivate var featuredItems = [KPNewsHotItem]()
     fileprivate var trainItems = [KPDiscoveryTrainItem]()
-    fileprivate var dietItems = [KPHotDetailItem]()
+    fileprivate var dietItems = [KPDietItem]()
     fileprivate var mallItems = [KPHotDetailItem]()
 
     fileprivate var scrollView: UIScrollView?
@@ -109,7 +112,7 @@ class KPDiscoveryController: KPBaseViewController {
         dietTableView.separatorStyle = .none
         dietTableView.tag = TableViewType.diet.rawValue
         dietTableView.backgroundColor = KPBg()
-        dietTableView.register(KPDiscoveryTrainCell.self, forCellReuseIdentifier: KPDiscoveryTrainCellIdentifier)
+        dietTableView.register(KPDiscoveryDietCell.self, forCellReuseIdentifier: KPDiscoveryDietCellIdentifier)
         dietTableView.tableFooterView = UIView()
         dietTableView.delegate = self
         dietTableView.dataSource = self
@@ -179,13 +182,10 @@ class KPDiscoveryController: KPBaseViewController {
             self?.trainTableView?.reloadData()
         }
 
-        KPNetworkTool.shareNetworkTool.loadDietListData{ [weak self](trainItems) in
+        KPNetworkTool.shareNetworkTool.loadDietListData{ [weak self](dietItems) in
             
-            print("trainItems",trainItems)
-            
+            self?.dietItems = dietItems
         }
-        
-        
         
         KPNetworkTool.shareNetworkTool.loadStoreBannerData{ [weak self](banners) in
             
@@ -239,12 +239,31 @@ extension KPDiscoveryController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.trainItems.count
+        switch tableView.tag {
 
+            case TableViewType.featured.rawValue:
+                
+                return self.trainItems.count
+
+            case TableViewType.train.rawValue:
+                
+                return self.trainItems.count
+
+            case TableViewType.diet.rawValue:
+
+                return self.dietItems.count
+
+            case TableViewType.mall.rawValue:
+
+                return self.trainItems.count
+            
+            default:
+                
+                return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         var cell = UITableViewCell()
 
@@ -259,41 +278,27 @@ extension KPDiscoveryController: UITableViewDataSource {
                 trainCell = cell as! KPDiscoveryTrainCell;
                 
                 trainCell.courses = trainItems[indexPath.row]
+                
                 return trainCell
 
-//                if indexPath.section == 0 {
-//                    
-//                    cell = tableView.dequeueReusableCell(withIdentifier: KPStoreCarouselCellIdentifier) as! KPStoreCarouselCell
-//                } else {
-//                    cell = tableView.dequeueReusableCell(withIdentifier: KPStoreBannerCellIdentifier) as! KPStoreBannerCell
-//                    var mineListCell = KPStoreBannerCell()
-//                    mineListCell = cell as! KPStoreBannerCell;
-//                    mineListCell.banners = banners
-//                    return mineListCell
-//                }
             case TableViewType.train.rawValue:
                 
                 cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
 
                 var trainCell = KPDiscoveryTrainCell()
                 trainCell.selectionStyle = .none
-
                 trainCell = cell as! KPDiscoveryTrainCell;
-
                 trainCell.courses = trainItems[indexPath.row]
-                
                 return trainCell
 
             case TableViewType.diet.rawValue:
-                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
+                cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryDietCellIdentifier) as! KPDiscoveryDietCell
                 
-                var trainCell = KPDiscoveryTrainCell()
-                
-                trainCell = cell as! KPDiscoveryTrainCell;
-                
-                trainCell.courses = trainItems[indexPath.row]
-                
-                return trainCell
+                var dietCell = KPDiscoveryDietCell()
+                dietCell = cell as! KPDiscoveryDietCell;
+                dietCell.diet = dietItems[indexPath.row]
+                return dietCell
+            
             case TableViewType.mall.rawValue:
                 cell = tableView.dequeueReusableCell(withIdentifier: KPDiscoveryTrainCellIdentifier) as! KPDiscoveryTrainCell
                 
@@ -316,7 +321,6 @@ extension KPDiscoveryController: UITableViewDataSource {
                 
                 return trainCell
         }
-        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -326,7 +330,28 @@ extension KPDiscoveryController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 180
+        switch tableView.tag {
+            
+        case TableViewType.featured.rawValue:
+            
+            return 180
+            
+        case TableViewType.train.rawValue:
+            
+            return 180
+
+        case TableViewType.diet.rawValue:
+            
+            return  KPDiscoveryDietCell.heightOfDietCell(dietItems[indexPath.row])
+            
+        case TableViewType.mall.rawValue:
+            
+            return 180
+            
+        default:
+            
+            return 0
+        }
     }
     
 }

@@ -41,7 +41,7 @@ class KPTrainScrollView: UIScrollView {
                 for i in 0..<imageNames.count {
                     
                     let imageView = UIImageView()
-                    imageView.frame = CGRect(x: CGFloat(i) * imageSize.width, y: 0, width: SCREENW, height: imageSize.height)
+                    imageView.frame = CGRect(x: CGFloat(i) * imageSize.width, y: 0, width: imageSize.width, height: imageSize.height)
                     imageView.contentMode = .scaleAspectFill
                     imageView.isUserInteractionEnabled = true
                     imageView.kf.setImage(with: URL(string: imageNames[i]))

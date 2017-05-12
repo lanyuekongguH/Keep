@@ -13,7 +13,7 @@ class KPDietItem: NSObject {
     var id: String?
     var name: String?
     var content: String?
-    var recipes: Array<Any>?
+    var recipes: Array<KPDietSingleItem>?
     
     init(dict: [String: AnyObject]) {
         
