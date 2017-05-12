@@ -39,7 +39,7 @@ class KPDietScrollView: UIScrollView {
                 }
                 
                 let imageSize = CGSize(width: 120, height: 120)
-                self.contentSize = CGSize(width: imageSize.width *  CGFloat(imageNames.count), height: imageSize.height)
+                self.contentSize = CGSize(width: (imageSize.width + 10) *  CGFloat(imageNames.count) + 10, height: imageSize.height)
                 
                 for i in 0..<imageNames.count {
                     
@@ -68,7 +68,7 @@ class KPDietScrollView: UIScrollView {
 
                     imageView.snp.makeConstraints({ (make) in
                         
-                        make.left.equalTo(CGFloat(i) * imageSize.width)
+                        make.left.equalTo(CGFloat(i) * (imageSize.width + 10) + 10)
                         make.width.equalTo(imageSize.width)
                         make.height.equalTo(imageSize.height)
                         make.top.equalTo(0)

@@ -358,13 +358,13 @@ extension KPDiscoveryController: UITableViewDataSource {
 
 extension KPDiscoveryController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if scrollView.isDragging {
-        
-            tabView.offsetRate = scrollView.contentOffset.x / SCREENW
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        
+//        if scrollView.isDragging {
+//        
+//            tabView.offsetRate = scrollView.contentOffset.x / SCREENW
+//        }
+//    }
 }
 
 extension KPDiscoveryController: KPDiscoveryTabButtonDelegate {

@@ -68,7 +68,7 @@ class KPDiscoveryDietCell: UITableViewCell {
                     make.top.equalTo(self.dietScrollView.snp.bottom).offset(0)
                 })
                 
-                let contentSize = contentLabel.text?.boundingRectWithSize(CGSize.init(width: SCREENW - 20, height: 9999), contentLabel.font)
+                let contentSize = diet.content?.boundingRectWithSize(CGSize.init(width: SCREENW - 20, height: 9999), contentLabel.font)
 
                 if let contentSize = contentSize {
                 
@@ -81,6 +81,16 @@ class KPDiscoveryDietCell: UITableViewCell {
                     })
                 }
             }
+        }
+    }
+    
+    override func prepareForReuse() {
+        
+        let array = self.dietScrollView.subviews
+        
+        for v in array {
+        
+            v.removeFromSuperview()
         }
     }
     
