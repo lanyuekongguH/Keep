@@ -42,6 +42,9 @@ typedef NS_OPTIONS(NSUInteger, AMapGeoFenceActiveAction)
 ///是否允许后台定位。默认为NO。只在iOS 9.0及之后起作用。设置为YES的时候必须保证 Background Modes 中的 Location updates 处于选中状态，否则会抛出异常。
 @property (nonatomic, assign) BOOL allowsBackgroundLocationUpdates;
 
+///检测是否存在虚拟定位风险，默认为NO，即不检测。 \n如果设置为YES，检测到风险后，会通过amapGeoFenceManager:didGeoFencesStatusChangedForRegion:customID:error: 的error给出风险提示，error的格式为error.domain==AMapGeoFenceErrorDomain; error.code==AMapGeoFenceErroFailureLocating; 
+@property (nonatomic, assign) BOOL detectRiskOfFakeLocation;
+
 
 /**
  * @brief 添加一个圆形围栏

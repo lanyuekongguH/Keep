@@ -15,6 +15,7 @@ pod "YYText"
 pod "SVProgressHUD"
 pod "ZipArchive"
 pod "AMap3DMap"
+pod “AMapSearch”
 pod "AMapLocation"
 pod "MJRefresh"
 pod "RealmSwift"

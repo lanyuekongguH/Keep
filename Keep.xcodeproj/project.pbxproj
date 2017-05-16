@@ -330,6 +330,7 @@
 		E40931E71EC98A56004BAC04 /* Rtimecost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E40930B11EC98A56004BAC04 /* Rtimecost.mp3 */; };
 		E40931E81EC98A56004BAC04 /* Rwarmup_complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E40930B21EC98A56004BAC04 /* Rwarmup_complete.mp3 */; };
 		E40931E91EC98A56004BAC04 /* Rwarmup_start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E40930B31EC98A56004BAC04 /* Rwarmup_start.mp3 */; };
+		E40931EB1EC98C72004BAC04 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40931EA1EC98C72004BAC04 /* AVFoundation.framework */; };
 		E40989AB1EBC815F004B1AEB /* TrainListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AA1EBC815F004B1AEB /* TrainListData.geojson */; };
 		E40989AD1EBC8282004B1AEB /* DietListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E40989AC1EBC8282004B1AEB /* DietListData.geojson */; };
 		E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40989AE1EBC856C004B1AEB /* KPDietItem.swift */; };
@@ -383,6 +384,7 @@
 		E48F699E1E76973800028DF0 /* BannerData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699D1E76973800028DF0 /* BannerData.geojson */; };
 		E48F69A01E76A7D600028DF0 /* StoreListData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E48F699F1E76A78800028DF0 /* StoreListData.geojson */; };
 		E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */; };
+		E4A1B81C1ECA8E0E002909D6 /* KPOCFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A1B81B1ECA8E0E002909D6 /* KPOCFile.m */; };
 		E4A5D9231E7004C500F91783 /* KPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9221E7004C500F91783 /* KPTabBarController.swift */; };
 		E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9241E7004E700F91783 /* KPNavigationController.swift */; };
 		E4A5D9271E70052000F91783 /* KPMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5D9261E70052000F91783 /* KPMineController.swift */; };
@@ -812,6 +814,7 @@
 		E40930B11EC98A56004BAC04 /* Rtimecost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rtimecost.mp3; sourceTree = "<group>"; };
 		E40930B21EC98A56004BAC04 /* Rwarmup_complete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rwarmup_complete.mp3; sourceTree = "<group>"; };
 		E40930B31EC98A56004BAC04 /* Rwarmup_start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rwarmup_start.mp3; sourceTree = "<group>"; };
+		E40931EA1EC98C72004BAC04 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E40989AA1EBC815F004B1AEB /* TrainListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TrainListData.geojson; sourceTree = "<group>"; };
 		E40989AC1EBC8282004B1AEB /* DietListData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DietListData.geojson; sourceTree = "<group>"; };
 		E40989AE1EBC856C004B1AEB /* KPDietItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDietItem.swift; sourceTree = "<group>"; };
@@ -871,6 +874,9 @@
 		E48F699D1E76973800028DF0 /* BannerData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BannerData.geojson; sourceTree = "<group>"; };
 		E48F699F1E76A78800028DF0 /* StoreListData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreListData.geojson; sourceTree = "<group>"; };
 		E4A0BDA21E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTodayWidgetTool.swift; sourceTree = "<group>"; };
+		E4A1B8191ECA8E0D002909D6 /* Keep-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keep-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4A1B81A1ECA8E0E002909D6 /* KPOCFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPOCFile.h; sourceTree = "<group>"; };
+		E4A1B81B1ECA8E0E002909D6 /* KPOCFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPOCFile.m; sourceTree = "<group>"; };
 		E4A5D9221E7004C500F91783 /* KPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTabBarController.swift; sourceTree = "<group>"; };
 		E4A5D9241E7004E700F91783 /* KPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNavigationController.swift; sourceTree = "<group>"; };
 		E4A5D9261E70052000F91783 /* KPMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineController.swift; sourceTree = "<group>"; };
@@ -941,6 +947,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40931EB1EC98C72004BAC04 /* AVFoundation.framework in Frameworks */,
 				9CD08EC34C9855572EE92ECA /* Pods_Keep.framework in Frameworks */,
 				E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */,
 			);
@@ -974,6 +981,7 @@
 		22F221A340CCDFFA37B1F85B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E40931EA1EC98C72004BAC04 /* AVFoundation.framework */,
 				E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */,
 				E40167BC1E8F88E600C41F96 /* SnapKit.framework */,
 				E40167BA1E8F88DF00C41F96 /* Kingfisher.framework */,
@@ -1627,6 +1635,9 @@
 			children = (
 				E4A5D9371E7009A900F91783 /* KPConst.swift */,
 				E4A946551E767F290040ED47 /* KPNetworkTool.swift */,
+				E4A1B81A1ECA8E0E002909D6 /* KPOCFile.h */,
+				E4A1B81B1ECA8E0E002909D6 /* KPOCFile.m */,
+				E4A1B8191ECA8E0D002909D6 /* Keep-Bridging-Header.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1799,6 +1810,7 @@
 					E45D45AF1E70020000AA79C5 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = M3FK4FYNRT;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -2239,7 +2251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2283,6 +2295,7 @@
 				E40166E01E8D080D00C41F96 /* KPFitBasisController.swift in Sources */,
 				E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */,
 				E4F011BD1E9644670043B61D /* KPStoreList.swift in Sources */,
+				E4A1B81C1ECA8E0E002909D6 /* KPOCFile.m in Sources */,
 				E45D45B41E70020000AA79C5 /* AppDelegate.swift in Sources */,
 				E481E0431EC46D0600D005A7 /* KPTrainScrollView.swift in Sources */,
 				E4A5D9251E7004E700F91783 /* KPNavigationController.swift in Sources */,
@@ -2524,6 +2537,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Keep/Keep.entitlements;
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				INFOPLIST_FILE = Keep/Classes/Info.plist;
@@ -2531,6 +2545,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Keep/Classes/Others/Tool/Keep-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2543,6 +2559,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Keep/Keep.entitlements;
 				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				INFOPLIST_FILE = Keep/Classes/Info.plist;
@@ -2550,6 +2567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Keep/Classes/Others/Tool/Keep-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

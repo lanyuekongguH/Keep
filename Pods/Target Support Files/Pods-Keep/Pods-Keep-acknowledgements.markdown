@@ -16,6 +16,11 @@ Copyright © 2014 AutoNavi. All Rights Reserved.
 Copyright © 2014 AutoNavi. All Rights Reserved.
 
 
+## AMapSearch
+
+Copyright © 2014 AutoNavi. All Rights Reserved.
+
+
 ## Alamofire
 
 Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
