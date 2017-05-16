@@ -22,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
         
-        
         AMapServices.shared().apiKey = "68139ad54d018576e5543d8274d4136f"
 
-        
         return true
     }
 
