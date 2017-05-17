@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol TrainCyclingDelegate: NSObjectProtocol {
+    func TrainCyclingDelegate(_ view:KPTrainCyclingView, button:UIButton)
+}
+
 class KPTrainCyclingView: UIScrollView {
 
+    weak var cyclingDelegate: TrainCyclingDelegate?
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         
@@ -49,6 +55,11 @@ class KPTrainCyclingView: UIScrollView {
         
     }
     
+    @objc fileprivate func buttonClick(_ button:UIButton) {
+    
+        cyclingDelegate?.TrainCyclingDelegate(self, button: button)
+    }
+    
     fileprivate lazy var bgImageView: UIImageView = {
         
         let bgImageView = UIImageView()
@@ -60,6 +71,7 @@ class KPTrainCyclingView: UIScrollView {
     fileprivate lazy var cyclingButton: UIButton = {
         
         let cyclingButton = UIButton()
+        cyclingButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
         cyclingButton.setBackgroundImage(UIImage.createImage(KPGreen()), for: UIControlState())
         cyclingButton.setBackgroundImage(UIImage.createImage(KPGreen()), for: .highlighted)
         cyclingButton.setTitle("出发去骑行", for: UIControlState())

@@ -62,18 +62,18 @@ class KPTrainViewController: UIViewController {
         setupUI()
         
         
-//        let button = UIButton()
-//        button.setTitle("开始", for: UIControlState())
-//        button.setTitleColor(UIColor.black, for: UIControlState())
-//        button.frame = CGRect.init(x: 100, y: 100, width: 100, height: 100)
-//        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
-//        self.view.addSubview(button)
+        let button = UIButton()
+        button.setTitle("开始", for: UIControlState())
+        button.setTitleColor(UIColor.black, for: UIControlState())
+        button.frame = CGRect.init(x: 100, y: 100, width: 100, height: 100)
+        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+        self.view.addSubview(button)
     }
     
     @objc fileprivate func buttonClick() {
     
-        let lineMapVc = KPTrainLineMapController()
-        self.navigationController?.pushViewController(lineMapVc, animated: true)
+//        let lineMapVc = KPTrainLineMapController()
+//        self.navigationController?.pushViewController(lineMapVc, animated: true)
         
 //        DispatchQueue.global().async {
 //        }
@@ -81,13 +81,13 @@ class KPTrainViewController: UIViewController {
 //        DispatchQueue.main.async {
 //        }
 //        
-//        self.av = AVSpeechSynthesizer()
-//        self.av?.delegate = self;
-//        let utterance = AVSpeechUtterance(string: "开始倒计时, 五秒，5秒，九秒，15秒，100秒，跑步结束,跑步距离5公里，用时50分钟,每公里平均用时10分钟。您已跑步1公里，用时10分钟，最近一公里用时4分钟。离目标还有30分钟，加快速度，加油吧！恭喜你，跑步5公里目标已达成，请确认是否结束本次跑步？")
-//        utterance.rate = 0.5;
-//        let voice = AVSpeechSynthesisVoice(language: "zh-CN")
-//        utterance.voice = voice;
-//        self.av?.speak(utterance)
+        self.av = AVSpeechSynthesizer()
+        self.av?.delegate = self;
+        let utterance = AVSpeechUtterance(string: "开始倒计时, 五秒，5秒，九秒，15秒，100秒，跑步结束,跑步距离5公里，用时50分钟,每公里平均用时10分钟。您已跑步1公里，用时10分钟，最近一公里用时4分钟。离目标还有30分钟，加快速度，加油吧！恭喜你，跑步5公里目标已达成，请确认是否结束本次跑步？")
+        utterance.rate = 0.5;
+        let voice = AVSpeechSynthesisVoice(language: "zh-CN")
+        utterance.voice = voice;
+        self.av?.speak(utterance)
         
     }
     
@@ -150,6 +150,7 @@ class KPTrainViewController: UIViewController {
         self.runTableView = runTableView
         
         let cyclingView = KPTrainCyclingView.init(frame: CGRect(x: SCREENW * 3, y: 0, width: SCREENW, height: SCREENH - (80 + 49)))
+        cyclingView.cyclingDelegate = self
         scrollView.addSubview(cyclingView)
         self.cyclingView = cyclingView
     }
@@ -326,5 +327,14 @@ extension KPTrainViewController: KPDiscoveryTabButtonDelegate {
     }
 
 }
+
+extension KPTrainViewController: TrainCyclingDelegate {
+    
+    func TrainCyclingDelegate(_ view: KPTrainCyclingView, button: UIButton) {
+        
+    }
+    
+}
+
 
 

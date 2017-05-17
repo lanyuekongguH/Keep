@@ -448,6 +448,7 @@
 		E4F2C9831EA32BD900466199 /* KPNewsHotHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2C9821EA32BD900466199 /* KPNewsHotHeadView.swift */; };
 		E4FCEEDB1ECBF6A600FC6C1A /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */; };
 		E4FCEEDD1ECBF76800FC6C1A /* KPTrainCyclingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */; };
+		E4FCEEDF1ECC25B200FC6C1A /* KPTrainStepsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -946,6 +947,7 @@
 		E4F2C9821EA32BD900466199 /* KPNewsHotHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotHeadView.swift; sourceTree = "<group>"; };
 		E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Image.xcassets; path = Assets.xcassets/Image.xcassets; sourceTree = "<group>"; };
 		E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainCyclingView.swift; sourceTree = "<group>"; };
+		E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainStepsButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1635,6 +1637,7 @@
 				E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */,
 				E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */,
 				E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */,
+				E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2374,6 +2377,7 @@
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
 				E45B5D681EACF1EE004FD585 /* KPNewsTagController.swift in Sources */,
 				E4694FD11E9CC96A00B5026E /* KPHealthListController.swift in Sources */,
+				E4FCEEDF1ECC25B200FC6C1A /* KPTrainStepsButton.swift in Sources */,
 				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,
 				E40989B11EC01B67004B1AEB /* KPTimerScrollView.swift in Sources */,
 				E44F27E01EA334F5002A1B5A /* KPNewsAddFriendListCell.swift in Sources */,
