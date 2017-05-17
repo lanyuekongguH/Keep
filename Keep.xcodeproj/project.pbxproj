@@ -446,6 +446,8 @@
 		E4F011DB1E97A2030043B61D /* KPNewsLikersListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F011D91E97A2030043B61D /* KPNewsLikersListCell.xib */; };
 		E4F011DD1E97A26A0043B61D /* KPNewsDetailAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011DC1E97A26A0043B61D /* KPNewsDetailAuthorCell.swift */; };
 		E4F2C9831EA32BD900466199 /* KPNewsHotHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2C9821EA32BD900466199 /* KPNewsHotHeadView.swift */; };
+		E4FCEEDB1ECBF6A600FC6C1A /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */; };
+		E4FCEEDD1ECBF76800FC6C1A /* KPTrainCyclingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -942,6 +944,8 @@
 		E4F011D91E97A2030043B61D /* KPNewsLikersListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPNewsLikersListCell.xib; sourceTree = "<group>"; };
 		E4F011DC1E97A26A0043B61D /* KPNewsDetailAuthorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsDetailAuthorCell.swift; sourceTree = "<group>"; };
 		E4F2C9821EA32BD900466199 /* KPNewsHotHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsHotHeadView.swift; sourceTree = "<group>"; };
+		E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Image.xcassets; path = Assets.xcassets/Image.xcassets; sourceTree = "<group>"; };
+		E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainCyclingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1374,6 +1378,7 @@
 				E4B4865D1E8BB31E00C17363 /* Info.plist */,
 				E45D45B71E70020000AA79C5 /* Main.storyboard */,
 				E45D45BA1E70020000AA79C5 /* Assets.xcassets */,
+				E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */,
 				E45D45BC1E70020000AA79C5 /* LaunchScreen.storyboard */,
 			);
 			path = Keep;
@@ -1629,6 +1634,7 @@
 				E4694FC61E9B990900B5026E /* KPTrainAddCell.swift */,
 				E4694FC71E9B990900B5026E /* KPTrainAddCell.xib */,
 				E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */,
+				E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1979,6 +1985,7 @@
 				E40931721EC98A56004BAC04 /* N086.mp3 in Resources */,
 				E40931521EC98A56004BAC04 /* N054.mp3 in Resources */,
 				E40931211EC98A56004BAC04 /* N015.mp3 in Resources */,
+				E4FCEEDB1ECBF6A600FC6C1A /* Image.xcassets in Resources */,
 				E40931BD1EC98A56004BAC04 /* Rlast_2min.mp3 in Resources */,
 				E409311F1EC98A56004BAC04 /* N014.mp3 in Resources */,
 				E40931251EC98A56004BAC04 /* N017.5.mp3 in Resources */,
@@ -2345,6 +2352,7 @@
 				E4694FDD1E9F95F900B5026E /* KPNewsLikeListController.swift in Sources */,
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
 				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
+				E4FCEEDD1ECBF76800FC6C1A /* KPTrainCyclingView.swift in Sources */,
 				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,
 				E481E03F1EC4668A00D005A7 /* KPDietSingleItem.swift in Sources */,
 				E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */,

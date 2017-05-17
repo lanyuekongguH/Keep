@@ -76,15 +76,15 @@ extension KPTrainLineMapController: AMapSearchDelegate {
         self.route = nil
         if response.count > 0 {
             
-            self.route = response.route
-            presentCurrentCourse()
-            
-            let path = response.route.paths[0]
-            
-            let step = path.steps[0]
-            
-            let overlays = self.mapView.overlays
-            self.mapView.removeOverlays(overlays)
+//            self.route = response.route
+//            presentCurrentCourse()
+//            
+//            let path = response.route.paths[0]
+//            
+//            let step = path.steps[0]
+//            
+//            let overlays = self.mapView.overlays
+//            self.mapView.removeOverlays(overlays)
         }
     }
 

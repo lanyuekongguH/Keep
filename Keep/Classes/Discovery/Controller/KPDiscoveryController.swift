@@ -67,7 +67,7 @@ class KPDiscoveryController: KPBaseViewController {
 
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 64 + 44, width: SCREENW, height: SCREENH - (64 + 44 + 49)))
         scrollView.backgroundColor = KPBg()
-        scrollView.contentSize = CGSize(width: SCREENW * 4, height: SCREENH - (64 + 44))
+        scrollView.contentSize = CGSize(width: SCREENW * 4, height: SCREENH - (64 + 44 + 49))
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
@@ -166,11 +166,9 @@ class KPDiscoveryController: KPBaseViewController {
     
     fileprivate func loadBannerData() {
         
-        
-        KPNetworkTool.shareNetworkTool.loadAdsBannerData(url: "https://api.gotokeep.com/v1.1/ads/banner?type=2", {[weak self](banners) in
+        KPNetworkTool.shareNetworkTool.loadAdsBannerData(url: "https://api.gotokeep.com/v1.1/ads/banner?type=2", {(banners) in
         
             print("banners",banners)
-            
         })
 
         KPNetworkTool.shareNetworkTool.loadTrainListData{ [weak self](trainItems) in

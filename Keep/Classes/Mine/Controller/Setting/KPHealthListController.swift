@@ -118,7 +118,7 @@ class KPHealthListController: KPBaseViewController {
     
     func setChart(dataPoints: [String], values: [Double]) {
 
-        var dataEntries = [ChartDataEntry]()
+//        var dataEntries = [ChartDataEntry]()
 
 //        for i in 0 .. dataPoints.count {
 //        
