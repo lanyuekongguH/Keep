@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let session = AVAudioSession.sharedInstance()
+        try! session.setCategory(AVAudioSessionCategoryPlayback)
+        try! session.setActive(true)
         
         let tabbarController = KPTabBarController()
         tabbarController.delegate = self
@@ -31,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         
         // 加载Shortcuts
         configureDynamicShortcuts()
+        
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

@@ -449,6 +449,9 @@
 		E4FCEEDB1ECBF6A600FC6C1A /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */; };
 		E4FCEEDD1ECBF76800FC6C1A /* KPTrainCyclingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */; };
 		E4FCEEDF1ECC25B200FC6C1A /* KPTrainStepsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */; };
+		E4FCEEE11ECDA7A300FC6C1A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FCEEE01ECDA7A300FC6C1A /* AVKit.framework */; };
+		E4FCEEE31ECE91A600FC6C1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FCEEE21ECE91A600FC6C1A /* QuartzCore.framework */; };
+		E4FCEEE51ECE91CA00FC6C1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FCEEE41ECE91CA00FC6C1A /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -948,6 +951,9 @@
 		E4FCEEDA1ECBF6A600FC6C1A /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Image.xcassets; path = Assets.xcassets/Image.xcassets; sourceTree = "<group>"; };
 		E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainCyclingView.swift; sourceTree = "<group>"; };
 		E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainStepsButton.swift; sourceTree = "<group>"; };
+		E4FCEEE01ECDA7A300FC6C1A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		E4FCEEE21ECE91A600FC6C1A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E4FCEEE41ECE91CA00FC6C1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -955,6 +961,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4FCEEE51ECE91CA00FC6C1A /* CoreGraphics.framework in Frameworks */,
+				E4FCEEE31ECE91A600FC6C1A /* QuartzCore.framework in Frameworks */,
+				E4FCEEE11ECDA7A300FC6C1A /* AVKit.framework in Frameworks */,
 				E40931EB1EC98C72004BAC04 /* AVFoundation.framework in Frameworks */,
 				9CD08EC34C9855572EE92ECA /* Pods_Keep.framework in Frameworks */,
 				E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */,
@@ -989,6 +998,9 @@
 		22F221A340CCDFFA37B1F85B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4FCEEE41ECE91CA00FC6C1A /* CoreGraphics.framework */,
+				E4FCEEE21ECE91A600FC6C1A /* QuartzCore.framework */,
+				E4FCEEE01ECDA7A300FC6C1A /* AVKit.framework */,
 				E40931EA1EC98C72004BAC04 /* AVFoundation.framework */,
 				E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */,
 				E40167BC1E8F88E600C41F96 /* SnapKit.framework */,
