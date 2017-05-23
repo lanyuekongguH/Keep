@@ -344,6 +344,9 @@
 		E41861CE1E7149840024EE1B /* KPMineDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861CD1E7149840024EE1B /* KPMineDataViewController.swift */; };
 		E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861CF1E7149960024EE1B /* KPMineSportsController.swift */; };
 		E41861D31E7150DC0024EE1B /* KPMineSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41861D11E7150DC0024EE1B /* KPMineSettingCell.swift */; };
+		E43AC12C1ED480CA00B7237A /* KPTrainRunSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AC12B1ED480CA00B7237A /* KPTrainRunSettingController.swift */; };
+		E43AC12E1ED4812500B7237A /* KPTrainActionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AC12D1ED4812500B7237A /* KPTrainActionsListController.swift */; };
+		E43AC1301ED4817100B7237A /* KPTrainActionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AC12F1ED4817100B7237A /* KPTrainActionListCell.swift */; };
 		E44F27E01EA334F5002A1B5A /* KPNewsAddFriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F27DF1EA334F5002A1B5A /* KPNewsAddFriendListCell.swift */; };
 		E44F27E21EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F27E11EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift */; };
 		E44F27E41EA335D4002A1B5A /* KPNewsAddFriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44F27E31EA335D4002A1B5A /* KPNewsAddFriendButton.swift */; };
@@ -835,6 +838,9 @@
 		E41861CD1E7149840024EE1B /* KPMineDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineDataViewController.swift; sourceTree = "<group>"; };
 		E41861CF1E7149960024EE1B /* KPMineSportsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineSportsController.swift; sourceTree = "<group>"; };
 		E41861D11E7150DC0024EE1B /* KPMineSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPMineSettingCell.swift; sourceTree = "<group>"; };
+		E43AC12B1ED480CA00B7237A /* KPTrainRunSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRunSettingController.swift; sourceTree = "<group>"; };
+		E43AC12D1ED4812500B7237A /* KPTrainActionsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainActionsListController.swift; sourceTree = "<group>"; };
+		E43AC12F1ED4817100B7237A /* KPTrainActionListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainActionListCell.swift; sourceTree = "<group>"; };
 		E44F27DF1EA334F5002A1B5A /* KPNewsAddFriendListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAddFriendListCell.swift; sourceTree = "<group>"; };
 		E44F27E11EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAddFriendInviteCell.swift; sourceTree = "<group>"; };
 		E44F27E31EA335D4002A1B5A /* KPNewsAddFriendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPNewsAddFriendButton.swift; sourceTree = "<group>"; };
@@ -1625,6 +1631,8 @@
 				E4A946531E7655540040ED47 /* KPTrainRunRecordController.swift */,
 				E4694FCC1E9B9A0400B5026E /* KPTrainTimetableController.swift */,
 				E45B5D611EACECCA004FD585 /* KPTainPlanController.swift */,
+				E43AC12B1ED480CA00B7237A /* KPTrainRunSettingController.swift */,
+				E43AC12D1ED4812500B7237A /* KPTrainActionsListController.swift */,
 				E4DF1E501ECA98BA00C7BEED /* KPTrainLineMapController.swift */,
 			);
 			path = Controller;
@@ -1650,6 +1658,7 @@
 				E4694FCA1E9B994800B5026E /* KPTrainTimetableCell.swift */,
 				E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */,
 				E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */,
+				E43AC12F1ED4817100B7237A /* KPTrainActionListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2320,6 +2329,7 @@
 				E4B88F421EC3F544004E728F /* KPDiscoveryTrainItem.swift in Sources */,
 				E4A5D9291E70054400F91783 /* KPSettingController.swift in Sources */,
 				E40166D41E8D07AD00C41F96 /* KPPushMessageController.swift in Sources */,
+				E43AC1301ED4817100B7237A /* KPTrainActionListCell.swift in Sources */,
 				E40166E01E8D080D00C41F96 /* KPFitBasisController.swift in Sources */,
 				E4AADDFE1E8BC31C00477C61 /* KPShortcutType.swift in Sources */,
 				E4F011BD1E9644670043B61D /* KPStoreList.swift in Sources */,
@@ -2341,6 +2351,7 @@
 				E4694FBF1E9B987700B5026E /* KPTrainRecommendCell.swift in Sources */,
 				E4A5D9331E7006F000F91783 /* KPAddFriendController.swift in Sources */,
 				E4694FD71E9E333400B5026E /* KPNewsFollowCell.swift in Sources */,
+				E43AC12C1ED480CA00B7237A /* KPTrainRunSettingController.swift in Sources */,
 				E4B88F401EC30EE9004E728F /* KPDiscoveryHeadCell.swift in Sources */,
 				E4F2C9831EA32BD900466199 /* KPNewsHotHeadView.swift in Sources */,
 				E48DEBB31EA6FA4D005D3408 /* KPNewsHotBottomView.swift in Sources */,
@@ -2370,6 +2381,7 @@
 				E4FCEEDD1ECBF76800FC6C1A /* KPTrainCyclingView.swift in Sources */,
 				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,
 				E481E03F1EC4668A00D005A7 /* KPDietSingleItem.swift in Sources */,
+				E43AC12E1ED4812500B7237A /* KPTrainActionsListController.swift in Sources */,
 				E40989AF1EBC856C004B1AEB /* KPDietItem.swift in Sources */,
 				E4A946541E7655540040ED47 /* KPTrainRunRecordController.swift in Sources */,
 				E4694FCB1E9B994800B5026E /* KPTrainTimetableCell.swift in Sources */,
