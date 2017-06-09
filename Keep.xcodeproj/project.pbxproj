@@ -428,6 +428,9 @@
 		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
 		E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB0C221E95F6450028E918 /* KPHealthTool.swift */; };
 		E4DF1E511ECA98BA00C7BEED /* KPTrainLineMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF1E501ECA98BA00C7BEED /* KPTrainLineMapController.swift */; };
+		E4EA0DC51EEAF25C00D6C7A5 /* KPTrainMapPathController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA0DC41EEAF25C00D6C7A5 /* KPTrainMapPathController.swift */; };
+		E4EA0DC71EEAF2B700D6C7A5 /* KPTrainMapDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA0DC61EEAF2B700D6C7A5 /* KPTrainMapDataView.swift */; };
+		E4EA0DC91EEAF32700D6C7A5 /* KPTrainRunShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA0DC81EEAF32700D6C7A5 /* KPTrainRunShareView.swift */; };
 		E4F011AB1E963C630043B61D /* KPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011AA1E963C630043B61D /* KPBaseViewController.swift */; };
 		E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */; };
 		E4F011BC1E9644670043B61D /* KPStoreBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F011BA1E9644670043B61D /* KPStoreBanner.swift */; };
@@ -933,6 +936,9 @@
 		E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E4CB0C221E95F6450028E918 /* KPHealthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthTool.swift; sourceTree = "<group>"; };
 		E4DF1E501ECA98BA00C7BEED /* KPTrainLineMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainLineMapController.swift; sourceTree = "<group>"; };
+		E4EA0DC41EEAF25C00D6C7A5 /* KPTrainMapPathController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPTrainMapPathController.swift; sourceTree = "<group>"; };
+		E4EA0DC61EEAF2B700D6C7A5 /* KPTrainMapDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPTrainMapDataView.swift; sourceTree = "<group>"; };
+		E4EA0DC81EEAF32700D6C7A5 /* KPTrainRunShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPTrainRunShareView.swift; sourceTree = "<group>"; };
 		E4F011AA1E963C630043B61D /* KPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPBaseViewController.swift; sourceTree = "<group>"; };
 		E4F011AC1E9641C60043B61D /* KPPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPPublishViewController.swift; sourceTree = "<group>"; };
 		E4F011BA1E9644670043B61D /* KPStoreBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPStoreBanner.swift; sourceTree = "<group>"; };
@@ -1634,6 +1640,7 @@
 				E43AC12B1ED480CA00B7237A /* KPTrainRunSettingController.swift */,
 				E43AC12D1ED4812500B7237A /* KPTrainActionsListController.swift */,
 				E4DF1E501ECA98BA00C7BEED /* KPTrainLineMapController.swift */,
+				E4EA0DC41EEAF25C00D6C7A5 /* KPTrainMapPathController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1659,6 +1666,8 @@
 				E4FCEEDC1ECBF76800FC6C1A /* KPTrainCyclingView.swift */,
 				E4FCEEDE1ECC25B200FC6C1A /* KPTrainStepsButton.swift */,
 				E43AC12F1ED4817100B7237A /* KPTrainActionListCell.swift */,
+				E4EA0DC61EEAF2B700D6C7A5 /* KPTrainMapDataView.swift */,
+				E4EA0DC81EEAF32700D6C7A5 /* KPTrainRunShareView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2313,6 +2322,7 @@
 				E4F011D71E979F4D0043B61D /* KPNewsLikersListItem.swift in Sources */,
 				E4A5D93A1E700BB700F91783 /* KPDiscoveryController.swift in Sources */,
 				E44F27E41EA335D4002A1B5A /* KPNewsAddFriendButton.swift in Sources */,
+				E4EA0DC71EEAF2B700D6C7A5 /* KPTrainMapDataView.swift in Sources */,
 				E4694FC41E9B98E300B5026E /* KPTrainPlanListCell.swift in Sources */,
 				E41861C71E713F940024EE1B /* UITableView+KP.swift in Sources */,
 				E4A5D9351E7007D000F91783 /* KPTrainViewController.swift in Sources */,
@@ -2379,6 +2389,7 @@
 				E4A946511E7286DE0040ED47 /* KPSegmentView.swift in Sources */,
 				E4F011AD1E9641C60043B61D /* KPPublishViewController.swift in Sources */,
 				E4FCEEDD1ECBF76800FC6C1A /* KPTrainCyclingView.swift in Sources */,
+				E4EA0DC51EEAF25C00D6C7A5 /* KPTrainMapPathController.swift in Sources */,
 				E4694FCD1E9B9A0400B5026E /* KPTrainTimetableController.swift in Sources */,
 				E481E03F1EC4668A00D005A7 /* KPDietSingleItem.swift in Sources */,
 				E43AC12E1ED4812500B7237A /* KPTrainActionsListController.swift in Sources */,
@@ -2396,6 +2407,7 @@
 				E41861D01E7149960024EE1B /* KPMineSportsController.swift in Sources */,
 				E4A5D9311E70064500F91783 /* KPNewsViewController.swift in Sources */,
 				E481E0411EC46CEE00D005A7 /* KPDietScrollView.swift in Sources */,
+				E4EA0DC91EEAF32700D6C7A5 /* KPTrainRunShareView.swift in Sources */,
 				E4F011D51E979E3A0043B61D /* KPNewDetailLikersCell.swift in Sources */,
 				E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */,
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
