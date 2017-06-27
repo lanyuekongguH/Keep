@@ -31,7 +31,7 @@ class KPTrainActionListCell: UITableViewCell {
         return timeLabel
     }()
     
-    fileprivate lazy var imageView: UIImageView = {
+    fileprivate lazy var myImageView: UIImageView = {
         
         let imageView = UIImageView()
         return imageView

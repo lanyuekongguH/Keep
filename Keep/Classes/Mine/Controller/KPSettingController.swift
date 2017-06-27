@@ -28,16 +28,23 @@ class KPSettingController: UIViewController {
     func setupUI() {
         
         view.backgroundColor = UIColor.white
-
-        let tableView = UITableView.init(frame: view.bounds, style: .grouped)
         
-        tableView.register(KPMineSettingCell.self, forCellReuseIdentifier: KPMineSettingCellIdentifier)
-
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.addSubview(tableView)
-        self.tableView = tableView
+        
+        DispatchQueue.global().async {
+            
+            let tableView = UITableView.init(frame: self.view.bounds, style: .grouped)
+            
+            tableView.register(KPMineSettingCell.self, forCellReuseIdentifier: KPMineSettingCellIdentifier)
+            
+            tableView.tableFooterView = UIView()
+            tableView.delegate = self
+            tableView.dataSource = self
+            self.view.addSubview(tableView)
+            self.tableView = tableView
+        }
+        
+            
+        
     }
 
     func loadDataArray() {
