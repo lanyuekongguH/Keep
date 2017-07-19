@@ -7,15 +7,20 @@
 //
 
 import UIKit
-import MapKit
 
 class KPTrainMapPathController: UIViewController {
 
     fileprivate var map: MAMapView?
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let map = MAMapView(frame:self.view.bounds)
+        map.zoomLevel = 15
+        map.isRotateEnabled = false
+        map.delegate = self as! MAMapViewDelegate
+        self.view.addSubview(map)
+        self.map = map
+        
     }
 }

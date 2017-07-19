@@ -57,7 +57,6 @@ class KPTrainViewController: UIViewController {
         
         setupUI()
         
-        
         let button = UIButton()
         button.setTitle("开始", for: UIControlState())
         button.setTitleColor(UIColor.black, for: UIControlState())
@@ -68,16 +67,8 @@ class KPTrainViewController: UIViewController {
     
     @objc fileprivate func buttonClick() {
     
-//        let lineMapVc = KPTrainLineMapController()
-//        self.navigationController?.pushViewController(lineMapVc, animated: true)
-        
-//        DispatchQueue.global().async {
-//        }
-//        
-//        DispatchQueue.main.async {
-//        }
-//
-        
+        let lineMapVc = KPTrainMapPathController()
+        self.navigationController?.pushViewController(lineMapVc, animated: true)
     }
     
     fileprivate func setupUI() {
@@ -170,8 +161,6 @@ class KPTrainViewController: UIViewController {
         tabView.frame = CGRect(x: 0, y: 20, width: SCREENW, height: 60)
         return tabView
     }()
-    
-    
 }
 
 
@@ -281,7 +270,6 @@ extension KPTrainViewController: KPDiscoveryTabButtonDelegate {
     func discoveryTabView(_ tabView: KPDiscoveryTabView, button: UIButton) {
         
     }
-
 }
 
 extension KPTrainViewController: TrainCyclingDelegate {
@@ -289,7 +277,6 @@ extension KPTrainViewController: TrainCyclingDelegate {
     func TrainCyclingDelegate(_ view: KPTrainCyclingView, button: UIButton) {
         
     }
-    
 }
 
 
