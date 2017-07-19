@@ -368,10 +368,4 @@ class KPNetworkTool: NSObject {
             }
         }
     }
-    
-    
-    
-    
-    
-    
 }

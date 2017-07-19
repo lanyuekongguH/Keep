@@ -9,7 +9,6 @@
 import UIKit
 import SwiftyJSON
 import SWTableViewCell
-import AVFoundation
 
 enum TrainType : Int {
     
@@ -40,9 +39,6 @@ class KPTrainViewController: UIViewController {
     
     fileprivate var scrollView: UIScrollView?
     
-    var av:AVSpeechSynthesizer?
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -54,10 +50,10 @@ class KPTrainViewController: UIViewController {
 
         view.backgroundColor = UIColor.white
         
-//        navigationItem.titleView = titleView
-//
-//        let rightItem = UIBarButtonItem(image: UIImage(named: "icon_run_sign"), style: .plain, target: self, action: #selector(rightItemClick))
-//        navigationItem.rightBarButtonItem = rightItem
+        navigationItem.titleView = titleView
+
+        let rightItem = UIBarButtonItem(image: UIImage(named: "icon_run_sign"), style: .plain, target: self, action: #selector(rightItemClick))
+        navigationItem.rightBarButtonItem = rightItem
         
         setupUI()
         
@@ -80,14 +76,7 @@ class KPTrainViewController: UIViewController {
 //        
 //        DispatchQueue.main.async {
 //        }
-//        
-        self.av = AVSpeechSynthesizer()
-        self.av?.delegate = self;
-        let utterance = AVSpeechUtterance(string: "开始倒计时, 五秒，5秒，九秒，15秒，100秒，跑步结束,跑步距离5公里，用时50分钟,每公里平均用时10分钟。您已跑步1公里，用时10分钟，最近一公里用时4分钟。离目标还有30分钟，加快速度，加油吧！恭喜你，跑步5公里目标已达成，请确认是否结束本次跑步？")
-        utterance.rate = 0.5;
-        let voice = AVSpeechSynthesisVoice(language: "zh-CN")
-        utterance.voice = voice;
-        self.av?.speak(utterance)
+//
         
     }
     
@@ -285,39 +274,6 @@ extension KPTrainViewController: SWTableViewCellDelegate {
     
     }
     
-}
-
-extension KPTrainViewController: AVSpeechSynthesizerDelegate {
-
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-        
-        print("Start")
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
-        
-        print("Pause")
-
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
-        
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        print("Cancel")
-
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("Finish")
-
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-        print("SpeakRangeOfSpeechString")
-
-    }
 }
 
 extension KPTrainViewController: KPDiscoveryTabButtonDelegate {

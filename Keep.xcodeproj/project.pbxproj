@@ -427,6 +427,8 @@
 		E4C465981EA9FA3200465109 /* KPNewsMetaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C465971EA9FA3200465109 /* KPNewsMetaItem.swift */; };
 		E4CB0C201E95F59F0028E918 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */; };
 		E4CB0C231E95F6450028E918 /* KPHealthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB0C221E95F6450028E918 /* KPHealthTool.swift */; };
+		E4CF69AE1F1F3B9C000F7AD8 /* KPTrainRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF69AD1F1F3B9C000F7AD8 /* KPTrainRunManager.swift */; };
+		E4CF69B01F1F3E52000F7AD8 /* KPTrainRunTrackings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF69AF1F1F3E52000F7AD8 /* KPTrainRunTrackings.swift */; };
 		E4DF1E511ECA98BA00C7BEED /* KPTrainLineMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF1E501ECA98BA00C7BEED /* KPTrainLineMapController.swift */; };
 		E4EA0DC51EEAF25C00D6C7A5 /* KPTrainMapPathController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA0DC41EEAF25C00D6C7A5 /* KPTrainMapPathController.swift */; };
 		E4EA0DC71EEAF2B700D6C7A5 /* KPTrainMapDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA0DC61EEAF2B700D6C7A5 /* KPTrainMapDataView.swift */; };
@@ -937,6 +939,8 @@
 		E4CB0C1E1E95F59F0028E918 /* Keep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keep.entitlements; sourceTree = "<group>"; };
 		E4CB0C1F1E95F59F0028E918 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E4CB0C221E95F6450028E918 /* KPHealthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHealthTool.swift; sourceTree = "<group>"; };
+		E4CF69AD1F1F3B9C000F7AD8 /* KPTrainRunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRunManager.swift; sourceTree = "<group>"; };
+		E4CF69AF1F1F3E52000F7AD8 /* KPTrainRunTrackings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainRunTrackings.swift; sourceTree = "<group>"; };
 		E4DF1E501ECA98BA00C7BEED /* KPTrainLineMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPTrainLineMapController.swift; sourceTree = "<group>"; };
 		E4EA0DC41EEAF25C00D6C7A5 /* KPTrainMapPathController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPTrainMapPathController.swift; sourceTree = "<group>"; };
 		E4EA0DC61EEAF2B700D6C7A5 /* KPTrainMapDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPTrainMapDataView.swift; sourceTree = "<group>"; };
@@ -1628,8 +1632,8 @@
 		E4A5D91C1E70041C00F91783 /* Train */ = {
 			isa = PBXGroup;
 			children = (
+				E4CF69AC1F1F3B7B000F7AD8 /* Model */,
 				E4A5D91D1E70041C00F91783 /* Controller */,
-				E4A5D91E1E70041C00F91783 /* Model */,
 				E4A5D91F1E70041C00F91783 /* View */,
 			);
 			path = Train;
@@ -1648,13 +1652,6 @@
 				E4EA0DC41EEAF25C00D6C7A5 /* KPTrainMapPathController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		E4A5D91E1E70041C00F91783 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E4A5D91F1E70041C00F91783 /* View */ = {
@@ -1731,6 +1728,15 @@
 				E4694FCE1E9C918C00B5026E /* KPHealthData.swift */,
 			);
 			path = Health;
+			sourceTree = "<group>";
+		};
+		E4CF69AC1F1F3B7B000F7AD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF69AD1F1F3B9C000F7AD8 /* KPTrainRunManager.swift */,
+				E4CF69AF1F1F3E52000F7AD8 /* KPTrainRunTrackings.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E4F011B81E9644090043B61D /* Model */ = {
@@ -2377,6 +2383,7 @@
 				E44F27E21EA33551002A1B5A /* KPNewsAddFriendInviteCell.swift in Sources */,
 				E4A0BDA31E95E3BD00EB2FB0 /* KPTodayWidgetTool.swift in Sources */,
 				E4B88F441EC3F566004E728F /* KPDiscoveryPlanItem.swift in Sources */,
+				E4CF69B01F1F3E52000F7AD8 /* KPTrainRunTrackings.swift in Sources */,
 				E4F011C91E9644F40043B61D /* KPNewsHotCollectionCell.swift in Sources */,
 				E4C465981EA9FA3200465109 /* KPNewsMetaItem.swift in Sources */,
 				E40166E61E8D085000C41F96 /* KPAboutMeViewController.swift in Sources */,
@@ -2420,6 +2427,7 @@
 				E48DEBB11EA6F9CC005D3408 /* KPNewsHotVideoCell.swift in Sources */,
 				E40166DA1E8D07E700C41F96 /* KPLinkHealthController.swift in Sources */,
 				E45B5D681EACF1EE004FD585 /* KPNewsTagController.swift in Sources */,
+				E4CF69AE1F1F3B9C000F7AD8 /* KPTrainRunManager.swift in Sources */,
 				E4694FD11E9CC96A00B5026E /* KPHealthListController.swift in Sources */,
 				E4FCEEDF1ECC25B200FC6C1A /* KPTrainStepsButton.swift in Sources */,
 				E4AADE051E8C978B00477C61 /* KPAboutViewController.swift in Sources */,
