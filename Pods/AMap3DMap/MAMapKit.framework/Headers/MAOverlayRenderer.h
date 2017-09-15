@@ -14,11 +14,18 @@
 #define kMAOverlayRendererDefaultStrokeColor [UIColor colorWithRed:0.3 green:0.63 blue:0.89 alpha:0.8]
 #define kMAOverlayRendererDefaultFillColor [UIColor colorWithRed:0.77 green:0.88 blue:0.94 alpha:0.8]
 
+@protocol MAOverlayRenderDelegate;
+
 ///该类是地图覆盖物Renderer的基类, 提供绘制overlay的接口但并无实际的实现（render相关方法只能在重写后的glRender方法中使用）
 @interface MAOverlayRenderer : NSObject {
     @protected
+    GLuint _strokeTextureID;
     BOOL _needsUpdate;
+    BOOL _needsLoadStrokeTexture;
 }
+
+///delegate 为assign，移除时需要设置为nil。由地图添加时，不要手动设置。如果不是使用mapview进行添加，则需要手动设置。（since 5.1.0）
+@property (nonatomic, assign) id<MAOverlayRenderDelegate> rendererDelegate;
 
 ///关联的overlay对象
 @property (nonatomic, readonly, retain) id <MAOverlay> overlay;
@@ -29,8 +36,17 @@
 ///缓存的OpenGLES坐标 个数
 @property (nonatomic) NSUInteger glPointCount;
 
-///笔触纹理id, 修改纹理id参考 - (GLuint)loadStrokeTextureImage:(UIImage *)textureImage
+///用于生成笔触纹理id的图片，since 5.3.0
+@property (nonatomic, strong) UIImage *strokeImage;
+
+///笔触纹理id, 修改纹理id参考, 如果strokeImage未指定、尚未加载或加载失败返回0
 @property (nonatomic, readonly) GLuint strokeTextureID;
+
+///透明度[0，1]，默认为1. 使用MAOverlayRenderer类提供的渲染接口会自动应用此属性。（since 5.1.0）
+@property (nonatomic, assign) CGFloat alpha;
+
+///overlay渲染的scale。（since 5.1.0）
+@property (nonatomic, readonly) CGFloat contentScale;
 
 /**
  * @brief 初始化并返回一个Overlay Renderer
@@ -50,6 +66,18 @@
  *  @return 矩阵数组
  */
 - (float *)getProjectionMatrix;
+
+/**
+ *  @brief 获取当前地图中心点偏移，用以把地图坐标转换为gl坐标。需要添加到地图获取才有效。（since 5.1.0）
+ *  @return 偏移
+ */
+- (MAMapPoint)getOffsetPoint;
+
+/**
+ *  @brief 获取当前地图缩放级别，需要添加到地图获取才有效。（since 5.1.0）
+ *  @return 缩放级别
+ */
+- (CGFloat)getMapZoomLevel;
 
 /**
  * @brief 将MAMapPoint转化为相对于receiver的本地坐标，deprecated
@@ -146,7 +174,7 @@
  * @param points     OpenGLES坐标系点指针, 参考- (CGPoint)glPointForMapPoint:(MAMapPoint)mapPoint, - (CGPoint *)glPointsForMapPoints:(MAMapPoint *)mapPoints count:(NSUInteger)count
  * @param pointCount 点个数
  * @param lineWidth  线OpenGLES支持线宽尺寸, 参考 - (CGFloat)glWidthForWindowWidth:(CGFloat)windowWidth
- * @param textureID  指定的纹理 使用- (void)loadStrokeTextureImage:(UIImage *)textureImage;加载
+ * @param textureID  指定的纹理
  * @param looped     是否闭合, 如polyline会设置NO, polygon会设置YES
  */
 - (void)renderTexturedLinesWithPoints:(CGPoint *)points
@@ -271,7 +299,20 @@
  * @param textureImage 纹理图片（需满足：长宽相等，且宽度值为2的次幂）。若为nil，则清空原有纹理
  * @return openGL纹理ID, 若纹理加载失败返回0
  */
-- (GLuint)loadStrokeTextureImage:(UIImage *)textureImage;
+- (GLuint)loadStrokeTextureImage:(UIImage *)textureImage __attribute__((deprecated("已废弃, 请通过属性strokeImage设置")));
+
+/**
+ * @brief 加载纹理图片（since 5.1.0）
+ * @param textureImage 纹理图片（需满足：长宽相等，且宽度值为2的次幂)
+ * @return openGL纹理ID, 若纹理加载失败返回0
+ */
+- (GLuint)loadTexture:(UIImage *)textureImage;
+
+/**
+ @brief 删除纹理（since 5.1.0）
+ @param textureId 纹理ID
+ */
+- (void)deleteTexture:(GLuint)textureId;
 
 /**
  * @brief 当关联overlay对象有更新时，调用此接口刷新. since 5.0.0

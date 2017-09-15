@@ -15,7 +15,7 @@ class KPWKWebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         let webview = WKWebView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH))
 //        let url = URL(string: "https://show.gotokeep.com/entry/590d2dc204e156717fbb3a28")
         let url = URL(string: "https://show.gotokeep.com/explore/")

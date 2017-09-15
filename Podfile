@@ -15,12 +15,11 @@ pod "YYText"
 pod "SVProgressHUD"
 pod "ZipArchive"
 pod "AMap3DMap"
-pod “AMapSearch”
+pod "AMapSearch"
 pod "AMapLocation"
 pod "MJRefresh"
 pod "RealmSwift"
-pod "SQLite.swift"
-pod “ChameleonFramework/Swift”, :git => 'https://github.com/ViccAlexander/Chameleon.git'
+pod "ChameleonFramework/Swift", :git => 'https://github.com/ViccAlexander/Chameleon.git'
 pod "SWTableViewCell"
 pod "GPUImage"
 pod "SDWebImage/WebP"

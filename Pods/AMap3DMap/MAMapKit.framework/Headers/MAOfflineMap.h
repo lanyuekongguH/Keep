@@ -79,16 +79,16 @@ typedef void(^MAOfflineMapNewestVersionBlock)(BOOL hasNewestVersion);
 + (MAOfflineMap *)sharedOfflineMap;
 
 ///省份数组(每个元素均是MAOfflineProvince类型)
-@property (nonatomic, readonly) NSArray *provinces;
+@property (nonatomic, readonly) NSArray<MAOfflineProvince *> *provinces;
 
 ///直辖市数组(每个元素均是MAOfflineItemMunicipality类型)
-@property (nonatomic, readonly) NSArray *municipalities;
+@property (nonatomic, readonly) NSArray<MAOfflineItemMunicipality *> *municipalities;
 
 ///全国概要图
 @property (nonatomic, readonly) MAOfflineItemNationWide *nationWide;
 
 ///城市数组, 包括普通城市与直辖市
-@property (nonatomic, readonly) NSArray *cities;
+@property (nonatomic, readonly) NSArray<MAOfflineCity *> *cities;
 
 ///离线数据的版本号(由年月日组成, 如@"20130715")
 @property (nonatomic, readonly) NSString *version;
@@ -137,7 +137,7 @@ typedef void(^MAOfflineMapNewestVersionBlock)(BOOL hasNewestVersion);
 - (void)clearDisk;
 
 /**
- * @brief 监测新版本
+ * @brief 监测新版本。注意：如果有新版本，会重建所有的数据，包括provinces、municipalities、nationWide、cities，外部使用应当在newestVersionBlock中更新所持有的对象。
  * @param newestVersionBlock 回调block
  */
 - (void)checkNewestVersion:(MAOfflineMapNewestVersionBlock)newestVersionBlock;

@@ -7,7 +7,7 @@
 //
 
 #import "MAConfig.h"
-#import <MAMapKit/MAMapKit.h>
+#import "MAPointAnnotation.h"
 #import "MAAnnotationMoveAnimation.h"
 
 ///支持动画效果的点标注

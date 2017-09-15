@@ -7,6 +7,8 @@
 //
 
 #import <MAMapKit/MAConfig.h>
+#import <MAMapKit/MAMapAccessibilityIdentifier.h>
+
 #import <MAMapKit/MAMapVersion.h>
 #import <MAMapKit/MAMapView.h>
 #import <MAMapKit/MAMapStatus.h>
@@ -37,6 +39,10 @@
 #import <MAMapKit/MAGroundOverlayRenderer.h>
 #import <MAMapKit/MATileOverlay.h>
 #import <MAMapKit/MATileOverlayRenderer.h>
+
+#import <MAMapKit/MAMultiPointOverlay.h>
+#import <MAMapKit/MAMultiPointOverlayRenderer.h>
+
 #import <MAMapKit/MAHeatMapTileOverlay.h>
 #import <MAMapKit/MATouchPoi.h>
 #import <MAMapKit/MAIndoorInfo.h>

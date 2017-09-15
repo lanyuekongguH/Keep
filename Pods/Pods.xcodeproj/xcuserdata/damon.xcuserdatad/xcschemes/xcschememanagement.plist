@@ -64,11 +64,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SQLite.swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -106,112 +101,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>0E71BCA20E7726D2BCFA89C6846629F5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>18DEF356F0CD944B6C6B18F8B0734AB1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2597E77C6D3830202BFB48C276629F0A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2807B93328F75CE89A58EB89762727D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3037DCD7123E6B8D5591D382ABBF95FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4759802105ABDFE19039D2A0AE811097</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>624C5A9D7E41DE757CEDA330D7C13308</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6527FF53CEEE9DEE4743CC71BB33521B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6A4EDD9B7CD6F9FF5346BF2908EF6C5A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A79DC8F5606F6D28D8D17C45867D0779</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B326808C67C6E86DDEFF4C3F7AF9AF1F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C4944FEC314D1A66588651D006273ADE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E14A62900910444707A5504D25EC98DC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3F36F9EF312C4C52447CD4C83DBB6D2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED6761A40B57DDCA24551D69EABDC1C0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F307B842FF76B2DE6C55DB67C0885325</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F33B19C12D4136DF418AD6938CBC220F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

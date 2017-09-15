@@ -14,7 +14,7 @@
 #import "MAShape.h"
 #import "MAOverlay.h"
 
-///该类用于确定覆盖在地图上的图片，及其覆盖区域, 通常MAGroundOverlay是MAGroundOverlayView的model
+///该类用于确定覆盖在地图上的图片，及其覆盖区域, 通常MAGroundOverlay是MAGroundOverlayRenderer的model
 @interface MAGroundOverlay : MAShape<MAOverlay>
 
 ///绘制在地图上的覆盖图片

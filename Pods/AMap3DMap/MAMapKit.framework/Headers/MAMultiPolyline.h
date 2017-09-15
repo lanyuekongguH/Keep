@@ -13,7 +13,7 @@
 @interface MAMultiPolyline : MAPolyline
 
 ///绘制索引数组(纹理、颜色索引数组), 成员为NSNumber, 且为非负数
-@property (nonatomic, strong, readonly) NSArray *drawStyleIndexes;
+@property (nonatomic, strong) NSArray *drawStyleIndexes;
 
 /**
  * @brief 分段绘制，根据map point数据生成多段线
